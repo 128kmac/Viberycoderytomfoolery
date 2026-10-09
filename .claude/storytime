@@ -1,0 +1,10 @@
+{
+  "extraKnownMarketplaces": {
+    "cc-storytime": {
+      "source": { "source": "github", "repo": "maddiedreese/cc-storytime" }
+    }
+  },
+  "enabledPlugins": {
+    "storytime@cc-storytime": true
+  }
+}
