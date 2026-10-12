@@ -1,0 +1,38 @@
+[
+ {
+  "family": "anthropicSans",
+  "weight": "400",
+  "style": "normal",
+  "subset": "all",
+  "range": "",
+  "file": "anthropicsans-400-normal-all-0.woff2",
+  "src": "https://claude.com/_next/static/media/AnthropicSans_Roman_Web-s.p.050e7498.woff2"
+ },
+ {
+  "family": "anthropicSans",
+  "weight": "400",
+  "style": "italic",
+  "subset": "all",
+  "range": "",
+  "file": "anthropicsans-400-italic-all-1.woff2",
+  "src": "https://claude.com/_next/static/media/AnthropicSans_Italic_Web-s.p.6550bf15.woff2"
+ },
+ {
+  "family": "anthropicSerif",
+  "weight": "400",
+  "style": "normal",
+  "subset": "all",
+  "range": "",
+  "file": "anthropicserif-400-normal-all-2.woff2",
+  "src": "https://claude.com/_next/static/media/AnthropicSerif_Roman_Web-s.p.c28786b4.woff2"
+ },
+ {
+  "family": "anthropicSerif",
+  "weight": "400",
+  "style": "italic",
+  "subset": "all",
+  "range": "",
+  "file": "anthropicserif-400-italic-all-3.woff2",
+  "src": "https://claude.com/_next/static/media/AnthropicSerif_Italic_Web-s.p.43888cc6.woff2"
+ }
+]
