@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<style>
+  /* Two faces only: one display, one UI. Drop files into fonts/ with these names. */
+  @font-face { font-family: Display; src: url(fonts/display.woff2) format('woff2'), url(fonts/display.ttf) format('truetype'), url(fonts/display.otf) format('opentype'); font-weight: 100 900; }
+  @font-face { font-family: UI; src: url(fonts/ui.woff2) format('woff2'), url(fonts/ui.ttf) format('truetype'), url(fonts/ui.otf) format('opentype'); font-weight: 100 900; }
+  html, body { margin: 0; height: 100%; background: #101010; color: #ccc; font: 13px/1.4 system-ui, sans-serif; }
+  body { display: grid; place-items: center; gap: 8px; grid-template-rows: 1fr auto; }
+  canvas { display: block; max-width: 96vw; max-height: 88vh; aspect-ratio: var(--aspect, 16/9); background: #000; cursor: crosshair; }
+  #hud { padding: 6px 0 12px; opacity: .7; font-variant-numeric: tabular-nums; }
+  body.render { display: block; background: #000; }
+  body.render canvas { max-width: none; max-height: none; }
+  body.render #hud { display: none; }
+</style>
+</head>
+<body>
+<canvas id="film"></canvas>
+<div id="hud">loading…</div>
+<script type="module" src="film.js"></script>
+</body>
+</html>

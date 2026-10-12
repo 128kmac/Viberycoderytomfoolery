@@ -1,0 +1,17 @@
+{
+  "name": "claude-motion",
+  "version": "2.0.0",
+  "description": "Motion-graphics videos from code: canvas films that are a pure function of time, frame-exact render, synthesized score + beat-locked SFX, −14 LUFS master, multi-format delivery.",
+  "author": {
+    "name": "ozerkanra"
+  },
+  "keywords": [
+    "video",
+    "motion-graphics",
+    "animation",
+    "showreel",
+    "launch-video",
+    "ffmpeg",
+    "canvas"
+  ]
+}

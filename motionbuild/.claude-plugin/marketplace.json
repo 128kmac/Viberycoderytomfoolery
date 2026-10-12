@@ -1,0 +1,12 @@
+{
+  "name": "motionbuild",
+  "owner": { "name": "ozerkanra" },
+  "plugins": [
+    {
+      "name": "claude-motion",
+      "source": "./",
+      "description": "Motion-graphics videos from code: product reels, launch films, explainers and social cuts.",
+      "version": "2.0.0"
+    }
+  ]
+}
