@@ -1,0 +1,1 @@
+"""Vibrant Visuals configuration generators."""

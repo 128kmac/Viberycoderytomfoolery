@@ -1,0 +1,10386 @@
+{
+"acacia_shelf": {
+"mean": [
+156.1,
+85.8,
+53.6
+],
+"coverage": 1.0
+},
+"acacia_trapdoor": {
+"mean": [
+156.7,
+87.2,
+51.3
+],
+"coverage": 0.766
+},
+"amethyst_block": {
+"mean": [
+133.8,
+98.0,
+191.3
+],
+"coverage": 1.0
+},
+"amethyst_cluster": {
+"mean": [
+163.8,
+126.9,
+207.3
+],
+"coverage": 0.547
+},
+"ancient_debris_side": {
+"mean": [
+95.7,
+63.7,
+55.9
+],
+"coverage": 1.0
+},
+"ancient_debris_top": {
+"mean": [
+94.8,
+66.5,
+58.4
+],
+"coverage": 1.0
+},
+"angler_pottery_pattern": {
+"mean": [
+126.5,
+73.0,
+57.5
+],
+"coverage": 0.875
+},
+"anvil_base": {
+"mean": [
+68.5,
+68.5,
+68.5
+],
+"coverage": 1.0
+},
+"anvil_top_damaged_0": {
+"mean": [
+72.5,
+72.5,
+72.5
+],
+"coverage": 0.625
+},
+"anvil_top_damaged_1": {
+"mean": [
+72.9,
+72.8,
+72.8
+],
+"coverage": 0.625
+},
+"anvil_top_damaged_2": {
+"mean": [
+72.3,
+72.2,
+72.2
+],
+"coverage": 0.625
+},
+"archer_pottery_pattern": {
+"mean": [
+124.4,
+71.8,
+56.6
+],
+"coverage": 0.875
+},
+"arms_up_pottery_pattern": {
+"mean": [
+125.5,
+72.5,
+57.2
+],
+"coverage": 0.875
+},
+"azalea_leaves": {
+"mean": [
+90.2,
+114.9,
+44.2
+],
+"coverage": 0.77
+},
+"azalea_leaves_flowers": {
+"mean": [
+99.6,
+111.1,
+60.9
+],
+"coverage": 0.801
+},
+"azalea_leaves_flowers_opaque": {
+"mean": [
+91.3,
+104.1,
+56.3
+],
+"coverage": 1.0
+},
+"azalea_leaves_opaque": {
+"mean": [
+82.8,
+105.9,
+42.8
+],
+"coverage": 1.0
+},
+"azalea_plant": {
+"mean": [
+91.6,
+109.8,
+42.7
+],
+"coverage": 0.742
+},
+"azalea_side": {
+"mean": [
+94.0,
+118.0,
+45.4
+],
+"coverage": 0.602
+},
+"azalea_top": {
+"mean": [
+101.8,
+124.7,
+47.6
+],
+"coverage": 1.0
+},
+"bamboo_block": {
+"mean": [
+127.2,
+144.0,
+57.5
+],
+"coverage": 1.0
+},
+"bamboo_block_top": {
+"mean": [
+139.1,
+141.8,
+62.5
+],
+"coverage": 1.0
+},
+"bamboo_door_bottom": {
+"mean": [
+199.1,
+178.4,
+84.8
+],
+"coverage": 1.0
+},
+"bamboo_door_top": {
+"mean": [
+191.3,
+171.5,
+81.2
+],
+"coverage": 0.812
+},
+"bamboo_fence": {
+"mean": [
+206.8,
+186.3,
+89.4
+],
+"coverage": 0.668
+},
+"bamboo_fence_gate": {
+"mean": [
+207.4,
+186.8,
+87.8
+],
+"coverage": 0.398
+},
+"bamboo_leaf": {
+"mean": [
+116.1,
+187.1,
+40.7
+],
+"coverage": 0.727
+},
+"bamboo_mosaic": {
+"mean": [
+190.2,
+170.2,
+78.1
+],
+"coverage": 1.0
+},
+"bamboo_planks": {
+"mean": [
+193.4,
+173.1,
+80.5
+],
+"coverage": 1.0
+},
+"bamboo_sapling": {
+"mean": [
+92.4,
+89.1,
+35.9
+],
+"coverage": 0.215
+},
+"bamboo_shelf": {
+"mean": [
+182.4,
+164.3,
+75.9
+],
+"coverage": 1.0
+},
+"bamboo_singleleaf": {
+"mean": [
+100.2,
+138.7,
+35.2
+],
+"coverage": 0.047
+},
+"bamboo_small_leaf": {
+"mean": [
+113.6,
+180.0,
+41.7
+],
+"coverage": 0.324
+},
+"bamboo_stem": {
+"mean": [
+93.6,
+144.5,
+19.5
+],
+"coverage": 1.0
+},
+"bamboo_trapdoor": {
+"mean": [
+198.7,
+179.3,
+85.3
+],
+"coverage": 0.828
+},
+"barrel_bottom": {
+"mean": [
+115.6,
+85.4,
+48.8
+],
+"coverage": 1.0
+},
+"barrel_side": {
+"mean": [
+107.9,
+81.3,
+50.2
+],
+"coverage": 1.0
+},
+"barrel_top": {
+"mean": [
+134.5,
+100.5,
+58.5
+],
+"coverage": 1.0
+},
+"barrel_top_open": {
+"mean": [
+92.5,
+67.6,
+34.2
+],
+"coverage": 1.0
+},
+"barrier": {
+"mean": [
+212.6,
+0.1,
+0.1
+],
+"coverage": 0.461
+},
+"basalt_side": {
+"mean": [
+73.2,
+72.5,
+77.9
+],
+"coverage": 1.0
+},
+"basalt_top": {
+"mean": [
+80.6,
+81.5,
+86.2
+],
+"coverage": 1.0
+},
+"beacon": {
+"mean": [
+117.8,
+220.9,
+215.1
+],
+"coverage": 1.0
+},
+"bed_feet_end": {
+"mean": [
+129.8,
+50.5,
+29.0
+],
+"coverage": 0.445
+},
+"bed_feet_side": {
+"mean": [
+128.4,
+45.2,
+26.7
+],
+"coverage": 0.41
+},
+"bed_feet_top": {
+"mean": [
+142.8,
+22.7,
+22.9
+],
+"coverage": 1.0
+},
+"bed_head_end": {
+"mean": [
+175.6,
+160.6,
+139.4
+],
+"coverage": 0.445
+},
+"bed_head_side": {
+"mean": [
+150.5,
+102.2,
+84.0
+],
+"coverage": 0.41
+},
+"bed_head_top": {
+"mean": [
+175.4,
+116.4,
+116.6
+],
+"coverage": 1.0
+},
+"bedrock": {
+"mean": [
+85.1,
+85.1,
+85.1
+],
+"coverage": 1.0
+},
+"bee_nest_bottom": {
+"mean": [
+160.5,
+127.2,
+87.8
+],
+"coverage": 1.0
+},
+"bee_nest_front": {
+"mean": [
+183.3,
+141.9,
+76.1
+],
+"coverage": 1.0
+},
+"bee_nest_front_honey": {
+"mean": [
+195.0,
+151.9,
+75.5
+],
+"coverage": 1.0
+},
+"bee_nest_side": {
+"mean": [
+196.2,
+150.8,
+77.4
+],
+"coverage": 1.0
+},
+"bee_nest_top": {
+"mean": [
+202.1,
+160.2,
+74.7
+],
+"coverage": 1.0
+},
+"beehive_front": {
+"mean": [
+156.5,
+125.7,
+75.5
+],
+"coverage": 1.0
+},
+"beehive_front_honey": {
+"mean": [
+165.5,
+129.9,
+72.5
+],
+"coverage": 1.0
+},
+"beehive_side": {
+"mean": [
+157.2,
+126.4,
+75.8
+],
+"coverage": 1.0
+},
+"beehive_top": {
+"mean": [
+179.1,
+144.8,
+89.1
+],
+"coverage": 1.0
+},
+"beetroots_stage_0": {
+"mean": [
+65.6,
+137.5,
+41.0
+],
+"coverage": 0.059
+},
+"beetroots_stage_1": {
+"mean": [
+66.8,
+138.9,
+41.3
+],
+"coverage": 0.117
+},
+"beetroots_stage_2": {
+"mean": [
+69.5,
+130.9,
+39.4
+],
+"coverage": 0.344
+},
+"beetroots_stage_3": {
+"mean": [
+93.1,
+91.8,
+30.3
+],
+"coverage": 0.453
+},
+"bell_bottom": {
+"mean": [
+188.5,
+148.5,
+42.2
+],
+"coverage": 0.25
+},
+"bell_side": {
+"mean": [
+252.7,
+229.3,
+96.8
+],
+"coverage": 0.227
+},
+"bell_top": {
+"mean": [
+253.2,
+235.2,
+111.0
+],
+"coverage": 0.25
+},
+"big_dripleaf_side1": {
+"mean": [
+75.3,
+98.3,
+44.3
+],
+"coverage": 0.012
+},
+"big_dripleaf_side2": {
+"mean": [
+97.6,
+124.7,
+48.3
+],
+"coverage": 0.156
+},
+"big_dripleaf_stem": {
+"mean": [
+91.4,
+115.2,
+45.9
+],
+"coverage": 0.328
+},
+"big_dripleaf_top": {
+"mean": [
+111.6,
+141.9,
+51.7
+],
+"coverage": 0.906
+},
+"birch_shelf": {
+"mean": [
+175.1,
+155.6,
+106.1
+],
+"coverage": 1.0
+},
+"birch_trapdoor": {
+"mean": [
+207.0,
+194.4,
+157.1
+],
+"coverage": 1.0
+},
+"blackstone": {
+"mean": [
+42.2,
+35.5,
+40.7
+],
+"coverage": 1.0
+},
+"blackstone_top": {
+"mean": [
+42.4,
+36.5,
+42.0
+],
+"coverage": 1.0
+},
+"blade_pottery_pattern": {
+"mean": [
+129.4,
+74.7,
+58.9
+],
+"coverage": 0.875
+},
+"blast_furnace_front_off": {
+"mean": [
+107.6,
+107.6,
+107.3
+],
+"coverage": 1.0
+},
+"blast_furnace_front_on": {
+"mean": [
+115.6,
+110.5,
+105.5
+],
+"coverage": 1.0
+},
+"blast_furnace_side": {
+"mean": [
+107.8,
+107.5,
+107.7
+],
+"coverage": 1.0
+},
+"blast_furnace_top": {
+"mean": [
+80.9,
+80.3,
+81.0
+],
+"coverage": 1.0
+},
+"blue_ice": {
+"mean": [
+116.1,
+167.6,
+253.0
+],
+"coverage": 1.0
+},
+"bone_block_side": {
+"mean": [
+229.4,
+225.9,
+207.8
+],
+"coverage": 1.0
+},
+"bone_block_top": {
+"mean": [
+209.8,
+206.2,
+179.4
+],
+"coverage": 1.0
+},
+"bookshelf": {
+"mean": [
+117.4,
+94.6,
+59.8
+],
+"coverage": 1.0
+},
+"border": {
+"mean": [
+181.3,
+57.4,
+47.5
+],
+"coverage": 1.0
+},
+"brewer_pottery_pattern": {
+"mean": [
+126.3,
+72.8,
+57.4
+],
+"coverage": 0.875
+},
+"brewing_stand": {
+"mean": [
+122.1,
+100.9,
+80.9
+],
+"coverage": 0.508
+},
+"brewing_stand_base": {
+"mean": [
+116.5,
+105.9,
+105.9
+],
+"coverage": 1.0
+},
+"brick": {
+"mean": [
+151.0,
+97.6,
+83.1
+],
+"coverage": 1.0
+},
+"bubble_column_down_top_a": {
+"mean": [
+128.0,
+212.9,
+247.8
+],
+"coverage": 0.051
+},
+"bubble_column_down_top_b": {
+"mean": [
+128.0,
+212.9,
+247.8
+],
+"coverage": 0.051
+},
+"bubble_column_down_top_c": {
+"mean": [
+128.0,
+212.9,
+247.8
+],
+"coverage": 0.051
+},
+"bubble_column_down_top_d": {
+"mean": [
+128.0,
+212.9,
+247.8
+],
+"coverage": 0.051
+},
+"bubble_column_inner_a": {
+"mean": [
+67.4,
+195.4,
+255.0
+],
+"coverage": 0.02
+},
+"bubble_column_inner_b": {
+"mean": [
+67.4,
+195.4,
+255.0
+],
+"coverage": 0.02
+},
+"bubble_column_outer_a": {
+"mean": [
+95.9,
+205.2,
+255.0
+],
+"coverage": 0.07
+},
+"bubble_column_outer_b": {
+"mean": [
+95.9,
+205.2,
+255.0
+],
+"coverage": 0.07
+},
+"bubble_column_outer_c": {
+"mean": [
+95.9,
+205.2,
+255.0
+],
+"coverage": 0.07
+},
+"bubble_column_outer_d": {
+"mean": [
+95.9,
+205.2,
+255.0
+],
+"coverage": 0.07
+},
+"bubble_column_outer_e": {
+"mean": [
+95.9,
+205.2,
+255.0
+],
+"coverage": 0.07
+},
+"bubble_column_outer_f": {
+"mean": [
+95.9,
+205.2,
+255.0
+],
+"coverage": 0.07
+},
+"bubble_column_outer_g": {
+"mean": [
+95.9,
+205.2,
+255.0
+],
+"coverage": 0.07
+},
+"bubble_column_outer_h": {
+"mean": [
+95.9,
+205.2,
+255.0
+],
+"coverage": 0.07
+},
+"bubble_column_up_top_a": {
+"mean": [
+88.8,
+196.9,
+245.3
+],
+"coverage": 0.188
+},
+"bubble_column_up_top_b": {
+"mean": [
+88.8,
+196.9,
+245.3
+],
+"coverage": 0.188
+},
+"bubble_column_up_top_c": {
+"mean": [
+88.8,
+196.9,
+245.3
+],
+"coverage": 0.188
+},
+"bubble_column_up_top_d": {
+"mean": [
+88.8,
+196.9,
+245.3
+],
+"coverage": 0.188
+},
+"budding_amethyst": {
+"mean": [
+132.4,
+96.2,
+186.8
+],
+"coverage": 1.0
+},
+"build_allow": {
+"mean": [
+136.9,
+115.4,
+83.4
+],
+"coverage": 1.0
+},
+"build_deny": {
+"mean": [
+111.9,
+111.9,
+111.9
+],
+"coverage": 1.0
+},
+"burn_pottery_pattern": {
+"mean": [
+127.4,
+73.4,
+57.9
+],
+"coverage": 0.875
+},
+"bush": {
+"mean": [
+119.9,
+120.8,
+119.9
+],
+"coverage": 0.496
+},
+"cactus_bottom": {
+"mean": [
+142.2,
+170.4,
+84.6
+],
+"coverage": 0.766
+},
+"cactus_flower": {
+"mean": [
+209.6,
+120.7,
+135.4
+],
+"coverage": 0.359
+},
+"cactus_side": {
+"mean": [
+90.2,
+131.1,
+47.1
+],
+"coverage": 0.906
+},
+"cactus_top": {
+"mean": [
+85.9,
+127.1,
+43.2
+],
+"coverage": 0.766
+},
+"cake_bottom": {
+"mean": [
+133.9,
+62.4,
+32.6
+],
+"coverage": 0.766
+},
+"cake_inner": {
+"mean": [
+133.5,
+84.9,
+60.5
+],
+"coverage": 0.438
+},
+"cake_side": {
+"mean": [
+203.1,
+151.9,
+121.8
+],
+"coverage": 0.438
+},
+"cake_top": {
+"mean": [
+248.1,
+222.6,
+214.2
+],
+"coverage": 0.766
+},
+"calcite": {
+"mean": [
+223.5,
+224.5,
+220.7
+],
+"coverage": 1.0
+},
+"calibrated_sculk_sensor_amethyst": {
+"mean": [
+198.8,
+160.5,
+225.0
+],
+"coverage": 0.25
+},
+"calibrated_sculk_sensor_input_side": {
+"mean": [
+59.6,
+69.9,
+101.8
+],
+"coverage": 0.5
+},
+"calibrated_sculk_sensor_top": {
+"mean": [
+27.5,
+79.4,
+100.6
+],
+"coverage": 1.0
+},
+"camera_back": {
+"mean": [
+101.8,
+74.0,
+34.4
+],
+"coverage": 1.0
+},
+"camera_front": {
+"mean": [
+126.3,
+85.8,
+23.3
+],
+"coverage": 1.0
+},
+"camera_side": {
+"mean": [
+53.2,
+53.2,
+53.2
+],
+"coverage": 1.0
+},
+"camera_top": {
+"mean": [
+54.5,
+54.5,
+54.5
+],
+"coverage": 1.0
+},
+"campfire": {
+"mean": [
+222.6,
+166.2,
+66.0
+],
+"coverage": 0.543
+},
+"campfire_log": {
+"mean": [
+79.4,
+74.5,
+67.7
+],
+"coverage": 0.812
+},
+"campfire_log_lit": {
+"mean": [
+108.3,
+85.1,
+52.4
+],
+"coverage": 1.0
+},
+"candles/black_candle": {
+"mean": [
+38.3,
+36.7,
+57.6
+],
+"coverage": 0.082
+},
+"candles/black_candle_lit": {
+"mean": [
+74.0,
+48.5,
+51.8
+],
+"coverage": 0.082
+},
+"candles/blue_candle": {
+"mean": [
+57.0,
+76.4,
+161.0
+],
+"coverage": 0.082
+},
+"candles/blue_candle_lit": {
+"mean": [
+64.8,
+84.9,
+179.3
+],
+"coverage": 0.082
+},
+"candles/brown_candle": {
+"mean": [
+111.6,
+70.0,
+41.0
+],
+"coverage": 0.082
+},
+"candles/brown_candle_lit": {
+"mean": [
+147.8,
+96.2,
+51.6
+],
+"coverage": 0.082
+},
+"candles/candle": {
+"mean": [
+232.1,
+200.6,
+153.3
+],
+"coverage": 0.082
+},
+"candles/candle_lit": {
+"mean": [
+235.2,
+210.5,
+173.5
+],
+"coverage": 0.082
+},
+"candles/cyan_candle": {
+"mean": [
+17.0,
+123.6,
+123.6
+],
+"coverage": 0.082
+},
+"candles/cyan_candle_lit": {
+"mean": [
+43.0,
+147.0,
+134.8
+],
+"coverage": 0.082
+},
+"candles/gray_candle": {
+"mean": [
+80.4,
+94.5,
+96.8
+],
+"coverage": 0.082
+},
+"candles/gray_candle_lit": {
+"mean": [
+118.5,
+122.2,
+108.4
+],
+"coverage": 0.082
+},
+"candles/green_candle": {
+"mean": [
+72.8,
+96.4,
+21.0
+],
+"coverage": 0.082
+},
+"candles/green_candle_lit": {
+"mean": [
+100.8,
+115.1,
+22.0
+],
+"coverage": 0.082
+},
+"candles/light_blue_candle": {
+"mean": [
+34.6,
+137.8,
+196.6
+],
+"coverage": 0.082
+},
+"candles/light_blue_candle_lit": {
+"mean": [
+69.9,
+161.7,
+201.8
+],
+"coverage": 0.082
+},
+"candles/light_gray_candle": {
+"mean": [
+118.5,
+120.5,
+112.5
+],
+"coverage": 0.082
+},
+"candles/light_gray_candle_lit": {
+"mean": [
+151.5,
+147.4,
+126.3
+],
+"coverage": 0.082
+},
+"candles/lime_candle": {
+"mean": [
+98.2,
+171.8,
+22.7
+],
+"coverage": 0.082
+},
+"candles/lime_candle_lit": {
+"mean": [
+124.2,
+181.4,
+30.7
+],
+"coverage": 0.082
+},
+"candles/magenta_candle": {
+"mean": [
+160.7,
+45.9,
+153.3
+],
+"coverage": 0.082
+},
+"candles/magenta_candle_lit": {
+"mean": [
+182.5,
+69.8,
+161.8
+],
+"coverage": 0.082
+},
+"candles/orange_candle": {
+"mean": [
+219.3,
+100.4,
+9.0
+],
+"coverage": 0.082
+},
+"candles/orange_candle_lit": {
+"mean": [
+226.8,
+131.2,
+26.8
+],
+"coverage": 0.082
+},
+"candles/pink_candle": {
+"mean": [
+208.0,
+101.9,
+142.2
+],
+"coverage": 0.082
+},
+"candles/pink_candle_lit": {
+"mean": [
+218.0,
+131.0,
+150.7
+],
+"coverage": 0.082
+},
+"candles/purple_candle": {
+"mean": [
+105.4,
+34.5,
+159.5
+],
+"coverage": 0.082
+},
+"candles/purple_candle_lit": {
+"mean": [
+125.0,
+33.5,
+144.6
+],
+"coverage": 0.082
+},
+"candles/red_candle": {
+"mean": [
+153.1,
+39.0,
+36.1
+],
+"coverage": 0.082
+},
+"candles/red_candle_lit": {
+"mean": [
+180.6,
+65.3,
+47.0
+],
+"coverage": 0.082
+},
+"candles/white_candle": {
+"mean": [
+210.2,
+216.8,
+217.7
+],
+"coverage": 0.082
+},
+"candles/white_candle_lit": {
+"mean": [
+217.7,
+217.2,
+206.0
+],
+"coverage": 0.082
+},
+"candles/yellow_candle": {
+"mean": [
+209.0,
+164.8,
+50.2
+],
+"coverage": 0.082
+},
+"candles/yellow_candle_lit": {
+"mean": [
+216.8,
+183.6,
+74.6
+],
+"coverage": 0.082
+},
+"carried_waterlily": {
+"mean": [
+67.3,
+102.1,
+36.4
+],
+"coverage": 0.586
+},
+"carrots_stage3": {
+"mean": [
+81.6,
+124.2,
+37.6
+],
+"coverage": 0.43
+},
+"carrots_stage_0": {
+"mean": [
+44.6,
+110.3,
+39.7
+],
+"coverage": 0.066
+},
+"carrots_stage_1": {
+"mean": [
+52.6,
+120.4,
+40.0
+],
+"coverage": 0.164
+},
+"carrots_stage_2": {
+"mean": [
+56.5,
+113.7,
+37.9
+],
+"coverage": 0.32
+},
+"carrots_stage_3": {
+"mean": [
+81.6,
+124.2,
+37.6
+],
+"coverage": 0.43
+},
+"cartography_table_side1": {
+"mean": [
+70.5,
+50.3,
+34.3
+],
+"coverage": 1.0
+},
+"cartography_table_side2": {
+"mean": [
+81.7,
+61.9,
+42.3
+],
+"coverage": 1.0
+},
+"cartography_table_side3": {
+"mean": [
+67.8,
+43.9,
+20.5
+],
+"coverage": 1.0
+},
+"cartography_table_top": {
+"mean": [
+103.5,
+87.4,
+67.2
+],
+"coverage": 1.0
+},
+"cauldron_bottom": {
+"mean": [
+40.5,
+40.5,
+44.6
+],
+"coverage": 0.328
+},
+"cauldron_inner": {
+"mean": [
+49.2,
+49.0,
+53.3
+],
+"coverage": 1.0
+},
+"cauldron_side": {
+"mean": [
+74.1,
+73.4,
+74.7
+],
+"coverage": 1.0
+},
+"cauldron_top": {
+"mean": [
+73.8,
+72.7,
+74.1
+],
+"coverage": 0.609
+},
+"cauldron_water": {
+"mean": [
+205.4,
+205.4,
+205.4
+],
+"coverage": 1.0
+},
+"cauldron_water_placeholder": {
+"mean": [
+205.4,
+205.4,
+205.4
+],
+"coverage": 1.0
+},
+"cave_vines_body": {
+"mean": [
+88.2,
+101.6,
+38.1
+],
+"coverage": 0.562
+},
+"cave_vines_body_berries": {
+"mean": [
+105.2,
+107.3,
+40.3
+],
+"coverage": 0.625
+},
+"cave_vines_head": {
+"mean": [
+90.4,
+109.4,
+40.8
+],
+"coverage": 0.559
+},
+"cave_vines_head_berries": {
+"mean": [
+105.2,
+112.9,
+41.9
+],
+"coverage": 0.582
+},
+"chain1": {
+"mean": [
+50.2,
+56.8,
+73.2
+],
+"coverage": 0.117
+},
+"chain2": {
+"mean": [
+52.7,
+59.2,
+75.8
+],
+"coverage": 0.102
+},
+"chain_command_block_back": {
+"mean": [
+130.0,
+157.0,
+144.9
+],
+"coverage": 1.0
+},
+"chain_command_block_back_mipmap": {
+"mean": [
+126.8,
+150.7,
+140.8
+],
+"coverage": 1.0
+},
+"chain_command_block_conditional": {
+"mean": [
+129.8,
+161.8,
+147.3
+],
+"coverage": 1.0
+},
+"chain_command_block_conditional_mipmap": {
+"mean": [
+127.1,
+155.5,
+143.9
+],
+"coverage": 1.0
+},
+"chain_command_block_front": {
+"mean": [
+132.5,
+165.4,
+150.6
+],
+"coverage": 1.0
+},
+"chain_command_block_front_mipmap": {
+"mean": [
+129.7,
+159.3,
+146.7
+],
+"coverage": 1.0
+},
+"chain_command_block_side": {
+"mean": [
+131.2,
+161.1,
+147.5
+],
+"coverage": 1.0
+},
+"chain_command_block_side_mipmap": {
+"mean": [
+128.4,
+154.9,
+143.8
+],
+"coverage": 1.0
+},
+"cherry_door_bottom": {
+"mean": [
+225.7,
+176.1,
+169.7
+],
+"coverage": 0.992
+},
+"cherry_door_top": {
+"mean": [
+223.2,
+170.6,
+164.9
+],
+"coverage": 0.859
+},
+"cherry_leaves": {
+"mean": [
+229.4,
+173.0,
+194.1
+],
+"coverage": 0.844
+},
+"cherry_leaves_opaque": {
+"mean": [
+226.1,
+162.5,
+188.8
+],
+"coverage": 1.0
+},
+"cherry_log_side": {
+"mean": [
+54.7,
+33.0,
+44.4
+],
+"coverage": 1.0
+},
+"cherry_log_top": {
+"mean": [
+185.2,
+141.0,
+137.3
+],
+"coverage": 1.0
+},
+"cherry_planks": {
+"mean": [
+226.5,
+178.7,
+172.7
+],
+"coverage": 1.0
+},
+"cherry_sapling": {
+"mean": [
+164.1,
+117.9,
+143.2
+],
+"coverage": 0.477
+},
+"cherry_shelf": {
+"mean": [
+202.5,
+130.2,
+129.4
+],
+"coverage": 1.0
+},
+"cherry_trapdoor": {
+"mean": [
+226.4,
+178.6,
+172.4
+],
+"coverage": 0.859
+},
+"chest_front": {
+"mean": [
+122.8,
+90.8,
+41.0
+],
+"coverage": 1.0
+},
+"chest_side": {
+"mean": [
+123.2,
+89.8,
+37.8
+],
+"coverage": 1.0
+},
+"chest_top": {
+"mean": [
+130.8,
+94.2,
+37.1
+],
+"coverage": 1.0
+},
+"chiseled_bookshelf_empty": {
+"mean": [
+90.3,
+71.0,
+41.6
+],
+"coverage": 1.0
+},
+"chiseled_bookshelf_occupied": {
+"mean": [
+121.3,
+94.2,
+70.0
+],
+"coverage": 1.0
+},
+"chiseled_bookshelf_side": {
+"mean": [
+175.1,
+141.6,
+86.5
+],
+"coverage": 1.0
+},
+"chiseled_bookshelf_top": {
+"mean": [
+178.0,
+144.6,
+88.8
+],
+"coverage": 1.0
+},
+"chiseled_cinnabar": {
+"mean": [
+146.6,
+55.4,
+55.0
+],
+"coverage": 1.0
+},
+"chiseled_copper": {
+"mean": [
+184.0,
+100.8,
+73.8
+],
+"coverage": 1.0
+},
+"chiseled_nether_bricks": {
+"mean": [
+45.8,
+22.9,
+27.3
+],
+"coverage": 1.0
+},
+"chiseled_polished_blackstone": {
+"mean": [
+54.0,
+48.7,
+56.8
+],
+"coverage": 1.0
+},
+"chiseled_resin_bricks": {
+"mean": [
+200.7,
+84.2,
+24.8
+],
+"coverage": 1.0
+},
+"chiseled_sulfur": {
+"mean": [
+187.1,
+169.6,
+91.4
+],
+"coverage": 1.0
+},
+"chiseled_tuff": {
+"mean": [
+89.2,
+94.3,
+86.7
+],
+"coverage": 1.0
+},
+"chiseled_tuff_bricks": {
+"mean": [
+98.9,
+103.3,
+95.6
+],
+"coverage": 1.0
+},
+"chiseled_tuff_bricks_top": {
+"mean": [
+110.9,
+114.0,
+106.8
+],
+"coverage": 1.0
+},
+"chiseled_tuff_top": {
+"mean": [
+93.8,
+98.6,
+91.2
+],
+"coverage": 1.0
+},
+"chorus_flower": {
+"mean": [
+151.3,
+121.0,
+151.8
+],
+"coverage": 1.0
+},
+"chorus_flower_dead": {
+"mean": [
+96.6,
+61.1,
+94.6
+],
+"coverage": 1.0
+},
+"chorus_plant": {
+"mean": [
+93.9,
+57.1,
+93.8
+],
+"coverage": 1.0
+},
+"cinnabar": {
+"mean": [
+151.9,
+82.7,
+78.3
+],
+"coverage": 1.0
+},
+"cinnabar_bricks": {
+"mean": [
+148.2,
+55.6,
+53.7
+],
+"coverage": 1.0
+},
+"clay": {
+"mean": [
+160.7,
+166.5,
+179.4
+],
+"coverage": 1.0
+},
+"coal_block": {
+"mean": [
+16.0,
+15.9,
+15.9
+],
+"coverage": 1.0
+},
+"coal_ore": {
+"mean": [
+105.7,
+105.8,
+105.4
+],
+"coverage": 1.0
+},
+"coarse_dirt": {
+"mean": [
+119.4,
+85.6,
+59.4
+],
+"coverage": 1.0
+},
+"cobblestone": {
+"mean": [
+127.8,
+127.3,
+127.6
+],
+"coverage": 1.0
+},
+"cobblestone_mossy": {
+"mean": [
+110.1,
+118.5,
+94.9
+],
+"coverage": 1.0
+},
+"cocoa_stage_0": {
+"mean": [
+133.3,
+134.8,
+62.0
+],
+"coverage": 0.184
+},
+"cocoa_stage_1": {
+"mean": [
+146.3,
+110.7,
+56.1
+],
+"coverage": 0.348
+},
+"cocoa_stage_2": {
+"mean": [
+156.4,
+94.0,
+43.7
+],
+"coverage": 0.516
+},
+"command_block": {
+"mean": [
+178.8,
+137.7,
+111.8
+],
+"coverage": 1.0
+},
+"command_block_back": {
+"mean": [
+173.8,
+131.2,
+106.7
+],
+"coverage": 1.0
+},
+"command_block_back_mipmap": {
+"mean": [
+164.0,
+127.3,
+107.9
+],
+"coverage": 1.0
+},
+"command_block_conditional": {
+"mean": [
+178.7,
+133.2,
+105.9
+],
+"coverage": 1.0
+},
+"command_block_conditional_mipmap": {
+"mean": [
+168.2,
+129.4,
+107.2
+],
+"coverage": 1.0
+},
+"command_block_front": {
+"mean": [
+181.0,
+135.9,
+108.3
+],
+"coverage": 1.0
+},
+"command_block_front_mipmap": {
+"mean": [
+172.2,
+132.1,
+108.6
+],
+"coverage": 1.0
+},
+"command_block_side": {
+"mean": [
+177.3,
+133.6,
+107.7
+],
+"coverage": 1.0
+},
+"command_block_side_mipmap": {
+"mean": [
+168.0,
+129.9,
+108.5
+],
+"coverage": 1.0
+},
+"comparator_off": {
+"mean": [
+166.3,
+161.9,
+159.5
+],
+"coverage": 1.0
+},
+"comparator_on": {
+"mean": [
+175.7,
+160.1,
+157.8
+],
+"coverage": 1.0
+},
+"compost": {
+"mean": [
+88.6,
+61.5,
+23.6
+],
+"coverage": 0.562
+},
+"compost_ready": {
+"mean": [
+116.5,
+93.0,
+56.0
+],
+"coverage": 0.562
+},
+"composter_bottom": {
+"mean": [
+116.6,
+72.0,
+32.4
+],
+"coverage": 1.0
+},
+"composter_side": {
+"mean": [
+112.1,
+70.3,
+31.9
+],
+"coverage": 1.0
+},
+"composter_top": {
+"mean": [
+152.6,
+99.0,
+51.6
+],
+"coverage": 0.438
+},
+"concrete_black": {
+"mean": [
+8.4,
+10.4,
+15.4
+],
+"coverage": 1.0
+},
+"concrete_blue": {
+"mean": [
+44.5,
+46.5,
+143.4
+],
+"coverage": 1.0
+},
+"concrete_brown": {
+"mean": [
+96.4,
+59.5,
+31.6
+],
+"coverage": 1.0
+},
+"concrete_cyan": {
+"mean": [
+21.4,
+119.2,
+136.2
+],
+"coverage": 1.0
+},
+"concrete_gray": {
+"mean": [
+54.6,
+57.6,
+61.6
+],
+"coverage": 1.0
+},
+"concrete_green": {
+"mean": [
+73.4,
+91.3,
+36.5
+],
+"coverage": 1.0
+},
+"concrete_light_blue": {
+"mean": [
+35.6,
+137.0,
+198.9
+],
+"coverage": 1.0
+},
+"concrete_lime": {
+"mean": [
+94.1,
+168.8,
+24.5
+],
+"coverage": 1.0
+},
+"concrete_magenta": {
+"mean": [
+169.2,
+48.5,
+159.2
+],
+"coverage": 1.0
+},
+"concrete_orange": {
+"mean": [
+224.3,
+97.1,
+0.6
+],
+"coverage": 1.0
+},
+"concrete_pink": {
+"mean": [
+213.5,
+101.0,
+142.9
+],
+"coverage": 1.0
+},
+"concrete_powder_black": {
+"mean": [
+25.3,
+26.7,
+32.0
+],
+"coverage": 1.0
+},
+"concrete_powder_blue": {
+"mean": [
+70.2,
+73.3,
+166.8
+],
+"coverage": 1.0
+},
+"concrete_powder_brown": {
+"mean": [
+125.5,
+84.8,
+53.9
+],
+"coverage": 1.0
+},
+"concrete_powder_cyan": {
+"mean": [
+36.6,
+148.0,
+157.2
+],
+"coverage": 1.0
+},
+"concrete_powder_gray": {
+"mean": [
+76.9,
+81.1,
+84.9
+],
+"coverage": 1.0
+},
+"concrete_powder_green": {
+"mean": [
+97.2,
+119.1,
+44.6
+],
+"coverage": 1.0
+},
+"concrete_powder_light_blue": {
+"mean": [
+74.3,
+180.7,
+213.4
+],
+"coverage": 1.0
+},
+"concrete_powder_lime": {
+"mean": [
+125.4,
+189.3,
+41.9
+],
+"coverage": 1.0
+},
+"concrete_powder_magenta": {
+"mean": [
+192.7,
+83.8,
+184.6
+],
+"coverage": 1.0
+},
+"concrete_powder_orange": {
+"mean": [
+227.3,
+131.9,
+31.9
+],
+"coverage": 1.0
+},
+"concrete_powder_pink": {
+"mean": [
+228.9,
+153.3,
+181.1
+],
+"coverage": 1.0
+},
+"concrete_powder_purple": {
+"mean": [
+131.9,
+55.7,
+177.6
+],
+"coverage": 1.0
+},
+"concrete_powder_red": {
+"mean": [
+168.2,
+54.1,
+50.6
+],
+"coverage": 1.0
+},
+"concrete_powder_silver": {
+"mean": [
+154.9,
+155.0,
+148.2
+],
+"coverage": 1.0
+},
+"concrete_powder_white": {
+"mean": [
+225.7,
+227.5,
+227.8
+],
+"coverage": 1.0
+},
+"concrete_powder_yellow": {
+"mean": [
+232.9,
+199.2,
+54.8
+],
+"coverage": 1.0
+},
+"concrete_purple": {
+"mean": [
+100.4,
+31.6,
+156.4
+],
+"coverage": 1.0
+},
+"concrete_red": {
+"mean": [
+142.4,
+32.8,
+32.8
+],
+"coverage": 1.0
+},
+"concrete_silver": {
+"mean": [
+125.0,
+125.0,
+115.0
+],
+"coverage": 1.0
+},
+"concrete_white": {
+"mean": [
+207.1,
+213.1,
+214.1
+],
+"coverage": 1.0
+},
+"concrete_yellow": {
+"mean": [
+241.0,
+175.4,
+21.4
+],
+"coverage": 1.0
+},
+"conduit_base": {
+"mean": [
+160.4,
+140.8,
+114.3
+],
+"coverage": 0.75
+},
+"conduit_cage": {
+"mean": [
+164.7,
+143.7,
+116.4
+],
+"coverage": 0.363
+},
+"conduit_closed": {
+"mean": [
+22.9,
+107.9,
+138.6
+],
+"coverage": 0.812
+},
+"conduit_open": {
+"mean": [
+35.5,
+99.9,
+121.8
+],
+"coverage": 0.812
+},
+"conduit_wind_horizontal": {
+"mean": [
+172.0,
+236.0,
+251.0
+],
+"coverage": 0.0
+},
+"conduit_wind_vertical": {
+"mean": [
+255.0,
+255.0,
+255.0
+],
+"coverage": 0.0
+},
+"copper_bars": {
+"mean": [
+155.6,
+80.7,
+55.2
+],
+"coverage": 0.453
+},
+"copper_block": {
+"mean": [
+192.4,
+107.7,
+79.8
+],
+"coverage": 1.0
+},
+"copper_bulb": {
+"mean": [
+156.2,
+86.9,
+57.4
+],
+"coverage": 1.0
+},
+"copper_bulb_lit": {
+"mean": [
+216.0,
+150.5,
+106.7
+],
+"coverage": 1.0
+},
+"copper_bulb_lit_powered": {
+"mean": [
+216.5,
+149.8,
+106.3
+],
+"coverage": 1.0
+},
+"copper_bulb_powered": {
+"mean": [
+156.6,
+86.2,
+57.0
+],
+"coverage": 1.0
+},
+"copper_chain1": {
+"mean": [
+150.2,
+78.0,
+54.0
+],
+"coverage": 0.117
+},
+"copper_chain2": {
+"mean": [
+153.5,
+80.3,
+55.9
+],
+"coverage": 0.102
+},
+"copper_chest_inventory_front": {
+"mean": [
+188.3,
+106.8,
+80.0
+],
+"coverage": 1.0
+},
+"copper_chest_inventory_side": {
+"mean": [
+190.2,
+105.7,
+78.1
+],
+"coverage": 1.0
+},
+"copper_chest_inventory_top": {
+"mean": [
+188.4,
+104.7,
+76.5
+],
+"coverage": 1.0
+},
+"copper_door_bottom": {
+"mean": [
+180.8,
+103.5,
+77.3
+],
+"coverage": 1.0
+},
+"copper_door_top": {
+"mean": [
+192.6,
+109.5,
+82.6
+],
+"coverage": 0.812
+},
+"copper_grate": {
+"mean": [
+192.0,
+107.6,
+79.4
+],
+"coverage": 0.699
+},
+"copper_lantern": {
+"mean": [
+159.9,
+109.7,
+77.2
+],
+"coverage": 0.414
+},
+"copper_ore": {
+"mean": [
+124.7,
+125.7,
+120.0
+],
+"coverage": 1.0
+},
+"copper_torch": {
+"mean": [
+117.0,
+109.8,
+73.4
+],
+"coverage": 0.078
+},
+"copper_trapdoor": {
+"mean": [
+190.7,
+106.2,
+79.5
+],
+"coverage": 0.797
+},
+"coral_blue": {
+"mean": [
+49.1,
+87.1,
+206.6
+],
+"coverage": 1.0
+},
+"coral_blue_dead": {
+"mean": [
+130.5,
+123.2,
+119.7
+],
+"coverage": 1.0
+},
+"coral_fan_blue": {
+"mean": [
+50.9,
+91.6,
+208.7
+],
+"coverage": 0.309
+},
+"coral_fan_blue_dead": {
+"mean": [
+128.4,
+122.1,
+118.4
+],
+"coverage": 0.309
+},
+"coral_fan_pink": {
+"mean": [
+202.6,
+84.2,
+153.9
+],
+"coverage": 0.371
+},
+"coral_fan_pink_dead": {
+"mean": [
+132.9,
+125.2,
+121.3
+],
+"coverage": 0.371
+},
+"coral_fan_purple": {
+"mean": [
+160.1,
+32.6,
+159.4
+],
+"coverage": 0.438
+},
+"coral_fan_purple_dead": {
+"mean": [
+140.8,
+134.5,
+130.1
+],
+"coverage": 0.438
+},
+"coral_fan_red": {
+"mean": [
+158.8,
+34.8,
+45.6
+],
+"coverage": 0.41
+},
+"coral_fan_red_dead": {
+"mean": [
+124.9,
+118.1,
+114.7
+],
+"coverage": 0.41
+},
+"coral_fan_yellow": {
+"mean": [
+206.0,
+183.0,
+61.0
+],
+"coverage": 0.367
+},
+"coral_fan_yellow_dead": {
+"mean": [
+134.0,
+125.7,
+121.5
+],
+"coverage": 0.367
+},
+"coral_pink": {
+"mean": [
+207.5,
+91.1,
+159.4
+],
+"coverage": 1.0
+},
+"coral_pink_dead": {
+"mean": [
+124.3,
+117.5,
+114.2
+],
+"coverage": 1.0
+},
+"coral_plant_blue": {
+"mean": [
+47.6,
+83.4,
+197.1
+],
+"coverage": 0.598
+},
+"coral_plant_blue_dead": {
+"mean": [
+118.1,
+111.1,
+108.0
+],
+"coverage": 0.598
+},
+"coral_plant_pink": {
+"mean": [
+197.6,
+84.6,
+152.0
+],
+"coverage": 0.438
+},
+"coral_plant_pink_dead": {
+"mean": [
+133.8,
+125.0,
+120.9
+],
+"coverage": 0.438
+},
+"coral_plant_purple": {
+"mean": [
+161.4,
+23.9,
+159.7
+],
+"coverage": 0.52
+},
+"coral_plant_purple_dead": {
+"mean": [
+132.7,
+124.7,
+120.5
+],
+"coverage": 0.52
+},
+"coral_plant_red": {
+"mean": [
+167.0,
+37.6,
+46.9
+],
+"coverage": 0.426
+},
+"coral_plant_red_dead": {
+"mean": [
+136.9,
+128.4,
+124.0
+],
+"coverage": 0.426
+},
+"coral_plant_yellow": {
+"mean": [
+209.1,
+186.1,
+62.8
+],
+"coverage": 0.391
+},
+"coral_plant_yellow_dead": {
+"mean": [
+142.7,
+135.0,
+130.0
+],
+"coverage": 0.391
+},
+"coral_purple": {
+"mean": [
+183.9,
+33.0,
+180.4
+],
+"coverage": 1.0
+},
+"coral_purple_dead": {
+"mean": [
+131.8,
+123.5,
+119.4
+],
+"coverage": 1.0
+},
+"coral_red": {
+"mean": [
+162.9,
+35.4,
+48.1
+],
+"coverage": 1.0
+},
+"coral_red_dead": {
+"mean": [
+131.6,
+123.7,
+119.7
+],
+"coverage": 1.0
+},
+"coral_yellow": {
+"mean": [
+216.0,
+199.9,
+66.0
+],
+"coverage": 1.0
+},
+"coral_yellow_dead": {
+"mean": [
+133.6,
+126.2,
+122.3
+],
+"coverage": 1.0
+},
+"cracked_nether_bricks": {
+"mean": [
+40.4,
+20.0,
+24.0
+],
+"coverage": 1.0
+},
+"cracked_polished_blackstone_bricks": {
+"mean": [
+44.0,
+37.6,
+43.9
+],
+"coverage": 1.0
+},
+"crafter_bottom": {
+"mean": [
+78.9,
+78.9,
+78.7
+],
+"coverage": 1.0
+},
+"crafter_east": {
+"mean": [
+127.2,
+114.3,
+93.4
+],
+"coverage": 1.0
+},
+"crafter_east_crafting": {
+"mean": [
+128.7,
+114.5,
+93.4
+],
+"coverage": 1.0
+},
+"crafter_east_triggered": {
+"mean": [
+128.6,
+114.4,
+93.5
+],
+"coverage": 1.0
+},
+"crafter_north": {
+"mean": [
+113.8,
+108.8,
+100.6
+],
+"coverage": 1.0
+},
+"crafter_north_crafting": {
+"mean": [
+103.6,
+95.5,
+82.5
+],
+"coverage": 1.0
+},
+"crafter_south": {
+"mean": [
+123.3,
+112.4,
+96.8
+],
+"coverage": 1.0
+},
+"crafter_south_triggered": {
+"mean": [
+126.1,
+112.6,
+96.9
+],
+"coverage": 1.0
+},
+"crafter_top": {
+"mean": [
+112.1,
+98.6,
+99.8
+],
+"coverage": 1.0
+},
+"crafter_top_crafting": {
+"mean": [
+139.6,
+100.4,
+100.4
+],
+"coverage": 1.0
+},
+"crafter_top_triggered": {
+"mean": [
+114.9,
+98.8,
+99.9
+],
+"coverage": 1.0
+},
+"crafter_west": {
+"mean": [
+128.7,
+115.4,
+94.6
+],
+"coverage": 1.0
+},
+"crafter_west_crafting": {
+"mean": [
+130.3,
+115.6,
+94.6
+],
+"coverage": 1.0
+},
+"crafter_west_triggered": {
+"mean": [
+130.1,
+115.5,
+94.7
+],
+"coverage": 1.0
+},
+"crafting_table_front": {
+"mean": [
+129.2,
+105.6,
+70.3
+],
+"coverage": 1.0
+},
+"crafting_table_side": {
+"mean": [
+128.6,
+102.6,
+63.2
+],
+"coverage": 1.0
+},
+"crafting_table_top": {
+"mean": [
+119.8,
+73.2,
+42.4
+],
+"coverage": 1.0
+},
+"creaking_heart_side_active": {
+"mean": [
+149.9,
+84.0,
+49.1
+],
+"coverage": 1.0
+},
+"creaking_heart_side_dormant": {
+"mean": [
+102.0,
+66.1,
+49.0
+],
+"coverage": 1.0
+},
+"creaking_heart_side_inactive": {
+"mean": [
+82.4,
+68.4,
+63.2
+],
+"coverage": 1.0
+},
+"creaking_heart_top_active": {
+"mean": [
+153.1,
+84.1,
+44.7
+],
+"coverage": 1.0
+},
+"creaking_heart_top_dormant": {
+"mean": [
+102.0,
+64.9,
+44.9
+],
+"coverage": 1.0
+},
+"creaking_heart_top_inactive": {
+"mean": [
+73.1,
+59.6,
+54.5
+],
+"coverage": 1.0
+},
+"crimson_fungus": {
+"mean": [
+141.4,
+44.1,
+29.7
+],
+"coverage": 0.234
+},
+"crimson_nylium_side": {
+"mean": [
+107.2,
+26.9,
+26.7
+],
+"coverage": 1.0
+},
+"crimson_nylium_top": {
+"mean": [
+130.9,
+31.4,
+31.5
+],
+"coverage": 1.0
+},
+"crimson_roots": {
+"mean": [
+126.0,
+8.1,
+41.9
+],
+"coverage": 0.355
+},
+"crimson_roots_pot": {
+"mean": [
+127.0,
+8.3,
+41.2
+],
+"coverage": 0.234
+},
+"crimson_shelf": {
+"mean": [
+129.4,
+52.1,
+82.8
+],
+"coverage": 1.0
+},
+"crying_obsidian": {
+"mean": [
+32.6,
+10.1,
+60.4
+],
+"coverage": 1.0
+},
+"cut_copper": {
+"mean": [
+191.2,
+106.9,
+80.6
+],
+"coverage": 1.0
+},
+"danger_pottery_pattern": {
+"mean": [
+127.2,
+73.4,
+57.9
+],
+"coverage": 0.875
+},
+"dark_oak_shelf": {
+"mean": [
+65.7,
+51.2,
+32.6
+],
+"coverage": 1.0
+},
+"dark_oak_trapdoor": {
+"mean": [
+75.3,
+49.6,
+23.4
+],
+"coverage": 1.0
+},
+"daylight_detector_inverted_top": {
+"mean": [
+106.0,
+109.5,
+112.5
+],
+"coverage": 1.0
+},
+"daylight_detector_side": {
+"mean": [
+66.8,
+55.3,
+35.6
+],
+"coverage": 1.0
+},
+"daylight_detector_top": {
+"mean": [
+130.6,
+116.2,
+94.6
+],
+"coverage": 1.0
+},
+"deadbush": {
+"mean": [
+107.5,
+78.9,
+40.5
+],
+"coverage": 0.305
+},
+"decorated_pot_base": {
+"mean": [
+139.2,
+77.9,
+63.6
+],
+"coverage": 0.625
+},
+"decorated_pot_side": {
+"mean": [
+129.7,
+72.6,
+59.2
+],
+"coverage": 0.875
+},
+"deepslate/chiseled_deepslate": {
+"mean": [
+54.3,
+54.3,
+54.9
+],
+"coverage": 1.0
+},
+"deepslate/cobbled_deepslate": {
+"mean": [
+77.3,
+77.3,
+80.6
+],
+"coverage": 1.0
+},
+"deepslate/cracked_deepslate_bricks": {
+"mean": [
+65.0,
+64.9,
+65.2
+],
+"coverage": 1.0
+},
+"deepslate/cracked_deepslate_tiles": {
+"mean": [
+52.6,
+52.5,
+52.7
+],
+"coverage": 1.0
+},
+"deepslate/deepslate": {
+"mean": [
+80.1,
+80.1,
+82.6
+],
+"coverage": 1.0
+},
+"deepslate/deepslate_bricks": {
+"mean": [
+71.0,
+70.9,
+71.3
+],
+"coverage": 1.0
+},
+"deepslate/deepslate_coal_ore": {
+"mean": [
+74.4,
+74.5,
+76.0
+],
+"coverage": 1.0
+},
+"deepslate/deepslate_copper_ore": {
+"mean": [
+92.2,
+93.1,
+89.3
+],
+"coverage": 1.0
+},
+"deepslate/deepslate_diamond_ore": {
+"mean": [
+83.3,
+106.4,
+106.9
+],
+"coverage": 1.0
+},
+"deepslate/deepslate_emerald_ore": {
+"mean": [
+78.4,
+104.5,
+87.8
+],
+"coverage": 1.0
+},
+"deepslate/deepslate_gold_ore": {
+"mean": [
+115.2,
+102.9,
+78.2
+],
+"coverage": 1.0
+},
+"deepslate/deepslate_iron_ore": {
+"mean": [
+106.7,
+99.7,
+94.7
+],
+"coverage": 1.0
+},
+"deepslate/deepslate_lapis_ore": {
+"mean": [
+79.9,
+90.8,
+115.3
+],
+"coverage": 1.0
+},
+"deepslate/deepslate_redstone_ore": {
+"mean": [
+104.7,
+73.3,
+74.8
+],
+"coverage": 1.0
+},
+"deepslate/deepslate_tiles": {
+"mean": [
+54.9,
+54.8,
+55.1
+],
+"coverage": 1.0
+},
+"deepslate/deepslate_top": {
+"mean": [
+87.2,
+87.2,
+89.4
+],
+"coverage": 1.0
+},
+"deepslate/polished_deepslate": {
+"mean": [
+72.5,
+72.6,
+73.1
+],
+"coverage": 1.0
+},
+"diamond_block": {
+"mean": [
+98.2,
+237.1,
+228.1
+],
+"coverage": 1.0
+},
+"diamond_ore": {
+"mean": [
+121.2,
+141.3,
+140.7
+],
+"coverage": 1.0
+},
+"dirt": {
+"mean": [
+134.2,
+96.3,
+67.0
+],
+"coverage": 1.0
+},
+"dirt_podzol_side": {
+"mean": [
+122.5,
+87.7,
+57.0
+],
+"coverage": 1.0
+},
+"dirt_podzol_top": {
+"mean": [
+91.8,
+63.2,
+24.1
+],
+"coverage": 1.0
+},
+"dirt_with_roots": {
+"mean": [
+144.0,
+103.6,
+76.5
+],
+"coverage": 1.0
+},
+"dispenser_front_horizontal": {
+"mean": [
+122.3,
+121.8,
+121.8
+],
+"coverage": 1.0
+},
+"dispenser_front_vertical": {
+"mean": [
+98.6,
+97.9,
+97.9
+],
+"coverage": 1.0
+},
+"door_acacia_lower": {
+"mean": [
+162.9,
+91.7,
+57.4
+],
+"coverage": 0.719
+},
+"door_acacia_upper": {
+"mean": [
+167.9,
+95.3,
+60.7
+],
+"coverage": 0.719
+},
+"door_birch_lower": {
+"mean": [
+208.4,
+194.0,
+144.2
+],
+"coverage": 1.0
+},
+"door_birch_upper": {
+"mean": [
+220.2,
+209.9,
+176.5
+],
+"coverage": 1.0
+},
+"door_dark_oak_lower": {
+"mean": [
+73.5,
+49.2,
+24.0
+],
+"coverage": 1.0
+},
+"door_dark_oak_upper": {
+"mean": [
+76.6,
+51.8,
+25.3
+],
+"coverage": 1.0
+},
+"door_iron_lower": {
+"mean": [
+195.7,
+194.8,
+194.8
+],
+"coverage": 1.0
+},
+"door_iron_upper": {
+"mean": [
+194.1,
+193.1,
+193.1
+],
+"coverage": 0.812
+},
+"door_jungle_lower": {
+"mean": [
+158.1,
+113.6,
+78.8
+],
+"coverage": 1.0
+},
+"door_jungle_upper": {
+"mean": [
+163.6,
+119.7,
+84.7
+],
+"coverage": 0.883
+},
+"door_spruce_lower": {
+"mean": [
+105.9,
+80.4,
+48.9
+],
+"coverage": 1.0
+},
+"door_spruce_upper": {
+"mean": [
+106.5,
+80.5,
+48.7
+],
+"coverage": 1.0
+},
+"door_wood_lower": {
+"mean": [
+138.7,
+108.1,
+62.4
+],
+"coverage": 1.0
+},
+"door_wood_upper": {
+"mean": [
+140.6,
+110.8,
+66.1
+],
+"coverage": 0.812
+},
+"double_plant_fern_bottom": {
+"mean": [
+131.8,
+131.8,
+131.8
+],
+"coverage": 0.688
+},
+"double_plant_fern_carried": {
+"mean": [
+71.4,
+108.5,
+38.5
+],
+"coverage": 0.406
+},
+"double_plant_fern_top": {
+"mean": [
+125.1,
+125.7,
+125.1
+],
+"coverage": 0.406
+},
+"double_plant_grass_bottom": {
+"mean": [
+128.4,
+128.2,
+128.4
+],
+"coverage": 0.73
+},
+"double_plant_grass_carried": {
+"mean": [
+82.9,
+125.7,
+44.6
+],
+"coverage": 0.352
+},
+"double_plant_grass_top": {
+"mean": [
+151.2,
+149.4,
+151.2
+],
+"coverage": 0.352
+},
+"double_plant_paeonia_bottom": {
+"mean": [
+86.5,
+101.4,
+93.5
+],
+"coverage": 0.551
+},
+"double_plant_paeonia_top": {
+"mean": [
+129.7,
+126.5,
+139.5
+],
+"coverage": 0.43
+},
+"double_plant_rose_bottom": {
+"mean": [
+97.5,
+83.8,
+37.5
+],
+"coverage": 0.699
+},
+"double_plant_rose_top": {
+"mean": [
+131.0,
+66.1,
+37.4
+],
+"coverage": 0.363
+},
+"double_plant_sunflower_back": {
+"mean": [
+54.7,
+127.9,
+34.7
+],
+"coverage": 0.203
+},
+"double_plant_sunflower_bottom": {
+"mean": [
+56.8,
+135.1,
+30.9
+],
+"coverage": 0.223
+},
+"double_plant_sunflower_front": {
+"mean": [
+246.0,
+196.7,
+54.1
+],
+"coverage": 0.203
+},
+"double_plant_sunflower_top": {
+"mean": [
+49.8,
+129.4,
+27.2
+],
+"coverage": 0.121
+},
+"double_plant_syringa_bottom": {
+"mean": [
+136.8,
+123.9,
+126.1
+],
+"coverage": 0.352
+},
+"double_plant_syringa_top": {
+"mean": [
+154.5,
+124.8,
+147.0
+],
+"coverage": 0.293
+},
+"dragon_egg": {
+"mean": [
+12.5,
+9.4,
+15.7
+],
+"coverage": 1.0
+},
+"dried_ghast_state_1_back": {
+"mean": [
+146.8,
+136.6,
+136.6
+],
+"coverage": 0.391
+},
+"dried_ghast_state_1_bottom": {
+"mean": [
+135.8,
+128.8,
+128.8
+],
+"coverage": 0.391
+},
+"dried_ghast_state_1_front": {
+"mean": [
+147.7,
+136.0,
+136.0
+],
+"coverage": 0.391
+},
+"dried_ghast_state_1_left": {
+"mean": [
+156.0,
+143.2,
+143.2
+],
+"coverage": 0.391
+},
+"dried_ghast_state_1_right": {
+"mean": [
+155.8,
+143.0,
+143.0
+],
+"coverage": 0.391
+},
+"dried_ghast_state_1_tentacles": {
+"mean": [
+119.1,
+116.5,
+116.5
+],
+"coverage": 1.0
+},
+"dried_ghast_state_1_top": {
+"mean": [
+147.9,
+137.3,
+137.3
+],
+"coverage": 0.391
+},
+"dried_ghast_state_2_back": {
+"mean": [
+167.7,
+159.5,
+159.5
+],
+"coverage": 0.391
+},
+"dried_ghast_state_2_bottom": {
+"mean": [
+156.8,
+151.0,
+151.0
+],
+"coverage": 0.391
+},
+"dried_ghast_state_2_front": {
+"mean": [
+170.0,
+161.0,
+161.0
+],
+"coverage": 0.391
+},
+"dried_ghast_state_2_left": {
+"mean": [
+176.6,
+166.6,
+166.6
+],
+"coverage": 0.391
+},
+"dried_ghast_state_2_right": {
+"mean": [
+176.5,
+166.5,
+166.5
+],
+"coverage": 0.391
+},
+"dried_ghast_state_2_tentacles": {
+"mean": [
+145.1,
+142.1,
+142.1
+],
+"coverage": 1.0
+},
+"dried_ghast_state_2_top": {
+"mean": [
+168.9,
+160.4,
+160.4
+],
+"coverage": 0.391
+},
+"dried_ghast_state_3_back": {
+"mean": [
+189.5,
+183.3,
+183.3
+],
+"coverage": 0.391
+},
+"dried_ghast_state_3_bottom": {
+"mean": [
+179.8,
+174.0,
+174.0
+],
+"coverage": 0.391
+},
+"dried_ghast_state_3_front": {
+"mean": [
+190.5,
+184.0,
+184.0
+],
+"coverage": 0.391
+},
+"dried_ghast_state_3_left": {
+"mean": [
+197.4,
+190.8,
+190.8
+],
+"coverage": 0.391
+},
+"dried_ghast_state_3_right": {
+"mean": [
+197.4,
+190.7,
+190.7
+],
+"coverage": 0.391
+},
+"dried_ghast_state_3_tentacles": {
+"mean": [
+171.4,
+168.8,
+168.8
+],
+"coverage": 1.0
+},
+"dried_ghast_state_3_top": {
+"mean": [
+190.6,
+184.4,
+184.4
+],
+"coverage": 0.391
+},
+"dried_ghast_state_4_back": {
+"mean": [
+235.1,
+232.4,
+232.4
+],
+"coverage": 0.391
+},
+"dried_ghast_state_4_bottom": {
+"mean": [
+229.8,
+224.2,
+224.2
+],
+"coverage": 0.391
+},
+"dried_ghast_state_4_front": {
+"mean": [
+230.5,
+229.8,
+229.8
+],
+"coverage": 0.391
+},
+"dried_ghast_state_4_left": {
+"mean": [
+239.7,
+239.2,
+239.2
+],
+"coverage": 0.391
+},
+"dried_ghast_state_4_right": {
+"mean": [
+239.7,
+239.2,
+239.2
+],
+"coverage": 0.391
+},
+"dried_ghast_state_4_tentacles": {
+"mean": [
+223.7,
+221.1,
+221.1
+],
+"coverage": 1.0
+},
+"dried_ghast_state_4_top": {
+"mean": [
+235.5,
+233.4,
+233.4
+],
+"coverage": 0.391
+},
+"dried_kelp_side_a": {
+"mean": [
+38.4,
+48.9,
+29.5
+],
+"coverage": 1.0
+},
+"dried_kelp_side_b": {
+"mean": [
+38.4,
+48.9,
+29.5
+],
+"coverage": 1.0
+},
+"dried_kelp_top": {
+"mean": [
+50.3,
+58.6,
+38.9
+],
+"coverage": 1.0
+},
+"dripstone_block": {
+"mean": [
+134.5,
+107.6,
+92.5
+],
+"coverage": 1.0
+},
+"dropper_front_horizontal": {
+"mean": [
+122.4,
+122.0,
+122.0
+],
+"coverage": 1.0
+},
+"dropper_front_vertical": {
+"mean": [
+97.7,
+97.0,
+97.0
+],
+"coverage": 1.0
+},
+"emerald_block": {
+"mean": [
+42.4,
+203.4,
+87.8
+],
+"coverage": 1.0
+},
+"emerald_ore": {
+"mean": [
+108.3,
+136.4,
+115.7
+],
+"coverage": 1.0
+},
+"enchanting_table_bottom": {
+"mean": [
+15.1,
+10.6,
+24.6
+],
+"coverage": 1.0
+},
+"enchanting_table_side": {
+"mean": [
+49.8,
+46.5,
+57.1
+],
+"coverage": 0.75
+},
+"enchanting_table_top": {
+"mean": [
+128.8,
+75.3,
+85.3
+],
+"coverage": 1.0
+},
+"end_bricks": {
+"mean": [
+218.4,
+224.0,
+162.2
+],
+"coverage": 1.0
+},
+"end_gateway": {
+"mean": [
+17.0,
+25.2,
+31.3
+],
+"coverage": 0.645
+},
+"end_portal": {
+"mean": [
+8.2,
+19.3,
+26.7
+],
+"coverage": 0.863
+},
+"end_rod": {
+"mean": [
+207.6,
+198.3,
+187.1
+],
+"coverage": 0.227
+},
+"end_stone": {
+"mean": [
+219.5,
+222.9,
+158.3
+],
+"coverage": 1.0
+},
+"ender_chest_front": {
+"mean": [
+31.2,
+46.7,
+42.4
+],
+"coverage": 1.0
+},
+"ender_chest_side": {
+"mean": [
+17.4,
+29.7,
+33.6
+],
+"coverage": 1.0
+},
+"ender_chest_top": {
+"mean": [
+41.8,
+58.4,
+60.8
+],
+"coverage": 1.0
+},
+"endframe_eye": {
+"mean": [
+35.8,
+70.1,
+62.2
+],
+"coverage": 0.375
+},
+"endframe_side": {
+"mean": [
+150.7,
+163.0,
+123.0
+],
+"coverage": 0.812
+},
+"endframe_top": {
+"mean": [
+91.1,
+120.7,
+97.3
+],
+"coverage": 1.0
+},
+"explorer_pottery_pattern": {
+"mean": [
+120.8,
+69.7,
+55.0
+],
+"coverage": 0.875
+},
+"exposed_chiseled_copper": {
+"mean": [
+154.6,
+119.4,
+100.8
+],
+"coverage": 1.0
+},
+"exposed_copper": {
+"mean": [
+161.1,
+125.7,
+103.9
+],
+"coverage": 1.0
+},
+"exposed_copper_bars": {
+"mean": [
+134.2,
+107.5,
+89.4
+],
+"coverage": 0.453
+},
+"exposed_copper_bulb": {
+"mean": [
+135.1,
+107.5,
+89.9
+],
+"coverage": 1.0
+},
+"exposed_copper_bulb_lit": {
+"mean": [
+194.3,
+145.3,
+100.2
+],
+"coverage": 1.0
+},
+"exposed_copper_bulb_lit_powered": {
+"mean": [
+195.3,
+144.2,
+99.4
+],
+"coverage": 1.0
+},
+"exposed_copper_bulb_powered": {
+"mean": [
+136.1,
+106.4,
+89.1
+],
+"coverage": 1.0
+},
+"exposed_copper_chain1": {
+"mean": [
+124.5,
+101.4,
+82.9
+],
+"coverage": 0.117
+},
+"exposed_copper_chain2": {
+"mean": [
+130.5,
+104.7,
+85.4
+],
+"coverage": 0.102
+},
+"exposed_copper_chest_inventory_front": {
+"mean": [
+163.0,
+123.8,
+106.9
+],
+"coverage": 1.0
+},
+"exposed_copper_chest_inventory_side": {
+"mean": [
+162.9,
+122.5,
+104.8
+],
+"coverage": 1.0
+},
+"exposed_copper_chest_inventory_top": {
+"mean": [
+159.2,
+120.8,
+101.9
+],
+"coverage": 1.0
+},
+"exposed_copper_door_bottom": {
+"mean": [
+152.6,
+118.1,
+100.2
+],
+"coverage": 1.0
+},
+"exposed_copper_door_top": {
+"mean": [
+164.3,
+123.4,
+106.5
+],
+"coverage": 0.812
+},
+"exposed_copper_grate": {
+"mean": [
+161.9,
+125.9,
+104.6
+],
+"coverage": 0.699
+},
+"exposed_copper_lantern": {
+"mean": [
+149.9,
+132.7,
+106.2
+],
+"coverage": 0.414
+},
+"exposed_copper_trapdoor": {
+"mean": [
+161.0,
+125.1,
+104.7
+],
+"coverage": 0.797
+},
+"exposed_cut_copper": {
+"mean": [
+154.7,
+121.8,
+101.3
+],
+"coverage": 1.0
+},
+"exposed_lightning_rod": {
+"mean": [
+159.2,
+120.1,
+103.7
+],
+"coverage": 0.156
+},
+"eyeblossom_blooming": {
+"mean": [
+140.2,
+125.9,
+121.6
+],
+"coverage": 0.227
+},
+"eyeblossom_dormant": {
+"mean": [
+108.2,
+98.3,
+101.3
+],
+"coverage": 0.195
+},
+"eyeblossom_eyes_blooming": {
+"mean": [
+237.5,
+138.5,
+37.5
+],
+"coverage": 0.016
+},
+"eyeblossom_stem_blooming": {
+"mean": [
+133.0,
+124.9,
+127.8
+],
+"coverage": 0.211
+},
+"farmland_dry": {
+"mean": [
+143.2,
+102.5,
+70.8
+],
+"coverage": 1.0
+},
+"farmland_wet": {
+"mean": [
+81.9,
+44.5,
+15.5
+],
+"coverage": 1.0
+},
+"fern": {
+"mean": [
+124.2,
+124.6,
+124.2
+],
+"coverage": 0.348
+},
+"fern_carried": {
+"mean": [
+59.6,
+92.0,
+51.2
+],
+"coverage": 0.348
+},
+"fire_0": {
+"mean": [
+212.9,
+142.3,
+52.8
+],
+"coverage": 0.57
+},
+"fire_0_placeholder": {
+"mean": [
+221.0,
+162.4,
+70.7
+],
+"coverage": 0.566
+},
+"fire_1": {
+"mean": [
+216.8,
+151.0,
+54.1
+],
+"coverage": 0.613
+},
+"fire_1_placeholder": {
+"mean": [
+216.8,
+151.0,
+54.1
+],
+"coverage": 0.613
+},
+"firefly_bush": {
+"mean": [
+87.7,
+83.4,
+43.2
+],
+"coverage": 0.602
+},
+"firefly_bush_firefly": {
+"mean": [
+158.5,
+152.0,
+112.5
+],
+"coverage": 0.008
+},
+"fletcher_table_side1": {
+"mean": [
+191.6,
+167.0,
+129.6
+],
+"coverage": 1.0
+},
+"fletcher_table_side2": {
+"mean": [
+173.3,
+155.1,
+111.1
+],
+"coverage": 1.0
+},
+"fletcher_table_top": {
+"mean": [
+197.1,
+180.4,
+133.4
+],
+"coverage": 1.0
+},
+"flow_pottery_pattern": {
+"mean": [
+123.5,
+71.5,
+56.5
+],
+"coverage": 0.875
+},
+"flower_allium": {
+"mean": [
+159.0,
+137.2,
+183.9
+],
+"coverage": 0.148
+},
+"flower_blue_orchid": {
+"mean": [
+47.3,
+162.5,
+168.3
+],
+"coverage": 0.172
+},
+"flower_cornflower": {
+"mean": [
+79.7,
+121.2,
+146.5
+],
+"coverage": 0.137
+},
+"flower_dandelion": {
+"mean": [
+147.7,
+172.2,
+43.5
+],
+"coverage": 0.125
+},
+"flower_houstonia": {
+"mean": [
+169.4,
+204.5,
+127.4
+],
+"coverage": 0.168
+},
+"flower_lily_of_the_valley": {
+"mean": [
+123.1,
+174.6,
+95.1
+],
+"coverage": 0.203
+},
+"flower_oxeye_daisy": {
+"mean": [
+179.3,
+202.5,
+143.4
+],
+"coverage": 0.199
+},
+"flower_paeonia": {
+"mean": [
+138.3,
+134.8,
+149.5
+],
+"coverage": 0.242
+},
+"flower_pot": {
+"mean": [
+124.1,
+68.6,
+53.4
+],
+"coverage": 0.195
+},
+"flower_rose": {
+"mean": [
+128.7,
+64.8,
+37.7
+],
+"coverage": 0.137
+},
+"flower_rose_blue": {
+"mean": [
+52.6,
+136.1,
+126.1
+],
+"coverage": 0.117
+},
+"flower_tulip_orange": {
+"mean": [
+93.5,
+142.2,
+30.8
+],
+"coverage": 0.16
+},
+"flower_tulip_pink": {
+"mean": [
+99.1,
+157.5,
+78.3
+],
+"coverage": 0.16
+},
+"flower_tulip_red": {
+"mean": [
+89.6,
+128.6,
+32.9
+],
+"coverage": 0.191
+},
+"flower_tulip_white": {
+"mean": [
+93.5,
+164.8,
+71.0
+],
+"coverage": 0.176
+},
+"flower_wither_rose": {
+"mean": [
+41.5,
+44.8,
+23.3
+],
+"coverage": 0.145
+},
+"flowering_azalea_side": {
+"mean": [
+111.0,
+113.4,
+73.4
+],
+"coverage": 0.602
+},
+"flowering_azalea_top": {
+"mean": [
+112.0,
+121.9,
+64.2
+],
+"coverage": 1.0
+},
+"friend_pottery_pattern": {
+"mean": [
+124.8,
+72.0,
+56.8
+],
+"coverage": 0.875
+},
+"frogspawn": {
+"mean": [
+110.2,
+95.1,
+86.8
+],
+"coverage": 0.316
+},
+"frosted_ice_0": {
+"mean": [
+140.2,
+181.2,
+252.7
+],
+"coverage": 1.0
+},
+"frosted_ice_1": {
+"mean": [
+140.0,
+181.0,
+252.6
+],
+"coverage": 1.0
+},
+"frosted_ice_2": {
+"mean": [
+138.3,
+179.9,
+252.4
+],
+"coverage": 1.0
+},
+"frosted_ice_3": {
+"mean": [
+135.4,
+178.1,
+252.1
+],
+"coverage": 1.0
+},
+"furnace_front_off": {
+"mean": [
+91.7,
+91.2,
+91.2
+],
+"coverage": 1.0
+},
+"furnace_front_on": {
+"mean": [
+121.1,
+112.9,
+93.7
+],
+"coverage": 1.0
+},
+"furnace_side": {
+"mean": [
+120.6,
+120.1,
+120.1
+],
+"coverage": 1.0
+},
+"furnace_top": {
+"mean": [
+110.4,
+109.7,
+109.7
+],
+"coverage": 1.0
+},
+"gilded_blackstone": {
+"mean": [
+55.6,
+42.9,
+38.3
+],
+"coverage": 1.0
+},
+"glass": {
+"mean": [
+175.8,
+213.9,
+219.0
+],
+"coverage": 0.254
+},
+"glass_black": {
+"mean": [
+25.0,
+25.0,
+25.0
+],
+"coverage": 0.254
+},
+"glass_blue": {
+"mean": [
+51.0,
+76.0,
+178.0
+],
+"coverage": 0.254
+},
+"glass_brown": {
+"mean": [
+102.0,
+76.0,
+51.0
+],
+"coverage": 0.254
+},
+"glass_cyan": {
+"mean": [
+76.0,
+127.0,
+153.0
+],
+"coverage": 0.254
+},
+"glass_gray": {
+"mean": [
+76.0,
+76.0,
+76.0
+],
+"coverage": 0.254
+},
+"glass_green": {
+"mean": [
+102.0,
+127.0,
+51.0
+],
+"coverage": 0.254
+},
+"glass_light_blue": {
+"mean": [
+102.0,
+153.0,
+216.0
+],
+"coverage": 0.254
+},
+"glass_lime": {
+"mean": [
+127.0,
+204.0,
+25.0
+],
+"coverage": 0.254
+},
+"glass_magenta": {
+"mean": [
+178.0,
+76.0,
+216.0
+],
+"coverage": 0.254
+},
+"glass_orange": {
+"mean": [
+216.0,
+127.0,
+51.0
+],
+"coverage": 0.254
+},
+"glass_pane_top": {
+"mean": [
+170.2,
+210.2,
+217.3
+],
+"coverage": 1.0
+},
+"glass_pane_top_black": {
+"mean": [
+24.1,
+24.1,
+24.1
+],
+"coverage": 1.0
+},
+"glass_pane_top_blue": {
+"mean": [
+48.5,
+73.7,
+171.5
+],
+"coverage": 1.0
+},
+"glass_pane_top_brown": {
+"mean": [
+97.8,
+73.7,
+48.5
+],
+"coverage": 1.0
+},
+"glass_pane_top_cyan": {
+"mean": [
+73.7,
+122.9,
+147.3
+],
+"coverage": 1.0
+},
+"glass_pane_top_gray": {
+"mean": [
+73.7,
+73.7,
+73.7
+],
+"coverage": 1.0
+},
+"glass_pane_top_green": {
+"mean": [
+97.8,
+122.9,
+48.5
+],
+"coverage": 1.0
+},
+"glass_pane_top_light_blue": {
+"mean": [
+97.8,
+147.3,
+208.6
+],
+"coverage": 1.0
+},
+"glass_pane_top_lime": {
+"mean": [
+122.9,
+196.6,
+24.1
+],
+"coverage": 1.0
+},
+"glass_pane_top_magenta": {
+"mean": [
+171.5,
+73.7,
+208.6
+],
+"coverage": 1.0
+},
+"glass_pane_top_orange": {
+"mean": [
+208.6,
+122.9,
+48.5
+],
+"coverage": 1.0
+},
+"glass_pane_top_pink": {
+"mean": [
+233.4,
+122.9,
+159.7
+],
+"coverage": 1.0
+},
+"glass_pane_top_purple": {
+"mean": [
+122.9,
+61.3,
+171.5
+],
+"coverage": 1.0
+},
+"glass_pane_top_red": {
+"mean": [
+147.3,
+48.5,
+48.5
+],
+"coverage": 1.0
+},
+"glass_pane_top_silver": {
+"mean": [
+147.3,
+147.3,
+147.3
+],
+"coverage": 1.0
+},
+"glass_pane_top_white": {
+"mean": [
+246.1,
+246.1,
+246.1
+],
+"coverage": 1.0
+},
+"glass_pane_top_yellow": {
+"mean": [
+221.0,
+221.0,
+48.5
+],
+"coverage": 1.0
+},
+"glass_pink": {
+"mean": [
+242.0,
+127.0,
+165.0
+],
+"coverage": 0.254
+},
+"glass_purple": {
+"mean": [
+127.0,
+63.0,
+178.0
+],
+"coverage": 0.254
+},
+"glass_red": {
+"mean": [
+153.0,
+51.0,
+51.0
+],
+"coverage": 0.254
+},
+"glass_silver": {
+"mean": [
+153.0,
+153.0,
+153.0
+],
+"coverage": 0.254
+},
+"glass_white": {
+"mean": [
+255.0,
+255.0,
+255.0
+],
+"coverage": 0.254
+},
+"glass_yellow": {
+"mean": [
+229.0,
+229.0,
+51.0
+],
+"coverage": 0.254
+},
+"glazed_terracotta_black": {
+"mean": [
+67.7,
+30.0,
+32.2
+],
+"coverage": 1.0
+},
+"glazed_terracotta_blue": {
+"mean": [
+47.5,
+64.6,
+139.4
+],
+"coverage": 1.0
+},
+"glazed_terracotta_brown": {
+"mean": [
+120.0,
+106.2,
+85.9
+],
+"coverage": 1.0
+},
+"glazed_terracotta_cyan": {
+"mean": [
+52.2,
+118.7,
+125.3
+],
+"coverage": 1.0
+},
+"glazed_terracotta_gray": {
+"mean": [
+83.1,
+90.3,
+93.6
+],
+"coverage": 1.0
+},
+"glazed_terracotta_green": {
+"mean": [
+117.0,
+142.3,
+67.4
+],
+"coverage": 1.0
+},
+"glazed_terracotta_light_blue": {
+"mean": [
+94.5,
+164.6,
+208.9
+],
+"coverage": 1.0
+},
+"glazed_terracotta_lime": {
+"mean": [
+162.9,
+197.7,
+55.2
+],
+"coverage": 1.0
+},
+"glazed_terracotta_magenta": {
+"mean": [
+208.3,
+100.4,
+191.9
+],
+"coverage": 1.0
+},
+"glazed_terracotta_orange": {
+"mean": [
+154.8,
+147.5,
+92.0
+],
+"coverage": 1.0
+},
+"glazed_terracotta_pink": {
+"mean": [
+235.2,
+155.0,
+181.6
+],
+"coverage": 1.0
+},
+"glazed_terracotta_purple": {
+"mean": [
+109.9,
+48.1,
+152.5
+],
+"coverage": 1.0
+},
+"glazed_terracotta_red": {
+"mean": [
+182.0,
+59.6,
+53.0
+],
+"coverage": 1.0
+},
+"glazed_terracotta_silver": {
+"mean": [
+144.3,
+166.1,
+168.0
+],
+"coverage": 1.0
+},
+"glazed_terracotta_white": {
+"mean": [
+188.5,
+212.5,
+202.9
+],
+"coverage": 1.0
+},
+"glazed_terracotta_yellow": {
+"mean": [
+234.3,
+192.3,
+88.7
+],
+"coverage": 1.0
+},
+"glow_item_frame": {
+"mean": [
+148.2,
+103.4,
+64.5
+],
+"coverage": 1.0
+},
+"glow_lichen": {
+"mean": [
+112.4,
+130.6,
+121.6
+],
+"coverage": 0.41
+},
+"glowing_obsidian": {
+"mean": [
+80.6,
+2.8,
+12.7
+],
+"coverage": 1.0
+},
+"glowstone": {
+"mean": [
+171.8,
+131.2,
+84.3
+],
+"coverage": 1.0
+},
+"gold_block": {
+"mean": [
+246.4,
+208.3,
+61.6
+],
+"coverage": 1.0
+},
+"gold_ore": {
+"mean": [
+145.1,
+133.9,
+106.5
+],
+"coverage": 1.0
+},
+"golden_dandelion": {
+"mean": [
+159.7,
+102.3,
+37.1
+],
+"coverage": 0.125
+},
+"grass_block_snow": {
+"mean": [
+169.9,
+151.1,
+133.0
+],
+"coverage": 1.0
+},
+"grass_carried": {
+"mean": [
+78.0,
+118.5,
+42.3
+],
+"coverage": 1.0
+},
+"grass_path_side": {
+"mean": [
+136.5,
+101.1,
+66.6
+],
+"coverage": 0.938
+},
+"grass_path_top": {
+"mean": [
+148.3,
+121.7,
+65.3
+],
+"coverage": 1.0
+},
+"grass_side": {
+"mean": [
+154.5,
+154.5,
+154.5
+],
+"coverage": 0.176
+},
+"grass_side_carried": {
+"mean": [
+126.8,
+107.1,
+65.6
+],
+"coverage": 1.0
+},
+"grass_side_snowed": {
+"mean": [
+169.8,
+151.0,
+133.3
+],
+"coverage": 1.0
+},
+"grass_top": {
+"mean": [
+147.4,
+147.4,
+147.4
+],
+"coverage": 1.0
+},
+"gravel": {
+"mean": [
+131.9,
+127.5,
+126.5
+],
+"coverage": 1.0
+},
+"grindstone_pivot": {
+"mean": [
+73.1,
+46.0,
+21.1
+],
+"coverage": 0.234
+},
+"grindstone_round": {
+"mean": [
+142.0,
+142.0,
+142.0
+],
+"coverage": 0.375
+},
+"grindstone_side": {
+"mean": [
+139.6,
+139.6,
+139.6
+],
+"coverage": 0.562
+},
+"guster_pottery_pattern": {
+"mean": [
+126.9,
+73.3,
+57.9
+],
+"coverage": 0.875
+},
+"hanging_roots": {
+"mean": [
+161.2,
+115.2,
+91.5
+],
+"coverage": 0.293
+},
+"hardened_clay": {
+"mean": [
+152.1,
+94.0,
+67.7
+],
+"coverage": 1.0
+},
+"hardened_clay_stained_black": {
+"mean": [
+37.2,
+22.8,
+16.4
+],
+"coverage": 1.0
+},
+"hardened_clay_stained_blue": {
+"mean": [
+74.3,
+59.7,
+91.1
+],
+"coverage": 1.0
+},
+"hardened_clay_stained_brown": {
+"mean": [
+77.2,
+51.2,
+35.7
+],
+"coverage": 1.0
+},
+"hardened_clay_stained_cyan": {
+"mean": [
+86.7,
+91.0,
+91.0
+],
+"coverage": 1.0
+},
+"hardened_clay_stained_gray": {
+"mean": [
+57.8,
+42.4,
+35.6
+],
+"coverage": 1.0
+},
+"hardened_clay_stained_green": {
+"mean": [
+76.0,
+83.3,
+42.3
+],
+"coverage": 1.0
+},
+"hardened_clay_stained_light_blue": {
+"mean": [
+113.5,
+108.5,
+138.0
+],
+"coverage": 1.0
+},
+"hardened_clay_stained_lime": {
+"mean": [
+103.5,
+117.7,
+52.8
+],
+"coverage": 1.0
+},
+"hardened_clay_stained_magenta": {
+"mean": [
+149.7,
+88.1,
+108.7
+],
+"coverage": 1.0
+},
+"hardened_clay_stained_orange": {
+"mean": [
+161.6,
+83.9,
+37.7
+],
+"coverage": 1.0
+},
+"hardened_clay_stained_pink": {
+"mean": [
+161.9,
+78.3,
+78.7
+],
+"coverage": 1.0
+},
+"hardened_clay_stained_purple": {
+"mean": [
+118.4,
+70.3,
+86.1
+],
+"coverage": 1.0
+},
+"hardened_clay_stained_red": {
+"mean": [
+143.1,
+61.0,
+46.9
+],
+"coverage": 1.0
+},
+"hardened_clay_stained_silver": {
+"mean": [
+135.3,
+106.9,
+97.5
+],
+"coverage": 1.0
+},
+"hardened_clay_stained_white": {
+"mean": [
+209.6,
+178.0,
+161.3
+],
+"coverage": 1.0
+},
+"hardened_clay_stained_yellow": {
+"mean": [
+186.3,
+133.1,
+35.4
+],
+"coverage": 1.0
+},
+"hay_block_side": {
+"mean": [
+166.4,
+136.7,
+38.3
+],
+"coverage": 1.0
+},
+"hay_block_top": {
+"mean": [
+166.0,
+139.1,
+12.4
+],
+"coverage": 1.0
+},
+"heart_pottery_pattern": {
+"mean": [
+122.6,
+70.8,
+55.8
+],
+"coverage": 0.875
+},
+"heartbreak_pottery_pattern": {
+"mean": [
+124.5,
+71.8,
+56.7
+],
+"coverage": 0.875
+},
+"heavy_core": {
+"mean": [
+82.3,
+86.2,
+94.1
+],
+"coverage": 0.75
+},
+"honey_bottom": {
+"mean": [
+241.3,
+146.0,
+17.9
+],
+"coverage": 1.0
+},
+"honey_side": {
+"mean": [
+250.7,
+188.4,
+57.9
+],
+"coverage": 1.0
+},
+"honey_top": {
+"mean": [
+251.1,
+185.3,
+52.5
+],
+"coverage": 1.0
+},
+"honeycomb": {
+"mean": [
+229.3,
+148.4,
+29.5
+],
+"coverage": 1.0
+},
+"hopper_inside": {
+"mean": [
+49.2,
+49.0,
+53.3
+],
+"coverage": 1.0
+},
+"hopper_outside": {
+"mean": [
+66.6,
+65.9,
+68.2
+],
+"coverage": 1.0
+},
+"hopper_top": {
+"mean": [
+75.8,
+74.4,
+75.6
+],
+"coverage": 0.609
+},
+"howl_pottery_pattern": {
+"mean": [
+125.2,
+72.4,
+57.2
+],
+"coverage": 0.875
+},
+"huge_fungus/crimson_door_lower": {
+"mean": [
+115.5,
+55.2,
+79.5
+],
+"coverage": 1.0
+},
+"huge_fungus/crimson_door_top": {
+"mean": [
+114.4,
+55.0,
+79.1
+],
+"coverage": 1.0
+},
+"huge_fungus/crimson_log_side": {
+"mean": [
+93.4,
+26.1,
+30.4
+],
+"coverage": 1.0
+},
+"huge_fungus/crimson_log_top": {
+"mean": [
+112.7,
+49.6,
+70.1
+],
+"coverage": 1.0
+},
+"huge_fungus/crimson_planks": {
+"mean": [
+101.0,
+48.8,
+70.6
+],
+"coverage": 1.0
+},
+"huge_fungus/crimson_trapdoor": {
+"mean": [
+103.9,
+50.7,
+72.4
+],
+"coverage": 0.844
+},
+"huge_fungus/stripped_crimson_stem_side": {
+"mean": [
+137.3,
+57.3,
+90.1
+],
+"coverage": 1.0
+},
+"huge_fungus/stripped_crimson_stem_top": {
+"mean": [
+121.7,
+56.3,
+82.6
+],
+"coverage": 1.0
+},
+"huge_fungus/stripped_warped_stem_side": {
+"mean": [
+57.6,
+150.9,
+147.8
+],
+"coverage": 1.0
+},
+"huge_fungus/stripped_warped_stem_top": {
+"mean": [
+52.1,
+128.9,
+124.5
+],
+"coverage": 1.0
+},
+"huge_fungus/warped_door_lower": {
+"mean": [
+43.3,
+118.8,
+112.4
+],
+"coverage": 1.0
+},
+"huge_fungus/warped_door_top": {
+"mean": [
+44.6,
+127.0,
+120.6
+],
+"coverage": 1.0
+},
+"huge_fungus/warped_planks": {
+"mean": [
+43.1,
+104.9,
+99.1
+],
+"coverage": 1.0
+},
+"huge_fungus/warped_stem_side": {
+"mean": [
+58.0,
+59.4,
+77.9
+],
+"coverage": 1.0
+},
+"huge_fungus/warped_stem_top": {
+"mean": [
+53.3,
+109.7,
+110.1
+],
+"coverage": 1.0
+},
+"huge_fungus/warped_trapdoor": {
+"mean": [
+47.3,
+119.5,
+111.7
+],
+"coverage": 0.785
+},
+"ice": {
+"mean": [
+145.7,
+183.8,
+254.0
+],
+"coverage": 1.0
+},
+"ice_packed": {
+"mean": [
+141.6,
+180.0,
+250.5
+],
+"coverage": 1.0
+},
+"iron_bars": {
+"mean": [
+136.8,
+139.2,
+135.6
+],
+"coverage": 0.453
+},
+"iron_block": {
+"mean": [
+220.1,
+220.0,
+220.0
+],
+"coverage": 1.0
+},
+"iron_ore": {
+"mean": [
+136.3,
+129.3,
+122.8
+],
+"coverage": 1.0
+},
+"iron_trapdoor": {
+"mean": [
+203.0,
+202.2,
+202.2
+],
+"coverage": 0.859
+},
+"itemframe_background": {
+"mean": [
+116.7,
+67.4,
+42.8
+],
+"coverage": 1.0
+},
+"jigsaw_back": {
+"mean": [
+34.2,
+27.5,
+37.2
+],
+"coverage": 1.0
+},
+"jigsaw_front": {
+"mean": [
+80.1,
+69.6,
+81.1
+],
+"coverage": 1.0
+},
+"jigsaw_lock": {
+"mean": [
+45.0,
+38.2,
+47.4
+],
+"coverage": 1.0
+},
+"jigsaw_side": {
+"mean": [
+62.5,
+54.0,
+63.5
+],
+"coverage": 1.0
+},
+"jukebox_side": {
+"mean": [
+88.8,
+58.9,
+40.8
+],
+"coverage": 1.0
+},
+"jukebox_top": {
+"mean": [
+93.8,
+64.4,
+47.3
+],
+"coverage": 1.0
+},
+"jungle_shelf": {
+"mean": [
+155.6,
+121.7,
+73.8
+],
+"coverage": 1.0
+},
+"jungle_trapdoor": {
+"mean": [
+152.9,
+110.4,
+77.5
+],
+"coverage": 0.836
+},
+"kelp_a": {
+"mean": [
+87.0,
+130.9,
+42.9
+],
+"coverage": 0.398
+},
+"kelp_b": {
+"mean": [
+87.0,
+130.9,
+42.9
+],
+"coverage": 0.398
+},
+"kelp_c": {
+"mean": [
+87.0,
+130.9,
+42.9
+],
+"coverage": 0.398
+},
+"kelp_d": {
+"mean": [
+87.0,
+130.9,
+42.9
+],
+"coverage": 0.398
+},
+"kelp_top": {
+"mean": [
+87.3,
+138.1,
+44.1
+],
+"coverage": 0.223
+},
+"kelp_top_bulb": {
+"mean": [
+87.3,
+138.1,
+44.1
+],
+"coverage": 0.223
+},
+"ladder": {
+"mean": [
+124.7,
+96.7,
+54.7
+],
+"coverage": 0.562
+},
+"lantern": {
+"mean": [
+106.6,
+92.4,
+84.8
+],
+"coverage": 0.414
+},
+"lapis_block": {
+"mean": [
+30.6,
+67.4,
+140.1
+],
+"coverage": 1.0
+},
+"lapis_ore": {
+"mean": [
+107.0,
+117.9,
+141.3
+],
+"coverage": 1.0
+},
+"large_amethyst_bud": {
+"mean": [
+161.3,
+126.5,
+202.8
+],
+"coverage": 0.305
+},
+"lava_flow": {
+"mean": [
+207.3,
+91.8,
+20.6
+],
+"coverage": 1.0
+},
+"lava_flow_normal": {
+"mean": [
+127.4,
+127.6,
+252.0
+],
+"coverage": 1.0
+},
+"lava_placeholder": {
+"mean": [
+220.8,
+125.9,
+38.6
+],
+"coverage": 1.0
+},
+"lava_still": {
+"mean": [
+216.9,
+104.5,
+26.3
+],
+"coverage": 1.0
+},
+"lava_still_normal": {
+"mean": [
+127.5,
+127.4,
+254.7
+],
+"coverage": 1.0
+},
+"leaf_litter": {
+"mean": [
+170.8,
+170.8,
+170.8
+],
+"coverage": 0.457
+},
+"leaves_acacia": {
+"mean": [
+149.3,
+148.5,
+148.5
+],
+"coverage": 0.578
+},
+"leaves_acacia_carried": {
+"mean": [
+44.9,
+115.5,
+11.5
+],
+"coverage": 0.578
+},
+"leaves_acacia_opaque": {
+"mean": [
+131.9,
+130.1,
+130.1
+],
+"coverage": 1.0
+},
+"leaves_big_oak": {
+"mean": [
+150.6,
+150.7,
+150.6
+],
+"coverage": 0.699
+},
+"leaves_big_oak_carried": {
+"mean": [
+44.1,
+114.9,
+12.0
+],
+"coverage": 0.699
+},
+"leaves_big_oak_opaque": {
+"mean": [
+138.7,
+137.9,
+138.7
+],
+"coverage": 1.0
+},
+"leaves_birch": {
+"mean": [
+130.2,
+128.8,
+129.9
+],
+"coverage": 0.562
+},
+"leaves_birch_carried": {
+"mean": [
+64.8,
+85.6,
+41.9
+],
+"coverage": 0.562
+},
+"leaves_birch_opaque": {
+"mean": [
+121.8,
+119.7,
+121.6
+],
+"coverage": 1.0
+},
+"leaves_jungle": {
+"mean": [
+156.7,
+154.1,
+143.4
+],
+"coverage": 0.695
+},
+"leaves_jungle_carried": {
+"mean": [
+60.5,
+114.2,
+14.5
+],
+"coverage": 0.695
+},
+"leaves_jungle_opaque": {
+"mean": [
+142.8,
+140.0,
+133.5
+],
+"coverage": 1.0
+},
+"leaves_oak": {
+"mean": [
+144.2,
+143.9,
+144.2
+],
+"coverage": 0.672
+},
+"leaves_oak_carried": {
+"mean": [
+38.4,
+100.6,
+9.4
+],
+"coverage": 0.672
+},
+"leaves_oak_opaque": {
+"mean": [
+131.0,
+129.2,
+131.0
+],
+"coverage": 1.0
+},
+"leaves_spruce": {
+"mean": [
+126.1,
+126.1,
+126.1
+],
+"coverage": 0.625
+},
+"leaves_spruce_carried": {
+"mean": [
+47.5,
+76.4,
+47.5
+],
+"coverage": 0.625
+},
+"leaves_spruce_opaque": {
+"mean": [
+103.6,
+103.6,
+103.6
+],
+"coverage": 1.0
+},
+"lectern_base": {
+"mean": [
+162.6,
+121.0,
+74.3
+],
+"coverage": 1.0
+},
+"lectern_front": {
+"mean": [
+130.0,
+100.8,
+55.7
+],
+"coverage": 1.0
+},
+"lectern_sides": {
+"mean": [
+149.9,
+117.1,
+67.5
+],
+"coverage": 1.0
+},
+"lectern_top": {
+"mean": [
+173.8,
+137.7,
+83.3
+],
+"coverage": 1.0
+},
+"lever": {
+"mean": [
+111.3,
+93.4,
+67.1
+],
+"coverage": 0.078
+},
+"lightning_rod": {
+"mean": [
+196.7,
+111.2,
+83.0
+],
+"coverage": 0.156
+},
+"lightning_rod_powered": {
+"mean": [
+255.0,
+255.0,
+255.0
+],
+"coverage": 0.156
+},
+"lodestone_side": {
+"mean": [
+119.4,
+119.9,
+123.0
+],
+"coverage": 1.0
+},
+"lodestone_top": {
+"mean": [
+147.0,
+149.1,
+152.8
+],
+"coverage": 1.0
+},
+"log_acacia": {
+"mean": [
+103.2,
+96.6,
+86.9
+],
+"coverage": 1.0
+},
+"log_acacia_top": {
+"mean": [
+150.9,
+88.8,
+55.2
+],
+"coverage": 1.0
+},
+"log_big_oak": {
+"mean": [
+60.4,
+46.6,
+26.2
+],
+"coverage": 1.0
+},
+"log_big_oak_top": {
+"mean": [
+67.7,
+45.1,
+22.4
+],
+"coverage": 1.0
+},
+"log_birch": {
+"mean": [
+216.6,
+215.0,
+210.3
+],
+"coverage": 1.0
+},
+"log_birch_top": {
+"mean": [
+193.2,
+179.4,
+135.2
+],
+"coverage": 1.0
+},
+"log_jungle": {
+"mean": [
+85.2,
+68.0,
+25.2
+],
+"coverage": 1.0
+},
+"log_jungle_top": {
+"mean": [
+149.6,
+109.3,
+70.6
+],
+"coverage": 1.0
+},
+"log_oak": {
+"mean": [
+109.1,
+85.1,
+50.7
+],
+"coverage": 1.0
+},
+"log_oak_top": {
+"mean": [
+151.4,
+121.6,
+73.0
+],
+"coverage": 1.0
+},
+"log_spruce": {
+"mean": [
+58.8,
+37.7,
+16.9
+],
+"coverage": 1.0
+},
+"log_spruce_top": {
+"mean": [
+108.8,
+80.4,
+46.8
+],
+"coverage": 1.0
+},
+"loom_bottom": {
+"mean": [
+76.2,
+60.1,
+36.0
+],
+"coverage": 1.0
+},
+"loom_front": {
+"mean": [
+148.1,
+118.9,
+82.1
+],
+"coverage": 1.0
+},
+"loom_side": {
+"mean": [
+145.9,
+101.3,
+72.5
+],
+"coverage": 1.0
+},
+"loom_top": {
+"mean": [
+142.2,
+119.3,
+91.8
+],
+"coverage": 1.0
+},
+"magma": {
+"mean": [
+141.9,
+62.6,
+31.0
+],
+"coverage": 1.0
+},
+"mangrove_door_bottom": {
+"mean": [
+112.2,
+47.8,
+46.4
+],
+"coverage": 1.0
+},
+"mangrove_door_top": {
+"mean": [
+112.9,
+48.9,
+46.7
+],
+"coverage": 1.0
+},
+"mangrove_leaves": {
+"mean": [
+129.8,
+128.6,
+128.6
+],
+"coverage": 0.828
+},
+"mangrove_leaves_carried": {
+"mean": [
+75.7,
+99.5,
+37.9
+],
+"coverage": 0.828
+},
+"mangrove_leaves_opaque": {
+"mean": [
+120.2,
+119.0,
+119.0
+],
+"coverage": 1.0
+},
+"mangrove_log_side": {
+"mean": [
+83.6,
+66.7,
+41.1
+],
+"coverage": 1.0
+},
+"mangrove_log_top": {
+"mean": [
+102.8,
+48.8,
+42.4
+],
+"coverage": 1.0
+},
+"mangrove_planks": {
+"mean": [
+118.0,
+54.1,
+48.7
+],
+"coverage": 1.0
+},
+"mangrove_propagule": {
+"mean": [
+96.3,
+174.6,
+83.8
+],
+"coverage": 0.129
+},
+"mangrove_propagule_hanging": {
+"mean": [
+108.9,
+135.3,
+69.7
+],
+"coverage": 0.211
+},
+"mangrove_roots_side": {
+"mean": [
+75.3,
+59.9,
+38.4
+],
+"coverage": 0.547
+},
+"mangrove_roots_top": {
+"mean": [
+74.8,
+59.6,
+38.6
+],
+"coverage": 0.691
+},
+"mangrove_shelf": {
+"mean": [
+109.4,
+45.0,
+42.0
+],
+"coverage": 1.0
+},
+"mangrove_trapdoor": {
+"mean": [
+110.9,
+46.8,
+42.5
+],
+"coverage": 0.875
+},
+"medium_amethyst_bud": {
+"mean": [
+158.3,
+120.5,
+201.5
+],
+"coverage": 0.199
+},
+"melon_side": {
+"mean": [
+114.4,
+146.2,
+30.2
+],
+"coverage": 1.0
+},
+"melon_stem_connected": {
+"mean": [
+141.6,
+142.1,
+141.6
+],
+"coverage": 0.129
+},
+"melon_stem_disconnected": {
+"mean": [
+153.8,
+153.8,
+153.8
+],
+"coverage": 0.137
+},
+"melon_top": {
+"mean": [
+111.1,
+144.7,
+30.5
+],
+"coverage": 1.0
+},
+"miner_pottery_pattern": {
+"mean": [
+127.7,
+73.7,
+58.2
+],
+"coverage": 0.875
+},
+"missing_tile": {
+"mean": [
+124.6,
+88.4,
+61.0
+],
+"coverage": 1.0
+},
+"mob_spawner": {
+"mean": [
+36.4,
+46.4,
+62.8
+],
+"coverage": 0.688
+},
+"moss_block": {
+"mean": [
+89.1,
+109.7,
+45.4
+],
+"coverage": 1.0
+},
+"mourner_pottery_pattern": {
+"mean": [
+124.8,
+71.9,
+56.7
+],
+"coverage": 0.875
+},
+"mud": {
+"mean": [
+60.1,
+57.5,
+60.6
+],
+"coverage": 1.0
+},
+"mud_bricks": {
+"mean": [
+137.1,
+103.8,
+79.1
+],
+"coverage": 1.0
+},
+"muddy_mangrove_roots_side": {
+"mean": [
+68.4,
+58.7,
+48.4
+],
+"coverage": 1.0
+},
+"muddy_mangrove_roots_top": {
+"mean": [
+70.0,
+58.6,
+45.1
+],
+"coverage": 1.0
+},
+"mushroom_block_inside": {
+"mean": [
+201.6,
+170.2,
+120.2
+],
+"coverage": 1.0
+},
+"mushroom_block_skin_brown": {
+"mean": [
+149.3,
+111.8,
+81.5
+],
+"coverage": 1.0
+},
+"mushroom_block_skin_red": {
+"mean": [
+200.2,
+46.9,
+45.0
+],
+"coverage": 1.0
+},
+"mushroom_block_skin_stem": {
+"mean": [
+203.2,
+196.6,
+185.6
+],
+"coverage": 1.0
+},
+"mushroom_brown": {
+"mean": [
+153.5,
+116.8,
+92.5
+],
+"coverage": 0.133
+},
+"mushroom_red": {
+"mean": [
+217.0,
+75.4,
+67.8
+],
+"coverage": 0.125
+},
+"mycelium_side": {
+"mean": [
+113.5,
+87.6,
+71.9
+],
+"coverage": 1.0
+},
+"mycelium_top": {
+"mean": [
+111.2,
+98.6,
+101.3
+],
+"coverage": 1.0
+},
+"nether_brick": {
+"mean": [
+44.3,
+21.9,
+26.1
+],
+"coverage": 1.0
+},
+"nether_gold_ore": {
+"mean": [
+115.4,
+55.0,
+42.1
+],
+"coverage": 1.0
+},
+"nether_sprouts": {
+"mean": [
+19.5,
+151.2,
+133.4
+],
+"coverage": 0.121
+},
+"nether_wart_block": {
+"mean": [
+115.0,
+3.3,
+2.6
+],
+"coverage": 1.0
+},
+"nether_wart_stage_0": {
+"mean": [
+117.5,
+18.7,
+21.6
+],
+"coverage": 0.172
+},
+"nether_wart_stage_1": {
+"mean": [
+115.9,
+17.1,
+18.9
+],
+"coverage": 0.465
+},
+"nether_wart_stage_2": {
+"mean": [
+111.2,
+18.1,
+19.0
+],
+"coverage": 0.625
+},
+"netherite_block": {
+"mean": [
+66.5,
+61.5,
+63.9
+],
+"coverage": 1.0
+},
+"netherrack": {
+"mean": [
+97.6,
+38.4,
+38.4
+],
+"coverage": 1.0
+},
+"noteblock": {
+"mean": [
+88.8,
+58.9,
+40.8
+],
+"coverage": 1.0
+},
+"oak_shelf": {
+"mean": [
+144.7,
+115.3,
+67.1
+],
+"coverage": 1.0
+},
+"observer_back": {
+"mean": [
+71.9,
+69.8,
+69.8
+],
+"coverage": 1.0
+},
+"observer_back_lit": {
+"mean": [
+76.3,
+68.3,
+68.3
+],
+"coverage": 1.0
+},
+"observer_front": {
+"mean": [
+103.6,
+103.4,
+103.4
+],
+"coverage": 1.0
+},
+"observer_side": {
+"mean": [
+70.2,
+69.0,
+69.0
+],
+"coverage": 1.0
+},
+"observer_top": {
+"mean": [
+98.4,
+98.4,
+98.4
+],
+"coverage": 1.0
+},
+"obsidian": {
+"mean": [
+15.1,
+10.6,
+24.6
+],
+"coverage": 1.0
+},
+"ochre_froglight_side": {
+"mean": [
+245.5,
+233.3,
+181.9
+],
+"coverage": 1.0
+},
+"ochre_froglight_top": {
+"mean": [
+250.7,
+245.1,
+206.5
+],
+"coverage": 1.0
+},
+"orange_poplar_leaves": {
+"mean": [
+188.3,
+86.5,
+23.9
+],
+"coverage": 0.711
+},
+"orange_poplar_leaves_opaque": {
+"mean": [
+195.2,
+87.8,
+23.1
+],
+"coverage": 1.0
+},
+"oxidized_chiseled_copper": {
+"mean": [
+83.5,
+161.9,
+132.3
+],
+"coverage": 1.0
+},
+"oxidized_copper": {
+"mean": [
+82.4,
+162.7,
+132.9
+],
+"coverage": 1.0
+},
+"oxidized_copper_bars": {
+"mean": [
+64.2,
+122.8,
+100.7
+],
+"coverage": 0.453
+},
+"oxidized_copper_bulb": {
+"mean": [
+70.2,
+132.4,
+109.3
+],
+"coverage": 1.0
+},
+"oxidized_copper_bulb_lit": {
+"mean": [
+134.5,
+154.5,
+104.0
+],
+"coverage": 1.0
+},
+"oxidized_copper_bulb_lit_powered": {
+"mean": [
+136.3,
+153.0,
+102.8
+],
+"coverage": 1.0
+},
+"oxidized_copper_bulb_powered": {
+"mean": [
+72.0,
+130.9,
+108.1
+],
+"coverage": 1.0
+},
+"oxidized_copper_chain1": {
+"mean": [
+61.4,
+116.8,
+97.7
+],
+"coverage": 0.117
+},
+"oxidized_copper_chain2": {
+"mean": [
+62.3,
+119.8,
+100.6
+],
+"coverage": 0.102
+},
+"oxidized_copper_chest_inventory_front": {
+"mean": [
+83.0,
+158.9,
+133.3
+],
+"coverage": 1.0
+},
+"oxidized_copper_chest_inventory_side": {
+"mean": [
+80.2,
+158.1,
+131.6
+],
+"coverage": 1.0
+},
+"oxidized_copper_chest_inventory_top": {
+"mean": [
+80.6,
+160.9,
+133.3
+],
+"coverage": 1.0
+},
+"oxidized_copper_door_bottom": {
+"mean": [
+79.6,
+153.2,
+127.2
+],
+"coverage": 1.0
+},
+"oxidized_copper_door_top": {
+"mean": [
+82.2,
+160.2,
+132.7
+],
+"coverage": 0.812
+},
+"oxidized_copper_grate": {
+"mean": [
+82.0,
+161.2,
+131.2
+],
+"coverage": 0.699
+},
+"oxidized_copper_lantern": {
+"mean": [
+79.9,
+140.5,
+112.4
+],
+"coverage": 0.414
+},
+"oxidized_copper_trapdoor": {
+"mean": [
+83.6,
+161.3,
+132.2
+],
+"coverage": 0.797
+},
+"oxidized_cut_copper": {
+"mean": [
+79.7,
+153.6,
+126.4
+],
+"coverage": 1.0
+},
+"oxidized_lightning_rod": {
+"mean": [
+79.1,
+154.2,
+127.8
+],
+"coverage": 0.156
+},
+"packed_mud": {
+"mean": [
+142.5,
+106.7,
+79.9
+],
+"coverage": 1.0
+},
+"pale_hanging_moss_middle": {
+"mean": [
+98.9,
+103.7,
+97.6
+],
+"coverage": 0.477
+},
+"pale_hanging_moss_tip": {
+"mean": [
+103.5,
+108.4,
+101.8
+],
+"coverage": 0.32
+},
+"pale_moss": {
+"mean": [
+106.6,
+112.4,
+104.9
+],
+"coverage": 1.0
+},
+"pale_moss_block": {
+"mean": [
+106.6,
+112.4,
+104.9
+],
+"coverage": 1.0
+},
+"pale_moss_carpet_side_base": {
+"mean": [
+103.1,
+108.3,
+101.6
+],
+"coverage": 0.523
+},
+"pale_moss_carpet_side_tip": {
+"mean": [
+111.9,
+117.9,
+110.2
+],
+"coverage": 0.195
+},
+"pale_oak_door_bottom": {
+"mean": [
+199.2,
+190.1,
+189.2
+],
+"coverage": 1.0
+},
+"pale_oak_door_top": {
+"mean": [
+216.3,
+208.0,
+206.7
+],
+"coverage": 1.0
+},
+"pale_oak_leaves": {
+"mean": [
+116.9,
+121.9,
+114.5
+],
+"coverage": 0.812
+},
+"pale_oak_leaves_opaque": {
+"mean": [
+106.4,
+111.1,
+104.5
+],
+"coverage": 1.0
+},
+"pale_oak_log_side": {
+"mean": [
+87.6,
+77.6,
+75.0
+],
+"coverage": 1.0
+},
+"pale_oak_log_top": {
+"mean": [
+198.7,
+189.3,
+187.9
+],
+"coverage": 1.0
+},
+"pale_oak_planks": {
+"mean": [
+227.7,
+217.5,
+216.4
+],
+"coverage": 1.0
+},
+"pale_oak_sapling": {
+"mean": [
+109.7,
+105.8,
+99.6
+],
+"coverage": 0.402
+},
+"pale_oak_shelf": {
+"mean": [
+227.6,
+217.3,
+216.4
+],
+"coverage": 1.0
+},
+"pale_oak_trapdoor": {
+"mean": [
+229.9,
+220.1,
+218.7
+],
+"coverage": 1.0
+},
+"pearlescent_froglight_side": {
+"mean": [
+235.5,
+225.0,
+228.5
+],
+"coverage": 1.0
+},
+"pearlescent_froglight_top": {
+"mean": [
+245.7,
+240.1,
+239.7
+],
+"coverage": 1.0
+},
+"pink_petals": {
+"mean": [
+246.7,
+180.6,
+218.6
+],
+"coverage": 0.402
+},
+"pink_petals_stem": {
+"mean": [
+169.3,
+169.3,
+169.3
+],
+"coverage": 0.012
+},
+"piston_bottom": {
+"mean": [
+97.1,
+96.6,
+96.6
+],
+"coverage": 1.0
+},
+"piston_inner": {
+"mean": [
+97.5,
+97.1,
+97.1
+],
+"coverage": 1.0
+},
+"piston_side": {
+"mean": [
+110.4,
+105.0,
+96.9
+],
+"coverage": 1.0
+},
+"piston_top_normal": {
+"mean": [
+154.0,
+127.7,
+87.8
+],
+"coverage": 1.0
+},
+"piston_top_sticky": {
+"mean": [
+122.9,
+149.7,
+92.8
+],
+"coverage": 1.0
+},
+"pitcher_crop_bottom": {
+"mean": [
+100.5,
+58.3,
+36.7
+],
+"coverage": 0.562
+},
+"pitcher_crop_bottom_stage_1": {
+"mean": [
+141.8,
+154.6,
+87.3
+],
+"coverage": 0.18
+},
+"pitcher_crop_bottom_stage_2": {
+"mean": [
+114.6,
+128.9,
+79.8
+],
+"coverage": 0.332
+},
+"pitcher_crop_bottom_stage_3": {
+"mean": [
+106.5,
+124.7,
+74.6
+],
+"coverage": 0.277
+},
+"pitcher_crop_bottom_stage_4": {
+"mean": [
+104.2,
+126.4,
+93.4
+],
+"coverage": 0.32
+},
+"pitcher_crop_side": {
+"mean": [
+178.3,
+126.2,
+81.0
+],
+"coverage": 0.234
+},
+"pitcher_crop_top": {
+"mean": [
+194.0,
+165.8,
+103.3
+],
+"coverage": 0.391
+},
+"pitcher_crop_top_stage_3": {
+"mean": [
+143.5,
+184.7,
+137.7
+],
+"coverage": 0.258
+},
+"pitcher_crop_top_stage_4": {
+"mean": [
+122.1,
+144.5,
+189.1
+],
+"coverage": 0.465
+},
+"planks_acacia": {
+"mean": [
+168.1,
+90.4,
+50.2
+],
+"coverage": 1.0
+},
+"planks_big_oak": {
+"mean": [
+66.7,
+43.1,
+20.2
+],
+"coverage": 1.0
+},
+"planks_birch": {
+"mean": [
+192.5,
+175.3,
+121.2
+],
+"coverage": 1.0
+},
+"planks_jungle": {
+"mean": [
+160.4,
+115.2,
+80.8
+],
+"coverage": 1.0
+},
+"planks_oak": {
+"mean": [
+162.2,
+130.8,
+78.6
+],
+"coverage": 1.0
+},
+"planks_spruce": {
+"mean": [
+114.9,
+84.8,
+48.6
+],
+"coverage": 1.0
+},
+"plenty_pottery_pattern": {
+"mean": [
+119.0,
+68.7,
+54.1
+],
+"coverage": 0.875
+},
+"pointed_dripstone_down_base": {
+"mean": [
+129.4,
+102.9,
+89.6
+],
+"coverage": 0.898
+},
+"pointed_dripstone_down_frustum": {
+"mean": [
+128.9,
+102.6,
+89.4
+],
+"coverage": 0.648
+},
+"pointed_dripstone_down_merge": {
+"mean": [
+138.6,
+112.0,
+95.5
+],
+"coverage": 0.336
+},
+"pointed_dripstone_down_middle": {
+"mean": [
+130.1,
+103.9,
+90.4
+],
+"coverage": 0.727
+},
+"pointed_dripstone_down_tip": {
+"mean": [
+136.8,
+109.4,
+93.8
+],
+"coverage": 0.207
+},
+"pointed_dripstone_up_base": {
+"mean": [
+129.4,
+102.9,
+89.6
+],
+"coverage": 0.898
+},
+"pointed_dripstone_up_frustum": {
+"mean": [
+128.9,
+102.6,
+89.4
+],
+"coverage": 0.648
+},
+"pointed_dripstone_up_merge": {
+"mean": [
+138.6,
+112.0,
+95.5
+],
+"coverage": 0.336
+},
+"pointed_dripstone_up_middle": {
+"mean": [
+130.1,
+103.9,
+90.4
+],
+"coverage": 0.727
+},
+"pointed_dripstone_up_tip": {
+"mean": [
+136.8,
+109.4,
+93.8
+],
+"coverage": 0.207
+},
+"polished_basalt_side": {
+"mean": [
+88.5,
+88.2,
+91.5
+],
+"coverage": 1.0
+},
+"polished_basalt_top": {
+"mean": [
+99.4,
+98.6,
+100.7
+],
+"coverage": 1.0
+},
+"polished_blackstone": {
+"mean": [
+53.2,
+48.6,
+56.7
+],
+"coverage": 1.0
+},
+"polished_blackstone_bricks": {
+"mean": [
+48.3,
+42.5,
+49.8
+],
+"coverage": 1.0
+},
+"polished_cinnabar": {
+"mean": [
+152.5,
+57.6,
+55.0
+],
+"coverage": 1.0
+},
+"polished_sulfur": {
+"mean": [
+188.0,
+170.3,
+91.3
+],
+"coverage": 1.0
+},
+"polished_tuff": {
+"mean": [
+97.6,
+104.1,
+99.9
+],
+"coverage": 1.0
+},
+"poplar_door_bottom": {
+"mean": [
+147.5,
+135.2,
+125.5
+],
+"coverage": 1.0
+},
+"poplar_door_top": {
+"mean": [
+151.5,
+139.5,
+128.6
+],
+"coverage": 0.844
+},
+"poplar_log_side": {
+"mean": [
+79.5,
+60.8,
+42.5
+],
+"coverage": 1.0
+},
+"poplar_log_top": {
+"mean": [
+136.2,
+122.3,
+110.2
+],
+"coverage": 1.0
+},
+"poplar_planks": {
+"mean": [
+149.7,
+137.3,
+127.4
+],
+"coverage": 1.0
+},
+"poplar_sapling": {
+"mean": [
+143.1,
+79.1,
+37.7
+],
+"coverage": 0.277
+},
+"poplar_shelf": {
+"mean": [
+148.0,
+135.4,
+126.2
+],
+"coverage": 1.0
+},
+"poplar_trapdoor": {
+"mean": [
+148.5,
+136.2,
+126.2
+],
+"coverage": 0.906
+},
+"portal": {
+"mean": [
+89.0,
+12.1,
+192.0
+],
+"coverage": 1.0
+},
+"portal_placeholder": {
+"mean": [
+88.8,
+11.9,
+191.9
+],
+"coverage": 1.0
+},
+"potatoes_stage_0": {
+"mean": [
+58.7,
+129.6,
+40.7
+],
+"coverage": 0.059
+},
+"potatoes_stage_1": {
+"mean": [
+68.6,
+132.0,
+42.6
+],
+"coverage": 0.102
+},
+"potatoes_stage_2": {
+"mean": [
+85.8,
+129.0,
+47.7
+],
+"coverage": 0.176
+},
+"potatoes_stage_3": {
+"mean": [
+84.8,
+135.3,
+47.3
+],
+"coverage": 0.316
+},
+"potent_sulfur": {
+"mean": [
+211.2,
+208.7,
+97.3
+],
+"coverage": 1.0
+},
+"potted_azalea_bush_plant": {
+"mean": [
+92.7,
+108.0,
+42.7
+],
+"coverage": 0.305
+},
+"potted_azalea_bush_side": {
+"mean": [
+95.8,
+119.1,
+46.6
+],
+"coverage": 0.227
+},
+"potted_azalea_bush_top": {
+"mean": [
+100.7,
+122.7,
+47.9
+],
+"coverage": 0.25
+},
+"potted_flowering_azalea_bush_plant": {
+"mean": [
+99.9,
+103.7,
+56.4
+],
+"coverage": 0.305
+},
+"potted_flowering_azalea_bush_side": {
+"mean": [
+109.7,
+113.6,
+69.6
+],
+"coverage": 0.227
+},
+"potted_flowering_azalea_bush_top": {
+"mean": [
+114.8,
+119.7,
+70.0
+],
+"coverage": 0.25
+},
+"powder_snow": {
+"mean": [
+248.1,
+253.4,
+253.4
+],
+"coverage": 1.0
+},
+"prismarine_bricks": {
+"mean": [
+99.2,
+171.6,
+158.4
+],
+"coverage": 1.0
+},
+"prismarine_dark": {
+"mean": [
+51.9,
+91.6,
+75.9
+],
+"coverage": 1.0
+},
+"prismarine_rough": {
+"mean": [
+98.5,
+162.1,
+145.8
+],
+"coverage": 1.0
+},
+"prize_pottery_pattern": {
+"mean": [
+123.4,
+71.2,
+56.1
+],
+"coverage": 0.875
+},
+"pumpkin_face_off": {
+"mean": [
+150.2,
+84.2,
+17.3
+],
+"coverage": 1.0
+},
+"pumpkin_face_on": {
+"mean": [
+214.6,
+152.4,
+52.9
+],
+"coverage": 1.0
+},
+"pumpkin_side": {
+"mean": [
+195.5,
+114.8,
+24.2
+],
+"coverage": 1.0
+},
+"pumpkin_stem_connected": {
+"mean": [
+139.1,
+139.1,
+139.1
+],
+"coverage": 0.129
+},
+"pumpkin_stem_disconnected": {
+"mean": [
+153.8,
+153.8,
+153.8
+],
+"coverage": 0.137
+},
+"pumpkin_top": {
+"mean": [
+198.0,
+118.7,
+24.5
+],
+"coverage": 1.0
+},
+"purpur_block": {
+"mean": [
+169.9,
+125.9,
+169.7
+],
+"coverage": 1.0
+},
+"purpur_pillar": {
+"mean": [
+171.8,
+129.5,
+171.6
+],
+"coverage": 1.0
+},
+"purpur_pillar_top": {
+"mean": [
+171.8,
+128.4,
+171.5
+],
+"coverage": 1.0
+},
+"quartz_block_bottom": {
+"mean": [
+236.8,
+230.4,
+223.9
+],
+"coverage": 1.0
+},
+"quartz_block_chiseled": {
+"mean": [
+231.9,
+226.9,
+218.0
+],
+"coverage": 1.0
+},
+"quartz_block_chiseled_top": {
+"mean": [
+231.6,
+226.6,
+217.2
+],
+"coverage": 1.0
+},
+"quartz_block_lines": {
+"mean": [
+235.5,
+230.7,
+224.0
+],
+"coverage": 1.0
+},
+"quartz_block_lines_top": {
+"mean": [
+235.1,
+229.8,
+223.0
+],
+"coverage": 1.0
+},
+"quartz_block_side": {
+"mean": [
+235.8,
+229.9,
+223.0
+],
+"coverage": 1.0
+},
+"quartz_block_top": {
+"mean": [
+235.8,
+229.9,
+223.0
+],
+"coverage": 1.0
+},
+"quartz_bricks": {
+"mean": [
+234.7,
+229.2,
+221.8
+],
+"coverage": 1.0
+},
+"quartz_ore": {
+"mean": [
+117.8,
+65.7,
+62.4
+],
+"coverage": 1.0
+},
+"rail_activator": {
+"mean": [
+115.0,
+87.2,
+74.3
+],
+"coverage": 0.609
+},
+"rail_activator_powered": {
+"mean": [
+143.4,
+87.4,
+74.2
+],
+"coverage": 0.609
+},
+"rail_detector": {
+"mean": [
+123.1,
+104.9,
+90.5
+],
+"coverage": 0.609
+},
+"rail_detector_powered": {
+"mean": [
+137.5,
+103.2,
+89.0
+],
+"coverage": 0.609
+},
+"rail_golden": {
+"mean": [
+138.0,
+109.9,
+74.2
+],
+"coverage": 0.672
+},
+"rail_golden_powered": {
+"mean": [
+154.4,
+110.0,
+74.1
+],
+"coverage": 0.672
+},
+"rail_normal": {
+"mean": [
+125.7,
+111.7,
+88.6
+],
+"coverage": 0.562
+},
+"rail_normal_turned": {
+"mean": [
+130.0,
+115.0,
+89.9
+],
+"coverage": 0.422
+},
+"raw_copper_block": {
+"mean": [
+154.4,
+105.9,
+79.1
+],
+"coverage": 1.0
+},
+"raw_gold_block": {
+"mean": [
+221.7,
+169.3,
+46.9
+],
+"coverage": 1.0
+},
+"raw_iron_block": {
+"mean": [
+166.3,
+135.7,
+107.4
+],
+"coverage": 1.0
+},
+"reactor_core_stage_0": {
+"mean": [
+120.8,
+173.4,
+183.8
+],
+"coverage": 1.0
+},
+"reactor_core_stage_1": {
+"mean": [
+142.9,
+28.0,
+28.6
+],
+"coverage": 1.0
+},
+"reactor_core_stage_2": {
+"mean": [
+19.3,
+18.1,
+39.4
+],
+"coverage": 1.0
+},
+"red_nether_brick": {
+"mean": [
+69.5,
+7.0,
+9.0
+],
+"coverage": 1.0
+},
+"red_poplar_leaves": {
+"mean": [
+153.9,
+44.3,
+39.2
+],
+"coverage": 0.711
+},
+"red_poplar_leaves_opaque": {
+"mean": [
+159.1,
+45.4,
+37.4
+],
+"coverage": 1.0
+},
+"red_sand": {
+"mean": [
+190.7,
+103.0,
+33.2
+],
+"coverage": 1.0
+},
+"red_sandstone_bottom": {
+"mean": [
+185.6,
+98.4,
+28.4
+],
+"coverage": 1.0
+},
+"red_sandstone_carved": {
+"mean": [
+183.2,
+96.9,
+27.5
+],
+"coverage": 1.0
+},
+"red_sandstone_normal": {
+"mean": [
+186.7,
+99.3,
+29.2
+],
+"coverage": 1.0
+},
+"red_sandstone_smooth": {
+"mean": [
+189.3,
+101.8,
+31.8
+],
+"coverage": 1.0
+},
+"red_sandstone_top": {
+"mean": [
+181.3,
+97.8,
+31.5
+],
+"coverage": 1.0
+},
+"red_shrub": {
+"mean": [
+121.9,
+35.3,
+21.8
+],
+"coverage": 0.547
+},
+"redstone_block": {
+"mean": [
+175.6,
+24.8,
+5.1
+],
+"coverage": 1.0
+},
+"redstone_dust_cross": {
+"mean": [
+240.5,
+240.5,
+240.5
+],
+"coverage": 0.211
+},
+"redstone_dust_line": {
+"mean": [
+240.0,
+240.0,
+240.0
+],
+"coverage": 0.078
+},
+"redstone_lamp_off": {
+"mean": [
+95.2,
+54.6,
+30.1
+],
+"coverage": 1.0
+},
+"redstone_lamp_on": {
+"mean": [
+142.9,
+101.8,
+60.6
+],
+"coverage": 1.0
+},
+"redstone_ore": {
+"mean": [
+140.4,
+109.6,
+109.6
+],
+"coverage": 1.0
+},
+"redstone_torch_off": {
+"mean": [
+101.4,
+70.0,
+43.6
+],
+"coverage": 0.078
+},
+"redstone_torch_on": {
+"mean": [
+171.3,
+79.0,
+44.0
+],
+"coverage": 0.102
+},
+"reeds": {
+"mean": [
+148.7,
+192.9,
+101.1
+],
+"coverage": 0.551
+},
+"reinforced_deepslate_bottom": {
+"mean": [
+79.1,
+82.5,
+80.0
+],
+"coverage": 1.0
+},
+"reinforced_deepslate_side": {
+"mean": [
+102.4,
+109.4,
+101.0
+],
+"coverage": 1.0
+},
+"reinforced_deepslate_top": {
+"mean": [
+80.3,
+82.9,
+78.9
+],
+"coverage": 1.0
+},
+"repeater_off": {
+"mean": [
+160.2,
+157.1,
+156.1
+],
+"coverage": 1.0
+},
+"repeater_on": {
+"mean": [
+169.5,
+157.1,
+156.1
+],
+"coverage": 1.0
+},
+"repeating_command_block_back": {
+"mean": [
+127.8,
+109.4,
+166.7
+],
+"coverage": 1.0
+},
+"repeating_command_block_back_mipmap": {
+"mean": [
+121.5,
+105.4,
+162.4
+],
+"coverage": 1.0
+},
+"repeating_command_block_conditional": {
+"mean": [
+127.3,
+109.1,
+171.5
+],
+"coverage": 1.0
+},
+"repeating_command_block_conditional_mipmap": {
+"mean": [
+121.5,
+105.4,
+168.1
+],
+"coverage": 1.0
+},
+"repeating_command_block_front": {
+"mean": [
+129.5,
+111.1,
+176.2
+],
+"coverage": 1.0
+},
+"repeating_command_block_front_mipmap": {
+"mean": [
+123.8,
+107.3,
+171.9
+],
+"coverage": 1.0
+},
+"repeating_command_block_side": {
+"mean": [
+128.7,
+110.4,
+171.0
+],
+"coverage": 1.0
+},
+"repeating_command_block_side_mipmap": {
+"mean": [
+122.9,
+106.6,
+167.0
+],
+"coverage": 1.0
+},
+"resin_block": {
+"mean": [
+217.2,
+99.2,
+25.4
+],
+"coverage": 1.0
+},
+"resin_bricks": {
+"mean": [
+205.8,
+88.5,
+24.2
+],
+"coverage": 1.0
+},
+"resin_clump": {
+"mean": [
+223.4,
+111.8,
+27.3
+],
+"coverage": 0.109
+},
+"respawn_anchor_bottom": {
+"mean": [
+32.6,
+10.1,
+60.4
+],
+"coverage": 1.0
+},
+"respawn_anchor_side0": {
+"mean": [
+39.5,
+23.9,
+62.8
+],
+"coverage": 1.0
+},
+"respawn_anchor_side1": {
+"mean": [
+42.4,
+26.5,
+64.5
+],
+"coverage": 1.0
+},
+"respawn_anchor_side2": {
+"mean": [
+45.0,
+28.5,
+65.9
+],
+"coverage": 1.0
+},
+"respawn_anchor_side3": {
+"mean": [
+47.5,
+30.3,
+66.9
+],
+"coverage": 1.0
+},
+"respawn_anchor_side4": {
+"mean": [
+50.0,
+32.3,
+68.3
+],
+"coverage": 1.0
+},
+"respawn_anchor_top": {
+"mean": [
+76.6,
+24.7,
+149.9
+],
+"coverage": 1.0
+},
+"respawn_anchor_top_off": {
+"mean": [
+33.6,
+22.0,
+52.1
+],
+"coverage": 1.0
+},
+"sand": {
+"mean": [
+219.2,
+207.2,
+163.1
+],
+"coverage": 1.0
+},
+"sandstone_bottom": {
+"mean": [
+215.7,
+202.1,
+154.2
+],
+"coverage": 1.0
+},
+"sandstone_carved": {
+"mean": [
+216.2,
+203.0,
+155.4
+],
+"coverage": 1.0
+},
+"sandstone_normal": {
+"mean": [
+216.4,
+203.3,
+155.8
+],
+"coverage": 1.0
+},
+"sandstone_smooth": {
+"mean": [
+217.8,
+206.4,
+159.8
+],
+"coverage": 1.0
+},
+"sandstone_top": {
+"mean": [
+223.8,
+214.2,
+170.3
+],
+"coverage": 1.0
+},
+"sapling_acacia": {
+"mean": [
+118.7,
+117.9,
+23.6
+],
+"coverage": 0.434
+},
+"sapling_birch": {
+"mean": [
+127.9,
+160.8,
+79.5
+],
+"coverage": 0.383
+},
+"sapling_jungle": {
+"mean": [
+47.6,
+81.1,
+16.7
+],
+"coverage": 0.336
+},
+"sapling_oak": {
+"mean": [
+77.5,
+106.6,
+40.7
+],
+"coverage": 0.434
+},
+"sapling_roofed_oak": {
+"mean": [
+61.2,
+90.7,
+30.8
+],
+"coverage": 0.43
+},
+"sapling_spruce": {
+"mean": [
+44.8,
+60.1,
+36.7
+],
+"coverage": 0.324
+},
+"scaffolding_bottom": {
+"mean": [
+193.6,
+172.8,
+79.5
+],
+"coverage": 0.438
+},
+"scaffolding_side": {
+"mean": [
+195.4,
+173.2,
+79.9
+],
+"coverage": 0.438
+},
+"scaffolding_top": {
+"mean": [
+170.2,
+131.5,
+73.2
+],
+"coverage": 0.906
+},
+"scrape_pottery_pattern": {
+"mean": [
+126.6,
+73.2,
+57.8
+],
+"coverage": 0.875
+},
+"sculk": {
+"mean": [
+13.0,
+27.9,
+33.8
+],
+"coverage": 1.0
+},
+"sculk_catalyst_bottom": {
+"mean": [
+89.3,
+109.2,
+109.2
+],
+"coverage": 1.0
+},
+"sculk_catalyst_side": {
+"mean": [
+76.6,
+93.9,
+90.2
+],
+"coverage": 1.0
+},
+"sculk_catalyst_side_bloom": {
+"mean": [
+77.1,
+101.2,
+97.1
+],
+"coverage": 1.0
+},
+"sculk_catalyst_top": {
+"mean": [
+15.3,
+32.0,
+38.4
+],
+"coverage": 1.0
+},
+"sculk_catalyst_top_bloom": {
+"mean": [
+15.4,
+33.8,
+40.1
+],
+"coverage": 1.0
+},
+"sculk_sensor_bottom": {
+"mean": [
+13.0,
+27.9,
+33.8
+],
+"coverage": 1.0
+},
+"sculk_sensor_side": {
+"mean": [
+10.4,
+39.0,
+47.4
+],
+"coverage": 0.5
+},
+"sculk_sensor_tendril_active": {
+"mean": [
+9.3,
+131.3,
+135.0
+],
+"coverage": 0.125
+},
+"sculk_sensor_tendril_inactive": {
+"mean": [
+13.9,
+61.4,
+72.3
+],
+"coverage": 0.125
+},
+"sculk_sensor_top": {
+"mean": [
+7.1,
+70.0,
+84.4
+],
+"coverage": 1.0
+},
+"sculk_shrieker_bottom": {
+"mean": [
+13.0,
+27.9,
+33.8
+],
+"coverage": 1.0
+},
+"sculk_shrieker_can_summon_inner_top": {
+"mean": [
+30.9,
+64.7,
+65.6
+],
+"coverage": 1.0
+},
+"sculk_shrieker_inner_top": {
+"mean": [
+30.5,
+54.6,
+55.4
+],
+"coverage": 1.0
+},
+"sculk_shrieker_side": {
+"mean": [
+75.1,
+101.1,
+95.4
+],
+"coverage": 0.758
+},
+"sculk_shrieker_top": {
+"mean": [
+198.8,
+205.2,
+169.5
+],
+"coverage": 0.203
+},
+"sculk_vein": {
+"mean": [
+7.9,
+49.3,
+58.9
+],
+"coverage": 0.691
+},
+"sea_lantern": {
+"mean": [
+172.2,
+200.2,
+190.8
+],
+"coverage": 1.0
+},
+"sea_pickle": {
+"mean": [
+90.4,
+97.4,
+39.6
+],
+"coverage": 0.844
+},
+"seagrass": {
+"mean": [
+51.2,
+126.4,
+8.6
+],
+"coverage": 0.301
+},
+"seagrass_carried": {
+"mean": [
+51.1,
+126.9,
+8.1
+],
+"coverage": 0.285
+},
+"seagrass_doubletall_bottom_a": {
+"mean": [
+45.7,
+118.1,
+4.3
+],
+"coverage": 0.555
+},
+"seagrass_doubletall_bottom_b": {
+"mean": [
+45.7,
+118.1,
+4.3
+],
+"coverage": 0.555
+},
+"seagrass_doubletall_top_a": {
+"mean": [
+58.5,
+138.5,
+13.6
+],
+"coverage": 0.285
+},
+"seagrass_doubletall_top_b": {
+"mean": [
+58.5,
+138.5,
+13.6
+],
+"coverage": 0.285
+},
+"sheaf_pottery_pattern": {
+"mean": [
+124.8,
+72.1,
+56.9
+],
+"coverage": 0.875
+},
+"shelf_mushroom_large": {
+"mean": [
+180.4,
+122.1,
+72.5
+],
+"coverage": 1.0
+},
+"shelf_mushroom_small": {
+"mean": [
+176.1,
+112.7,
+64.9
+],
+"coverage": 1.0
+},
+"shelter_pottery_pattern": {
+"mean": [
+126.5,
+73.1,
+57.7
+],
+"coverage": 0.875
+},
+"short_dry_grass": {
+"mean": [
+187.0,
+158.5,
+108.2
+],
+"coverage": 0.188
+},
+"shroomlight": {
+"mean": [
+240.9,
+146.5,
+70.9
+],
+"coverage": 1.0
+},
+"shulker_top_black": {
+"mean": [
+25.1,
+25.4,
+29.5
+],
+"coverage": 1.0
+},
+"shulker_top_blue": {
+"mean": [
+43.7,
+45.6,
+140.2
+],
+"coverage": 1.0
+},
+"shulker_top_brown": {
+"mean": [
+106.3,
+66.1,
+36.0
+],
+"coverage": 1.0
+},
+"shulker_top_cyan": {
+"mean": [
+20.2,
+121.3,
+135.1
+],
+"coverage": 1.0
+},
+"shulker_top_gray": {
+"mean": [
+55.3,
+58.8,
+62.5
+],
+"coverage": 1.0
+},
+"shulker_top_green": {
+"mean": [
+79.1,
+100.9,
+31.7
+],
+"coverage": 1.0
+},
+"shulker_top_light_blue": {
+"mean": [
+49.3,
+163.9,
+212.1
+],
+"coverage": 1.0
+},
+"shulker_top_lime": {
+"mean": [
+99.8,
+172.6,
+23.0
+],
+"coverage": 1.0
+},
+"shulker_top_magenta": {
+"mean": [
+173.9,
+54.1,
+163.6
+],
+"coverage": 1.0
+},
+"shulker_top_orange": {
+"mean": [
+234.1,
+106.4,
+8.7
+],
+"coverage": 1.0
+},
+"shulker_top_pink": {
+"mean": [
+230.4,
+121.8,
+157.7
+],
+"coverage": 1.0
+},
+"shulker_top_purple": {
+"mean": [
+103.2,
+32.5,
+156.4
+],
+"coverage": 1.0
+},
+"shulker_top_red": {
+"mean": [
+140.4,
+31.1,
+30.0
+],
+"coverage": 1.0
+},
+"shulker_top_silver": {
+"mean": [
+124.4,
+124.4,
+115.4
+],
+"coverage": 1.0
+},
+"shulker_top_undyed": {
+"mean": [
+139.3,
+96.9,
+139.3
+],
+"coverage": 1.0
+},
+"shulker_top_white": {
+"mean": [
+215.5,
+220.5,
+221.0
+],
+"coverage": 1.0
+},
+"shulker_top_yellow": {
+"mean": [
+248.0,
+189.0,
+29.4
+],
+"coverage": 1.0
+},
+"skull_pottery_pattern": {
+"mean": [
+123.8,
+71.5,
+56.4
+],
+"coverage": 0.875
+},
+"slime": {
+"mean": [
+111.6,
+192.0,
+91.6
+],
+"coverage": 1.0
+},
+"small_amethyst_bud": {
+"mean": [
+131.8,
+99.2,
+192.4
+],
+"coverage": 0.125
+},
+"small_dripleaf_side": {
+"mean": [
+108.0,
+128.0,
+49.0
+],
+"coverage": 0.016
+},
+"small_dripleaf_stem_bottom": {
+"mean": [
+94.7,
+122.0,
+45.1
+],
+"coverage": 0.168
+},
+"small_dripleaf_stem_top": {
+"mean": [
+97.2,
+121.3,
+46.4
+],
+"coverage": 0.137
+},
+"small_dripleaf_top": {
+"mean": [
+94.7,
+119.7,
+45.8
+],
+"coverage": 0.25
+},
+"smithing_table_bottom": {
+"mean": [
+64.2,
+28.1,
+23.8
+],
+"coverage": 1.0
+},
+"smithing_table_front": {
+"mean": [
+56.5,
+37.3,
+38.5
+],
+"coverage": 1.0
+},
+"smithing_table_side": {
+"mean": [
+55.3,
+35.5,
+36.0
+],
+"coverage": 1.0
+},
+"smithing_table_top": {
+"mean": [
+57.4,
+58.9,
+71.0
+],
+"coverage": 1.0
+},
+"smoker_bottom": {
+"mean": [
+107.5,
+105.6,
+103.7
+],
+"coverage": 1.0
+},
+"smoker_front_off": {
+"mean": [
+88.0,
+75.4,
+58.0
+],
+"coverage": 1.0
+},
+"smoker_front_on": {
+"mean": [
+118.3,
+96.9,
+66.7
+],
+"coverage": 1.0
+},
+"smoker_side": {
+"mean": [
+102.7,
+91.7,
+76.0
+],
+"coverage": 1.0
+},
+"smoker_top": {
+"mean": [
+85.5,
+83.5,
+81.3
+],
+"coverage": 1.0
+},
+"smooth_basalt": {
+"mean": [
+72.7,
+72.3,
+78.2
+],
+"coverage": 1.0
+},
+"sniffer_egg_not_cracked_bottom": {
+"mean": [
+73.3,
+25.2,
+26.2
+],
+"coverage": 0.656
+},
+"sniffer_egg_not_cracked_east": {
+"mean": [
+94.3,
+72.9,
+49.0
+],
+"coverage": 0.75
+},
+"sniffer_egg_not_cracked_north": {
+"mean": [
+91.6,
+77.2,
+51.2
+],
+"coverage": 0.875
+},
+"sniffer_egg_not_cracked_south": {
+"mean": [
+93.0,
+78.1,
+51.5
+],
+"coverage": 0.875
+},
+"sniffer_egg_not_cracked_top": {
+"mean": [
+135.2,
+105.1,
+67.5
+],
+"coverage": 0.656
+},
+"sniffer_egg_not_cracked_west": {
+"mean": [
+90.2,
+78.6,
+51.9
+],
+"coverage": 0.75
+},
+"sniffer_egg_slightly_cracked_bottom": {
+"mean": [
+71.1,
+24.9,
+25.7
+],
+"coverage": 0.656
+},
+"sniffer_egg_slightly_cracked_east": {
+"mean": [
+90.1,
+68.4,
+47.3
+],
+"coverage": 0.75
+},
+"sniffer_egg_slightly_cracked_north": {
+"mean": [
+89.2,
+72.0,
+49.4
+],
+"coverage": 0.875
+},
+"sniffer_egg_slightly_cracked_south": {
+"mean": [
+90.0,
+72.5,
+49.6
+],
+"coverage": 0.875
+},
+"sniffer_egg_slightly_cracked_top": {
+"mean": [
+129.0,
+97.2,
+62.5
+],
+"coverage": 0.656
+},
+"sniffer_egg_slightly_cracked_west": {
+"mean": [
+88.8,
+76.0,
+50.8
+],
+"coverage": 0.75
+},
+"sniffer_egg_very_cracked_bottom": {
+"mean": [
+70.1,
+25.0,
+25.8
+],
+"coverage": 0.656
+},
+"sniffer_egg_very_cracked_east": {
+"mean": [
+86.0,
+64.9,
+45.5
+],
+"coverage": 0.75
+},
+"sniffer_egg_very_cracked_north": {
+"mean": [
+85.7,
+68.2,
+47.3
+],
+"coverage": 0.875
+},
+"sniffer_egg_very_cracked_south": {
+"mean": [
+84.9,
+68.6,
+47.8
+],
+"coverage": 0.875
+},
+"sniffer_egg_very_cracked_top": {
+"mean": [
+120.0,
+89.4,
+58.4
+],
+"coverage": 0.656
+},
+"sniffer_egg_very_cracked_west": {
+"mean": [
+83.5,
+71.3,
+48.7
+],
+"coverage": 0.75
+},
+"snort_pottery_pattern": {
+"mean": [
+120.6,
+69.6,
+54.8
+],
+"coverage": 0.875
+},
+"snow": {
+"mean": [
+249.0,
+254.2,
+254.2
+],
+"coverage": 1.0
+},
+"soul_campfire": {
+"mean": [
+89.9,
+209.4,
+212.8
+],
+"coverage": 0.543
+},
+"soul_campfire_log_lit": {
+"mean": [
+67.3,
+103.7,
+101.8
+],
+"coverage": 1.0
+},
+"soul_fire_0": {
+"mean": [
+56.0,
+204.1,
+208.8
+],
+"coverage": 0.613
+},
+"soul_fire_1": {
+"mean": [
+56.0,
+204.1,
+208.8
+],
+"coverage": 0.613
+},
+"soul_lantern": {
+"mean": [
+70.9,
+98.9,
+114.5
+],
+"coverage": 0.414
+},
+"soul_sand": {
+"mean": [
+81.4,
+62.2,
+50.7
+],
+"coverage": 1.0
+},
+"soul_soil": {
+"mean": [
+75.8,
+57.5,
+46.6
+],
+"coverage": 1.0
+},
+"soul_torch": {
+"mean": [
+109.3,
+115.2,
+89.6
+],
+"coverage": 0.078
+},
+"sponge": {
+"mean": [
+195.9,
+192.1,
+74.6
+],
+"coverage": 1.0
+},
+"sponge_wet": {
+"mean": [
+171.1,
+181.2,
+70.4
+],
+"coverage": 1.0
+},
+"spore_blossom": {
+"mean": [
+206.9,
+97.0,
+158.6
+],
+"coverage": 0.484
+},
+"spore_blossom_base": {
+"mean": [
+113.0,
+142.4,
+50.4
+],
+"coverage": 0.621
+},
+"spruce_shelf": {
+"mean": [
+104.2,
+83.0,
+47.6
+],
+"coverage": 1.0
+},
+"spruce_trapdoor": {
+"mean": [
+103.7,
+79.0,
+47.9
+],
+"coverage": 1.0
+},
+"stone": {
+"mean": [
+125.5,
+125.5,
+125.5
+],
+"coverage": 1.0
+},
+"stone_andesite": {
+"mean": [
+136.2,
+136.3,
+136.8
+],
+"coverage": 1.0
+},
+"stone_andesite_smooth": {
+"mean": [
+132.3,
+134.8,
+134.0
+],
+"coverage": 1.0
+},
+"stone_diorite": {
+"mean": [
+188.7,
+188.5,
+189.0
+],
+"coverage": 1.0
+},
+"stone_diorite_smooth": {
+"mean": [
+193.0,
+193.1,
+194.6
+],
+"coverage": 1.0
+},
+"stone_granite": {
+"mean": [
+149.4,
+103.2,
+86.0
+],
+"coverage": 1.0
+},
+"stone_granite_smooth": {
+"mean": [
+154.1,
+106.8,
+89.2
+],
+"coverage": 1.0
+},
+"stone_slab_side": {
+"mean": [
+167.5,
+167.5,
+167.5
+],
+"coverage": 1.0
+},
+"stone_slab_top": {
+"mean": [
+158.7,
+158.7,
+158.7
+],
+"coverage": 1.0
+},
+"stonebrick": {
+"mean": [
+122.5,
+121.8,
+122.5
+],
+"coverage": 1.0
+},
+"stonebrick_carved": {
+"mean": [
+119.8,
+118.9,
+119.8
+],
+"coverage": 1.0
+},
+"stonebrick_cracked": {
+"mean": [
+118.3,
+117.7,
+118.3
+],
+"coverage": 1.0
+},
+"stonebrick_mossy": {
+"mean": [
+115.4,
+121.1,
+105.1
+],
+"coverage": 1.0
+},
+"stonecutter2_bottom": {
+"mean": [
+118.1,
+117.8,
+118.1
+],
+"coverage": 1.0
+},
+"stonecutter2_saw": {
+"mean": [
+221.9,
+221.9,
+221.9
+],
+"coverage": 0.32
+},
+"stonecutter2_side": {
+"mean": [
+106.6,
+90.3,
+78.0
+],
+"coverage": 0.562
+},
+"stonecutter2_top": {
+"mean": [
+123.3,
+118.7,
+111.2
+],
+"coverage": 1.0
+},
+"stonecutter_bottom": {
+"mean": [
+96.4,
+96.4,
+96.4
+],
+"coverage": 1.0
+},
+"stonecutter_other_side": {
+"mean": [
+113.5,
+113.5,
+113.5
+],
+"coverage": 1.0
+},
+"stonecutter_side": {
+"mean": [
+121.4,
+121.8,
+121.2
+],
+"coverage": 1.0
+},
+"stonecutter_top": {
+"mean": [
+114.4,
+116.0,
+116.0
+],
+"coverage": 1.0
+},
+"straw_bed": {
+"mean": [
+154.5,
+128.9,
+26.2
+],
+"coverage": 0.431
+},
+"stripped_acacia_log": {
+"mean": [
+174.7,
+92.9,
+59.8
+],
+"coverage": 1.0
+},
+"stripped_acacia_log_top": {
+"mean": [
+166.1,
+91.0,
+51.6
+],
+"coverage": 1.0
+},
+"stripped_bamboo_block": {
+"mean": [
+193.4,
+173.1,
+80.5
+],
+"coverage": 1.0
+},
+"stripped_bamboo_block_top": {
+"mean": [
+178.4,
+158.9,
+72.8
+],
+"coverage": 1.0
+},
+"stripped_birch_log": {
+"mean": [
+197.0,
+176.0,
+118.4
+],
+"coverage": 1.0
+},
+"stripped_birch_log_top": {
+"mean": [
+191.2,
+171.8,
+116.4
+],
+"coverage": 1.0
+},
+"stripped_cherry_log_side": {
+"mean": [
+215.1,
+145.2,
+148.9
+],
+"coverage": 1.0
+},
+"stripped_cherry_log_top": {
+"mean": [
+221.0,
+164.6,
+157.7
+],
+"coverage": 1.0
+},
+"stripped_dark_oak_log": {
+"mean": [
+72.8,
+56.9,
+36.0
+],
+"coverage": 1.0
+},
+"stripped_dark_oak_log_top": {
+"mean": [
+65.9,
+44.2,
+22.8
+],
+"coverage": 1.0
+},
+"stripped_jungle_log": {
+"mean": [
+171.5,
+132.8,
+84.6
+],
+"coverage": 1.0
+},
+"stripped_jungle_log_top": {
+"mean": [
+165.9,
+123.0,
+81.9
+],
+"coverage": 1.0
+},
+"stripped_mangrove_log_side": {
+"mean": [
+119.5,
+54.4,
+48.0
+],
+"coverage": 1.0
+},
+"stripped_mangrove_log_top": {
+"mean": [
+109.0,
+43.6,
+43.3
+],
+"coverage": 1.0
+},
+"stripped_oak_log": {
+"mean": [
+177.5,
+144.1,
+86.1
+],
+"coverage": 1.0
+},
+"stripped_oak_log_top": {
+"mean": [
+160.1,
+129.7,
+77.2
+],
+"coverage": 1.0
+},
+"stripped_pale_oak_log_side": {
+"mean": [
+245.8,
+238.2,
+236.9
+],
+"coverage": 1.0
+},
+"stripped_pale_oak_log_top": {
+"mean": [
+235.3,
+226.9,
+225.7
+],
+"coverage": 1.0
+},
+"stripped_poplar_log_side": {
+"mean": [
+164.6,
+152.5,
+139.5
+],
+"coverage": 1.0
+},
+"stripped_poplar_log_top": {
+"mean": [
+151.7,
+139.3,
+129.2
+],
+"coverage": 1.0
+},
+"stripped_poplar_side_log": {
+"mean": [
+166.1,
+155.6,
+135.5
+],
+"coverage": 1.0
+},
+"stripped_spruce_log": {
+"mean": [
+115.6,
+90.0,
+52.4
+],
+"coverage": 1.0
+},
+"stripped_spruce_log_top": {
+"mean": [
+113.4,
+86.7,
+50.5
+],
+"coverage": 1.0
+},
+"structure_air": {
+"mean": [
+0.0,
+186.0,
+255.0
+],
+"coverage": 0.047
+},
+"structure_block": {
+"mean": [
+88.9,
+74.4,
+90.1
+],
+"coverage": 1.0
+},
+"structure_block_corner": {
+"mean": [
+68.5,
+57.6,
+69.6
+],
+"coverage": 1.0
+},
+"structure_block_data": {
+"mean": [
+79.2,
+65.9,
+80.5
+],
+"coverage": 1.0
+},
+"structure_block_export": {
+"mean": [
+70.3,
+58.5,
+71.4
+],
+"coverage": 1.0
+},
+"structure_block_load": {
+"mean": [
+69.4,
+57.7,
+70.6
+],
+"coverage": 1.0
+},
+"structure_block_save": {
+"mean": [
+86.4,
+71.5,
+87.6
+],
+"coverage": 1.0
+},
+"structure_void": {
+"mean": [
+255.0,
+0.0,
+0.0
+],
+"coverage": 0.109
+},
+"sulfur": {
+"mean": [
+189.6,
+175.4,
+101.9
+],
+"coverage": 1.0
+},
+"sulfur_bricks": {
+"mean": [
+186.6,
+167.6,
+91.2
+],
+"coverage": 1.0
+},
+"sulfur_spike_down_base": {
+"mean": [
+182.6,
+169.6,
+94.7
+],
+"coverage": 0.828
+},
+"sulfur_spike_down_frustum": {
+"mean": [
+186.3,
+173.9,
+96.4
+],
+"coverage": 0.598
+},
+"sulfur_spike_down_middle": {
+"mean": [
+186.5,
+174.3,
+96.4
+],
+"coverage": 0.734
+},
+"sulfur_spike_down_tip": {
+"mean": [
+187.6,
+174.7,
+97.4
+],
+"coverage": 0.285
+},
+"sulfur_spike_down_tip_merge": {
+"mean": [
+185.0,
+172.5,
+95.7
+],
+"coverage": 0.359
+},
+"sulfur_spike_up_base": {
+"mean": [
+182.6,
+169.6,
+94.7
+],
+"coverage": 0.828
+},
+"sulfur_spike_up_frustum": {
+"mean": [
+186.3,
+173.9,
+96.4
+],
+"coverage": 0.598
+},
+"sulfur_spike_up_middle": {
+"mean": [
+186.5,
+174.3,
+96.4
+],
+"coverage": 0.734
+},
+"sulfur_spike_up_tip": {
+"mean": [
+187.6,
+174.7,
+97.4
+],
+"coverage": 0.285
+},
+"sulfur_spike_up_tip_merge": {
+"mean": [
+185.3,
+172.9,
+95.8
+],
+"coverage": 0.363
+},
+"suspicious_gravel_0": {
+"mean": [
+129.8,
+125.1,
+124.1
+],
+"coverage": 1.0
+},
+"suspicious_gravel_1": {
+"mean": [
+128.5,
+123.8,
+123.0
+],
+"coverage": 1.0
+},
+"suspicious_gravel_2": {
+"mean": [
+126.0,
+121.0,
+120.1
+],
+"coverage": 1.0
+},
+"suspicious_gravel_3": {
+"mean": [
+124.2,
+119.1,
+118.3
+],
+"coverage": 1.0
+},
+"suspicious_sand_0": {
+"mean": [
+217.7,
+204.3,
+159.2
+],
+"coverage": 1.0
+},
+"suspicious_sand_1": {
+"mean": [
+216.6,
+202.7,
+156.5
+],
+"coverage": 1.0
+},
+"suspicious_sand_2": {
+"mean": [
+214.1,
+198.8,
+151.3
+],
+"coverage": 1.0
+},
+"suspicious_sand_3": {
+"mean": [
+210.6,
+193.0,
+145.3
+],
+"coverage": 1.0
+},
+"sweet_berry_bush_stage0": {
+"mean": [
+42.9,
+89.6,
+56.2
+],
+"coverage": 0.207
+},
+"sweet_berry_bush_stage1": {
+"mean": [
+47.5,
+94.1,
+57.7
+],
+"coverage": 0.543
+},
+"sweet_berry_bush_stage2": {
+"mean": [
+59.9,
+88.4,
+56.1
+],
+"coverage": 0.566
+},
+"sweet_berry_bush_stage3": {
+"mean": [
+68.4,
+77.8,
+51.0
+],
+"coverage": 0.633
+},
+"tall_dry_grass": {
+"mean": [
+196.6,
+171.9,
+122.8
+],
+"coverage": 0.418
+},
+"tallgrass": {
+"mean": [
+119.8,
+119.8,
+119.8
+],
+"coverage": 0.688
+},
+"tallgrass_carried": {
+"mean": [
+74.6,
+113.3,
+39.7
+],
+"coverage": 0.543
+},
+"target_side": {
+"mean": [
+229.2,
+176.2,
+168.1
+],
+"coverage": 1.0
+},
+"target_top": {
+"mean": [
+226.4,
+170.3,
+157.8
+],
+"coverage": 1.0
+},
+"tinted_glass": {
+"mean": [
+46.9,
+34.3,
+52.5
+],
+"coverage": 0.234
+},
+"tnt_bottom": {
+"mean": [
+166.8,
+66.8,
+53.2
+],
+"coverage": 1.0
+},
+"tnt_side": {
+"mean": [
+182.3,
+88.2,
+84.1
+],
+"coverage": 1.0
+},
+"tnt_top": {
+"mean": [
+142.7,
+62.2,
+53.8
+],
+"coverage": 1.0
+},
+"torch_on": {
+"mean": [
+138.8,
+113.4,
+64.0
+],
+"coverage": 0.078
+},
+"torchflower": {
+"mean": [
+100.9,
+101.2,
+77.1
+],
+"coverage": 0.379
+},
+"torchflower_crop_stage_0": {
+"mean": [
+28.7,
+97.6,
+67.3
+],
+"coverage": 0.102
+},
+"torchflower_crop_stage_1": {
+"mean": [
+64.9,
+109.3,
+76.4
+],
+"coverage": 0.266
+},
+"trapdoor": {
+"mean": [
+124.9,
+99.4,
+56.7
+],
+"coverage": 0.859
+},
+"trapped_chest_front": {
+"mean": [
+123.7,
+90.2,
+39.7
+],
+"coverage": 1.0
+},
+"trial_spawner_bottom": {
+"mean": [
+41.7,
+59.2,
+76.2
+],
+"coverage": 0.75
+},
+"trial_spawner_side": {
+"mean": [
+53.9,
+65.8,
+77.3
+],
+"coverage": 0.758
+},
+"trial_spawner_side_active": {
+"mean": [
+53.9,
+65.8,
+77.3
+],
+"coverage": 0.758
+},
+"trial_spawner_side_active_ominous": {
+"mean": [
+46.4,
+65.6,
+82.1
+],
+"coverage": 0.758
+},
+"trial_spawner_side_inactive": {
+"mean": [
+47.8,
+67.5,
+83.4
+],
+"coverage": 0.758
+},
+"trial_spawner_side_inactive_ominous": {
+"mean": [
+39.9,
+58.5,
+74.3
+],
+"coverage": 0.758
+},
+"trial_spawner_top": {
+"mean": [
+63.0,
+79.5,
+91.4
+],
+"coverage": 1.0
+},
+"trial_spawner_top_active": {
+"mean": [
+62.7,
+80.6,
+92.4
+],
+"coverage": 1.0
+},
+"trial_spawner_top_active_ominous": {
+"mean": [
+49.2,
+83.7,
+100.1
+],
+"coverage": 1.0
+},
+"trial_spawner_top_ejecting_reward": {
+"mean": [
+46.6,
+52.8,
+61.8
+],
+"coverage": 1.0
+},
+"trial_spawner_top_ejecting_reward_ominous": {
+"mean": [
+33.1,
+55.9,
+69.5
+],
+"coverage": 1.0
+},
+"trial_spawner_top_inactive": {
+"mean": [
+56.5,
+82.6,
+98.9
+],
+"coverage": 1.0
+},
+"trial_spawner_top_inactive_ominous": {
+"mean": [
+49.3,
+74.2,
+90.6
+],
+"coverage": 1.0
+},
+"trial_spawner_top_open": {
+"mean": [
+47.0,
+51.6,
+60.8
+],
+"coverage": 1.0
+},
+"trip_wire": {
+"mean": [
+129.1,
+129.1,
+129.1
+],
+"coverage": 0.164
+},
+"trip_wire_source": {
+"mean": [
+142.6,
+133.4,
+118.0
+],
+"coverage": 0.18
+},
+"tuff": {
+"mean": [
+108.1,
+109.1,
+102.6
+],
+"coverage": 1.0
+},
+"tuff_bricks": {
+"mean": [
+98.1,
+102.6,
+95.3
+],
+"coverage": 1.0
+},
+"turtle_egg_not_cracked": {
+"mean": [
+228.0,
+226.9,
+191.8
+],
+"coverage": 0.52
+},
+"turtle_egg_slightly_cracked": {
+"mean": [
+218.2,
+214.9,
+177.5
+],
+"coverage": 0.52
+},
+"turtle_egg_very_cracked": {
+"mean": [
+208.0,
+203.8,
+165.5
+],
+"coverage": 0.52
+},
+"twisting_vines_base": {
+"mean": [
+20.2,
+136.0,
+122.1
+],
+"coverage": 0.352
+},
+"twisting_vines_bottom": {
+"mean": [
+20.1,
+143.2,
+124.4
+],
+"coverage": 0.277
+},
+"vault_bottom": {
+"mean": [
+44.0,
+43.3,
+56.2
+],
+"coverage": 1.0
+},
+"vault_bottom_ominous": {
+"mean": [
+44.0,
+43.3,
+56.2
+],
+"coverage": 1.0
+},
+"vault_front_ejecting": {
+"mean": [
+59.6,
+63.8,
+66.4
+],
+"coverage": 0.859
+},
+"vault_front_ejecting_ominous": {
+"mean": [
+49.7,
+66.9,
+71.8
+],
+"coverage": 0.945
+},
+"vault_front_off": {
+"mean": [
+51.4,
+65.6,
+74.1
+],
+"coverage": 0.859
+},
+"vault_front_off_ominous": {
+"mean": [
+56.1,
+65.3,
+70.1
+],
+"coverage": 0.945
+},
+"vault_front_on": {
+"mean": [
+60.0,
+63.3,
+66.0
+],
+"coverage": 0.859
+},
+"vault_front_on_ominous": {
+"mean": [
+52.1,
+68.0,
+71.6
+],
+"coverage": 0.945
+},
+"vault_side_off": {
+"mean": [
+55.1,
+69.4,
+74.8
+],
+"coverage": 0.812
+},
+"vault_side_off_ominous": {
+"mean": [
+55.1,
+69.4,
+74.8
+],
+"coverage": 0.812
+},
+"vault_side_on": {
+"mean": [
+62.7,
+66.6,
+66.1
+],
+"coverage": 0.812
+},
+"vault_side_on_ominous": {
+"mean": [
+45.9,
+70.5,
+76.0
+],
+"coverage": 0.812
+},
+"vault_top": {
+"mean": [
+54.6,
+69.7,
+79.0
+],
+"coverage": 1.0
+},
+"vault_top_ejecting": {
+"mean": [
+42.6,
+47.2,
+54.7
+],
+"coverage": 1.0
+},
+"vault_top_ejecting_ominous": {
+"mean": [
+45.2,
+47.2,
+51.5
+],
+"coverage": 1.0
+},
+"vault_top_ominous": {
+"mean": [
+68.7,
+72.6,
+70.6
+],
+"coverage": 1.0
+},
+"verdant_froglight_side": {
+"mean": [
+211.2,
+234.6,
+208.2
+],
+"coverage": 1.0
+},
+"verdant_froglight_top": {
+"mean": [
+229.3,
+244.5,
+228.1
+],
+"coverage": 1.0
+},
+"vine": {
+"mean": [
+116.1,
+116.1,
+116.1
+],
+"coverage": 0.57
+},
+"vine_carried": {
+"mean": [
+72.0,
+109.2,
+38.9
+],
+"coverage": 0.57
+},
+"warped_fungus": {
+"mean": [
+74.2,
+109.1,
+87.9
+],
+"coverage": 0.195
+},
+"warped_nylium_side": {
+"mean": [
+72.6,
+61.9,
+59.5
+],
+"coverage": 1.0
+},
+"warped_nylium_top": {
+"mean": [
+43.2,
+114.3,
+101.3
+],
+"coverage": 1.0
+},
+"warped_roots": {
+"mean": [
+20.3,
+138.1,
+124.2
+],
+"coverage": 0.359
+},
+"warped_roots_pot": {
+"mean": [
+20.5,
+136.6,
+123.3
+],
+"coverage": 0.277
+},
+"warped_shelf": {
+"mean": [
+51.2,
+140.6,
+133.6
+],
+"coverage": 1.0
+},
+"warped_wart_block": {
+"mean": [
+22.8,
+119.9,
+121.1
+],
+"coverage": 1.0
+},
+"water_flow": {
+"mean": [
+89.3,
+132.7,
+254.0
+],
+"coverage": 1.0
+},
+"water_flow_grey": {
+"mean": [
+169.0,
+169.0,
+169.0
+],
+"coverage": 1.0
+},
+"water_flow_grey_normal": {
+"mean": [
+127.6,
+127.3,
+254.8
+],
+"coverage": 1.0
+},
+"water_placeholder": {
+"mean": [
+116.1,
+138.8,
+255.0
+],
+"coverage": 1.0
+},
+"water_still": {
+"mean": [
+114.5,
+135.6,
+253.0
+],
+"coverage": 1.0
+},
+"water_still_grey": {
+"mean": [
+164.2,
+164.2,
+164.2
+],
+"coverage": 1.0
+},
+"water_still_grey_normal": {
+"mean": [
+126.9,
+126.2,
+255.0
+],
+"coverage": 1.0
+},
+"waterlily": {
+"mean": [
+133.5,
+133.5,
+133.5
+],
+"coverage": 0.586
+},
+"weathered_chiseled_copper": {
+"mean": [
+104.8,
+151.0,
+111.1
+],
+"coverage": 1.0
+},
+"weathered_copper": {
+"mean": [
+108.3,
+153.0,
+110.4
+],
+"coverage": 1.0
+},
+"weathered_copper_bars": {
+"mean": [
+84.8,
+123.2,
+94.3
+],
+"coverage": 0.453
+},
+"weathered_copper_bulb": {
+"mean": [
+92.4,
+126.7,
+99.5
+],
+"coverage": 1.0
+},
+"weathered_copper_bulb_lit": {
+"mean": [
+156.3,
+157.1,
+98.7
+],
+"coverage": 1.0
+},
+"weathered_copper_bulb_lit_powered": {
+"mean": [
+157.9,
+155.8,
+97.6
+],
+"coverage": 1.0
+},
+"weathered_copper_bulb_powered": {
+"mean": [
+94.0,
+125.3,
+98.3
+],
+"coverage": 1.0
+},
+"weathered_copper_chain1": {
+"mean": [
+72.1,
+106.8,
+91.9
+],
+"coverage": 0.117
+},
+"weathered_copper_chain2": {
+"mean": [
+75.0,
+110.2,
+92.8
+],
+"coverage": 0.102
+},
+"weathered_copper_chest_inventory_front": {
+"mean": [
+107.1,
+148.0,
+108.6
+],
+"coverage": 1.0
+},
+"weathered_copper_chest_inventory_side": {
+"mean": [
+105.2,
+149.5,
+108.8
+],
+"coverage": 1.0
+},
+"weathered_copper_chest_inventory_top": {
+"mean": [
+104.5,
+149.5,
+106.1
+],
+"coverage": 1.0
+},
+"weathered_copper_door_bottom": {
+"mean": [
+107.2,
+143.1,
+101.6
+],
+"coverage": 1.0
+},
+"weathered_copper_door_top": {
+"mean": [
+110.1,
+150.6,
+109.9
+],
+"coverage": 0.812
+},
+"weathered_copper_grate": {
+"mean": [
+106.2,
+152.9,
+111.0
+],
+"coverage": 0.699
+},
+"weathered_copper_lantern": {
+"mean": [
+97.3,
+135.0,
+101.2
+],
+"coverage": 0.414
+},
+"weathered_copper_trapdoor": {
+"mean": [
+108.8,
+153.2,
+110.2
+],
+"coverage": 0.797
+},
+"weathered_cut_copper": {
+"mean": [
+109.4,
+145.4,
+107.5
+],
+"coverage": 1.0
+},
+"weathered_lightning_rod": {
+"mean": [
+97.4,
+142.1,
+105.0
+],
+"coverage": 0.156
+},
+"web": {
+"mean": [
+228.6,
+233.2,
+234.4
+],
+"coverage": 0.41
+},
+"weeping_vines": {
+"mean": [
+104.6,
+1.3,
+0.0
+],
+"coverage": 0.109
+},
+"weeping_vines_base": {
+"mean": [
+131.7,
+19.4,
+41.2
+],
+"coverage": 0.449
+},
+"weeping_vines_bottom": {
+"mean": [
+98.5,
+5.7,
+41.3
+],
+"coverage": 0.109
+},
+"weeping_vines_plant": {
+"mean": [
+132.7,
+16.4,
+12.2
+],
+"coverage": 0.449
+},
+"wheat_stage_0": {
+"mean": [
+8.6,
+127.7,
+15.6
+],
+"coverage": 0.027
+},
+"wheat_stage_1": {
+"mean": [
+5.7,
+127.6,
+7.9
+],
+"coverage": 0.062
+},
+"wheat_stage_2": {
+"mean": [
+6.8,
+133.4,
+12.6
+],
+"coverage": 0.129
+},
+"wheat_stage_3": {
+"mean": [
+10.5,
+130.8,
+13.3
+],
+"coverage": 0.227
+},
+"wheat_stage_4": {
+"mean": [
+37.1,
+132.9,
+18.3
+],
+"coverage": 0.309
+},
+"wheat_stage_5": {
+"mean": [
+63.7,
+129.1,
+18.6
+],
+"coverage": 0.406
+},
+"wheat_stage_6": {
+"mean": [
+142.0,
+133.2,
+37.2
+],
+"coverage": 0.492
+},
+"wheat_stage_7": {
+"mean": [
+166.7,
+151.6,
+73.2
+],
+"coverage": 0.543
+},
+"wildflowers": {
+"mean": [
+237.1,
+213.9,
+117.3
+],
+"coverage": 0.238
+},
+"wildflowers_stem": {
+"mean": [
+169.3,
+169.3,
+169.3
+],
+"coverage": 0.012
+},
+"wool_colored_black": {
+"mean": [
+20.6,
+21.3,
+25.6
+],
+"coverage": 1.0
+},
+"wool_colored_blue": {
+"mean": [
+53.1,
+57.3,
+157.5
+],
+"coverage": 1.0
+},
+"wool_colored_brown": {
+"mean": [
+114.2,
+71.6,
+40.6
+],
+"coverage": 1.0
+},
+"wool_colored_cyan": {
+"mean": [
+21.2,
+137.7,
+145.4
+],
+"coverage": 1.0
+},
+"wool_colored_gray": {
+"mean": [
+62.7,
+68.2,
+71.6
+],
+"coverage": 1.0
+},
+"wool_colored_green": {
+"mean": [
+84.8,
+109.5,
+27.5
+],
+"coverage": 1.0
+},
+"wool_colored_light_blue": {
+"mean": [
+58.1,
+175.0,
+217.3
+],
+"coverage": 1.0
+},
+"wool_colored_lime": {
+"mean": [
+112.2,
+185.2,
+25.8
+],
+"coverage": 1.0
+},
+"wool_colored_magenta": {
+"mean": [
+189.5,
+68.8,
+179.9
+],
+"coverage": 1.0
+},
+"wool_colored_orange": {
+"mean": [
+240.7,
+118.1,
+19.5
+],
+"coverage": 1.0
+},
+"wool_colored_pink": {
+"mean": [
+237.9,
+141.4,
+172.4
+],
+"coverage": 1.0
+},
+"wool_colored_purple": {
+"mean": [
+121.9,
+42.2,
+172.5
+],
+"coverage": 1.0
+},
+"wool_colored_red": {
+"mean": [
+161.0,
+39.3,
+34.6
+],
+"coverage": 1.0
+},
+"wool_colored_silver": {
+"mean": [
+142.0,
+142.2,
+134.6
+],
+"coverage": 1.0
+},
+"wool_colored_white": {
+"mean": [
+233.6,
+236.3,
+236.8
+],
+"coverage": 1.0
+},
+"wool_colored_yellow": {
+"mean": [
+248.8,
+198.0,
+39.6
+],
+"coverage": 1.0
+},
+"yellow_poplar_leaves": {
+"mean": [
+214.8,
+133.5,
+40.2
+],
+"coverage": 0.711
+},
+"yellow_poplar_leaves_opaque": {
+"mean": [
+221.2,
+136.3,
+43.0
+],
+"coverage": 1.0
+}
+}

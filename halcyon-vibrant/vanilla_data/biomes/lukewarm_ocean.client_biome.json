@@ -1,0 +1,38 @@
+{
+ "format_version": "1.21.120",
+ "minecraft:client_biome": {
+  "components": {
+   "minecraft:ambient_sounds": {
+    "underwater_addition": {
+     "asset": "ambient.underwater.additions",
+     "chance": 0.01
+    },
+    "underwater_loop": "ambient.underwater.loop"
+   },
+   "minecraft:atmosphere_identifier": {
+    "atmosphere_identifier": "minecraft:warmish_atmospherics"
+   },
+   "minecraft:biome_music": {
+    "underwater_music": true
+   },
+   "minecraft:color_grading_identifier": {
+    "color_grading_identifier": "minecraft:warmish_color_grading"
+   },
+   "minecraft:fog_appearance": {
+    "fog_identifier": "minecraft:fog_lukewarm_ocean"
+   },
+   "minecraft:lighting_identifier": {
+    "lighting_identifier": "minecraft:warmish_lighting"
+   },
+   "minecraft:water_appearance": {
+    "surface_color": "#0D96DB"
+   },
+   "minecraft:water_identifier": {
+    "water_identifier": "minecraft:default_water"
+   }
+  },
+  "description": {
+   "identifier": "minecraft:lukewarm_ocean"
+  }
+ }
+}
