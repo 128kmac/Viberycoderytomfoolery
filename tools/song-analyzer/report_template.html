@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Song Analysis</title>
+<style>
+  :root {
+    --bg: #f6f5f1; --panel: #ffffff; --ink: #1c1c1f; --muted: #6b6b73; --rule: #e2e0da;
+    --quiet: #cfd8e3; --medium: #9fb4cc; --loud: #e2a35b; --peak: #c8432f;
+    --kick: #2a4d8f; --snare: #c8432f; --crash: #b58a1b; --vocal: #1f7a5c; --beat: #b9b6ad;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141417; --panel: #1c1c21; --ink: #ececef; --muted: #9a9aa5; --rule: #2c2c33;
+      --quiet: #2d3a4a; --medium: #45607f; --loud: #b9803f; --peak: #e2583f;
+      --kick: #7aa2ff; --snare: #ff7a63; --crash: #e9c15a; --vocal: #4fd1a1; --beat: #4a4a52;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141417; --panel: #1c1c21; --ink: #ececef; --muted: #9a9aa5; --rule: #2c2c33;
+    --quiet: #2d3a4a; --medium: #45607f; --loud: #b9803f; --peak: #e2583f;
+    --kick: #7aa2ff; --snare: #ff7a63; --crash: #e9c15a; --vocal: #4fd1a1; --beat: #4a4a52;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { padding: 20px 16px 8px; max-width: 1400px; margin: 0 auto; }
+  h1 { font-size: 20px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); }
+  .stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 6px; }
+  .stat { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 12px; min-width: 120px; }
+  .stat b { display: block; font-size: 17px; }
+  .stat span { color: var(--muted); font-size: 12px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0; }
+  button, select { font: inherit; background: var(--panel); color: var(--ink); border: 1px solid var(--rule); border-radius: 6px; padding: 5px 10px; cursor: pointer; }
+  button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+  main { max-width: 1400px; margin: 0 auto; padding: 0 16px 40px; }
+  #wrap { position: relative; overflow-x: auto; background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; }
+  canvas { display: block; }
+  #tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--bg); padding: 6px 8px; border-radius: 6px; font-size: 12px; display: none; max-width: 340px; z-index: 5; }
+  table { border-collapse: collapse; width: 100%; background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; margin-top: 16px; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--rule); font-size: 13px; }
+  th { color: var(--muted); font-weight: 600; }
+  h2 { font-size: 15px; margin: 26px 0 6px; }
+  .note { color: var(--muted); font-size: 12px; margin-top: 6px; }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="title">Song analysis</h1>
+  <div class="sub" id="subtitle"></div>
+  <div class="stats" id="stats"></div>
+  <div class="controls">
+    <button id="viewSong" aria-pressed="false">Whole song</button>
+    <button id="viewEx" aria-pressed="true">Excerpt</button>
+    <label>Zoom <input id="zoom" type="range" min="6" max="60" value="14"></label>
+    <button id="play">Play</button>
+    <span class="sub" id="clock"></span>
+  </div>
+</header>
+<main>
+  <div id="wrap"><canvas id="tl"></canvas></div>
+  <div class="note">Lanes: sections · loudness (momentary line, short-term fill, bar dynamics colour) · bars + beats · chords · vocal phrases + melody · drum hits · instrument presence. Hover for values, click to seek.</div>
+  <h2>Sections</h2>
+  <table id="secTable"></table>
+  <h2>Events in the excerpt</h2>
+  <table id="evTable"></table>
+</main>
+<div id="tip"></div>
+<audio id="audio" src="__AUDIO__" preload="auto"></audio>
+<script>
+const A = /*__DATA__*/null;
+const $ = (id) => document.getElementById(id);
+const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const mmss = (t) => `${Math.floor(t / 60)}:${(t % 60).toFixed(2).padStart(5, '0')}`;
+const EX = A.meta.excerpt;
+let view = 'ex', pps = 14;
+const audio = $('audio');
+const hasAudio = audio.getAttribute('src') !== '';
+// the report's audio may be the excerpt or the whole song
+const audioOffset = () => (hasAudio && audio.duration && Math.abs(audio.duration - A.meta.duration) > 1 ? EX.start : 0);
+
+$('title').textContent = `${A.meta.file}`;
+$('subtitle').textContent = `${mmss(A.meta.duration)} · excerpt ${mmss(EX.start)} – ${mmss(EX.end)}`;
+const stats = [
+  [A.tempo.bpm.toFixed(1) + ' bpm', A.tempo.constant_tempo ? 'constant tempo' : 'variable tempo'],
+  [A.key.name, `key · r=${A.key.confidence} (next ${A.key.runner_up})`],
+  [A.loudness.integrated_lufs + ' LUFS', 'integrated'],
+  [A.loudness.lra_lu + ' LU', 'loudness range'],
+  [A.bars.length + ' bars', 'detected'],
+  [A.vocals.phrases.length + ' phrases', 'vocal lines'],
+  [(A.vocals.range || []).join('–'), 'vocal range'],
+];
+$('stats').innerHTML = stats.map(([b, s]) => `<div class="stat"><b>${b}</b><span>${s}</span></div>`).join('');
+
+const LANES = [
+  ['sections', 26], ['loudness', 90], ['grid', 26], ['chords', 26], ['vocals', 70], ['drums', 54],
+  ['bass', 12], ['guitars', 12], ['strings_synth', 12], ['vocals_p', 12], ['cymbals', 12],
+];
+const LABEL = { sections: 'Sections', loudness: 'Loudness', grid: 'Bars', chords: 'Chords', vocals: 'Vocals', drums: 'Drums',
+  bass: 'Bass', guitars: 'Guitars', strings_synth: 'Strings/synth', vocals_p: 'Vocal', cymbals: 'Cymbals' };
+const GUT = 104, PAD = 6;
+const SEC_COL = ['#7c8db5', '#c98b5b', '#6fa58b', '#b8739a', '#a59a5f', '#5f9fb0', '#9b7fc9', '#c46a6a'];
+
+function range() { return view === 'ex' ? [EX.start, EX.end] : [0, A.meta.duration]; }
+
+function draw(playT) {
+  const [t0, t1] = range();
+  const cv = $('tl');
+  const H = LANES.reduce((s, l) => s + l[1] + PAD, PAD);
+  const W = Math.max($('wrap').clientWidth, GUT + (t1 - t0) * pps);
+  const dpr = devicePixelRatio || 1;
+  cv.width = W * dpr; cv.height = H * dpr; cv.style.width = W + 'px'; cv.style.height = H + 'px';
+  const c = cv.getContext('2d');
+  c.scale(dpr, dpr);
+  c.fillStyle = css('--panel'); c.fillRect(0, 0, W, H);
+  const X = (t) => GUT + (t - t0) * pps;
+  const vis = (a, b) => b >= t0 && a <= t1;
+  let y = PAD;
+  c.font = '12px system-ui'; c.textBaseline = 'middle';
+  const lanePos = {};
+  for (const [k, h] of LANES) { lanePos[k] = [y, h]; c.fillStyle = css('--muted'); c.fillText(LABEL[k], 8, y + h / 2); y += h + PAD; }
+  // beat lines behind everything
+  c.strokeStyle = css('--rule'); c.lineWidth = 1;
+  for (const b of A.tempo.downbeats) if (b >= t0 && b <= t1) { c.beginPath(); c.moveTo(X(b) + 0.5, PAD); c.lineTo(X(b) + 0.5, H - PAD); c.stroke(); }
+  // sections
+  let [ly, lh] = lanePos.sections;
+  for (const s of A.sections) if (vis(s.start, s.end)) {
+    c.fillStyle = SEC_COL['ABCDEFGHIJKLMNOP'.indexOf(s.label) % SEC_COL.length];
+    c.fillRect(X(s.start) + 1, ly, (s.end - s.start) * pps - 2, lh);
+    c.fillStyle = '#fff'; c.font = '600 12px system-ui';
+    c.fillText(`${s.label} · ${s.name}`, X(Math.max(s.start, t0)) + 6, ly + lh / 2);
+  }
+  c.font = '12px system-ui';
+  // loudness
+  [ly, lh] = lanePos.loudness;
+  const dynC = { quiet: css('--quiet'), medium: css('--medium'), loud: css('--loud'), peak: css('--peak') };
+  for (const b of A.bars) if (vis(b.start, b.end)) { c.fillStyle = dynC[b.dynamics]; c.globalAlpha = 0.35; c.fillRect(X(b.start), ly, (b.end - b.start) * pps, lh); }
+  c.globalAlpha = 1;
+  const lo = -40, hi = -4;
+  const LY = (v) => ly + lh - ((Math.max(lo, Math.min(hi, v)) - lo) / (hi - lo)) * lh;
+  const st = A.loudness.short_term_10hz, mo = A.loudness.momentary_10hz;
+  c.beginPath(); c.moveTo(X(t0), ly + lh);
+  for (let i = Math.floor(t0 * 10); i < Math.min(st.length, t1 * 10); i++) c.lineTo(X(i / 10), LY(st[i]));
+  c.lineTo(X(t1), ly + lh); c.closePath(); c.fillStyle = css('--medium'); c.globalAlpha = 0.5; c.fill(); c.globalAlpha = 1;
+  c.beginPath();
+  for (let i = Math.floor(t0 * 10); i < Math.min(mo.length, t1 * 10); i++) { const f = i === Math.floor(t0 * 10) ? 'moveTo' : 'lineTo'; c[f](X(i / 10), LY(mo[i])); }
+  c.strokeStyle = css('--ink'); c.lineWidth = 1; c.stroke();
+  // grid
+  [ly, lh] = lanePos.grid;
+  c.strokeStyle = css('--beat');
+  for (const b of A.tempo.beats) if (b >= t0 && b <= t1) { c.beginPath(); c.moveTo(X(b) + 0.5, ly + lh * 0.55); c.lineTo(X(b) + 0.5, ly + lh); c.stroke(); }
+  c.fillStyle = css('--ink');
+  for (const b of A.bars) if (b.start >= t0 && b.start <= t1) { c.fillRect(X(b.start), ly, 2, lh); c.fillText(String(b.i), X(b.start) + 4, ly + lh * 0.3); }
+  // chords
+  [ly, lh] = lanePos.chords;
+  for (const ch of A.chords) if (vis(ch.start, ch.end) && ch.chord !== 'N') {
+    c.fillStyle = css('--rule'); c.fillRect(X(ch.start) + 1, ly + 2, (ch.end - ch.start) * pps - 2, lh - 4);
+    if ((ch.end - ch.start) * pps > 26) { c.fillStyle = css('--ink'); c.fillText(ch.chord, X(ch.start) + 4, ly + lh / 2); }
+  }
+  // vocals: phrase blocks + notes
+  [ly, lh] = lanePos.vocals;
+  const notes = A.vocals.notes;
+  const mids = notes.map((n) => n.midi);
+  const nlo = Math.min(...mids, 48), nhi = Math.max(...mids, 72);
+  for (const p of A.vocals.phrases) if (vis(p.start, p.end)) {
+    c.fillStyle = css('--vocal'); c.globalAlpha = 0.14 + 0.3 * p.level; c.fillRect(X(p.start), ly, (p.end - p.start) * pps, lh); c.globalAlpha = 1;
+    c.fillStyle = css('--vocal');
+    for (const s of p.syllable_onsets) c.fillRect(X(s), ly + lh - 5, 1.5, 5);
+  }
+  c.fillStyle = css('--ink');
+  for (const n of notes) if (vis(n.start, n.end)) {
+    const yy = ly + lh - 6 - ((n.midi - nlo) / (nhi - nlo)) * (lh - 12);
+    c.fillRect(X(n.start), yy - 1.5, Math.max(2, (n.end - n.start) * pps), 3);
+  }
+  // drums
+  [ly, lh] = lanePos.drums;
+  const row = lh / 3;
+  [['kick', '--kick'], ['snare', '--snare'], ['crash', '--crash']].forEach(([k, col], i) => {
+    c.fillStyle = css(col);
+    for (const h of A.drums[k]) if (h.t >= t0 && h.t <= t1) {
+      const r = 1.5 + 3 * Math.min(1, h.s);
+      c.beginPath(); c.arc(X(h.t), ly + row * (i + 0.5), r, 0, Math.PI * 2); c.fill();
+    }
+  });
+  // instrument presence per bar
+  for (const k of ['bass', 'guitars', 'strings_synth', 'vocals_p', 'cymbals']) {
+    [ly, lh] = lanePos[k];
+    const key = k === 'vocals_p' ? 'vocals' : k;
+    for (const b of A.bars) if (vis(b.start, b.end)) {
+      const v = b.presence[key];
+      c.fillStyle = css('--ink'); c.globalAlpha = 0.06 + 0.8 * v * v;
+      c.fillRect(X(b.start) + 1, ly, (b.end - b.start) * pps - 2, lh);
+    }
+    c.globalAlpha = 1;
+  }
+  // events
+  c.fillStyle = css('--peak');
+  for (const e of A.events) if (e.type === 'impact' && e.t >= t0 && e.t <= t1) {
+    const [sy] = lanePos.loudness; c.beginPath(); c.moveTo(X(e.t) - 5, sy); c.lineTo(X(e.t) + 5, sy); c.lineTo(X(e.t), sy + 8); c.fill();
+  }
+  if (playT != null && playT >= t0 && playT <= t1) {
+    c.fillStyle = css('--peak'); c.fillRect(X(playT) - 1, 0, 2, H);
+  }
+  cv._X = X; cv._t0 = t0; cv._lanes = lanePos;
+}
+
+function tipAt(e) {
+  const cv = $('tl');
+  const r = cv.getBoundingClientRect();
+  const t = cv._t0 + (e.clientX - r.left - GUT) / pps;
+  const bar = A.bars.find((b) => t >= b.start && t < b.end);
+  const ch = A.chords.find((x) => t >= x.start && t < x.end);
+  const ph = A.vocals.phrases.find((p) => t >= p.start && t < p.end);
+  const sec = A.sections.find((s) => t >= s.start && t < s.end);
+  const lines = [`<b>${mmss(t)}</b> (excerpt ${t >= EX.start ? '+' + (t - EX.start).toFixed(2) + 's' : '—'})`];
+  if (sec) lines.push(`section ${sec.label} · ${sec.name}`);
+  if (bar) lines.push(`bar ${bar.i} · ${bar.dynamics} · ${bar.lufs} LUFS · K${bar.kicks} S${bar.snares}${bar.crash ? ' · crash' : ''}`);
+  if (bar) lines.push(Object.entries(bar.presence).map(([k, v]) => `${k} ${v.toFixed(2)}`).join(' · '));
+  if (ch) lines.push(`chord ${ch.chord} (${ch.roman})`);
+  if (ph) lines.push(`vocal phrase ${mmss(ph.start)}–${mmss(ph.end)} · ${ph.intensity} · ~${ph.syllables_est} syllables · median ${ph.pitch_median}`);
+  const tip = $('tip');
+  tip.innerHTML = lines.join('<br>');
+  tip.style.display = 'block';
+  tip.style.left = Math.min(innerWidth - 350, e.clientX + 14) + 'px';
+  tip.style.top = e.clientY + 14 + 'px';
+}
+$('tl').addEventListener('mousemove', tipAt);
+$('tl').addEventListener('mouseleave', () => { $('tip').style.display = 'none'; });
+$('tl').addEventListener('click', (e) => {
+  const cv = $('tl'); const r = cv.getBoundingClientRect();
+  const t = cv._t0 + (e.clientX - r.left - GUT) / pps;
+  if (hasAudio) { audio.currentTime = Math.max(0, t - audioOffset()); }
+  draw(t);
+});
+$('zoom').addEventListener('input', (e) => { pps = +e.target.value; draw(); });
+$('viewSong').onclick = () => { view = 'song'; $('viewSong').setAttribute('aria-pressed', 'true'); $('viewEx').setAttribute('aria-pressed', 'false'); pps = 6; $('zoom').value = 6; draw(); };
+$('viewEx').onclick = () => { view = 'ex'; $('viewEx').setAttribute('aria-pressed', 'true'); $('viewSong').setAttribute('aria-pressed', 'false'); pps = 14; $('zoom').value = 14; draw(); };
+$('play').onclick = () => {
+  if (!hasAudio) { $('clock').textContent = 'no audio linked (run with --audio-src)'; return; }
+  if (audio.paused) { audio.play(); $('play').textContent = 'Pause'; tick(); } else { audio.pause(); $('play').textContent = 'Play'; }
+};
+function tick() {
+  if (audio.paused) return;
+  const t = audio.currentTime + audioOffset();
+  $('clock').textContent = mmss(t);
+  draw(t);
+  const X = $('tl')._X(t);
+  const w = $('wrap');
+  if (X < w.scrollLeft + 60 || X > w.scrollLeft + w.clientWidth - 60) w.scrollLeft = X - 120;
+  requestAnimationFrame(tick);
+}
+addEventListener('resize', () => draw());
+
+$('secTable').innerHTML = '<tr><th>Start</th><th>End</th><th>Label</th><th>Name (guess)</th><th>Bars</th><th>LUFS</th><th>Vocals</th><th>Chords</th></tr>' +
+  A.sections.map((s) => `<tr${s.end > EX.start && s.start < EX.end ? ' style="font-weight:600"' : ''}><td>${mmss(s.start)}</td><td>${mmss(s.end)}</td><td>${s.label}</td><td>${s.name}</td><td>${s.bars}</td><td>${s.loudness_lufs}</td><td>${Math.round(s.vocals * 100)}%</td><td>${s.chords}</td></tr>`).join('');
+$('evTable').innerHTML = '<tr><th>Song time</th><th>Excerpt</th><th>Event</th><th>Detail</th></tr>' +
+  A.events.filter((e) => e.t >= EX.start && e.t < EX.end && e.type !== 'crash').map((e) => `<tr><td>${mmss(e.t)}</td><td>+${(e.t - EX.start).toFixed(2)}s</td><td>${e.type}</td><td>${e.label || ''}${e.end ? ' → ' + mmss(e.end) : ''}</td></tr>`).join('');
+draw();
+</script>
+</body>
+</html>

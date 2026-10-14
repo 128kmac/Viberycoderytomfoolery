@@ -1,0 +1,8 @@
+node_modules/
+out/
+# the song, its stems and anything containing its audio stay local (copyrighted audio)
+media/
+hero-federation/audio/*.wav
+hero-federation/analysis/.vocal_*
+*.onnx
+__pycache__/
