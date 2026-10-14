@@ -3,25 +3,24 @@
 @font-face { font-family: UI; src: url(../fonts/ui.ttf); font-weight: 200 700; }
 body{margin:0;background:#000}</style></head><body><canvas id="c" width="1920" height="1080"></canvas>
 <script type="module">
-import * as H from '../lib/heraldry.js';
+import * as D from '../lib/domini.js';
 await document.fonts.load('700 30px Display'); await document.fonts.load('700 30px UI');
 const c = document.getElementById('c').getContext('2d');
-const P = H.PAL;
-c.fillStyle = P.navy; c.fillRect(0,0,1920,1080);
-H.guilloche(c, {cx: 330, cy: 300, R: 230, A: 30, B: 12, n: 14, m: 5, lines: 20, width: 1});
-H.crest(c, 330, 330, 0.62, {}, {});
-H.sovereign(c, 640, 40, 480, {});
-c.fillStyle = P.crimson; c.fillRect(1150, 0, 770, 520);
-for (let i = 0; i < 4; i++) H.soldier(c, 1230 + i*150, 480, 300, i*0.12, P.ink, i===3?'salute':'march');
-H.soldierFront(c, 1830, 480, 260, 0.2, P.ink);
-c.fillStyle = P.gold; c.fillRect(0, 560, 900, 520);
-const top = H.bearer(c, 250, 1050, 300, P.ink, 0);
-H.flag(c, top[0], top[1], 420, 250, 1.3, 1);
-H.waxSeal(c, 1050, 800, 150, 4, 0);
-H.insignia(c, 'wings', 1500, 640, 0.9);
-H.insignia(c, 'anchor', 1350, 900, 0.7);
-H.insignia(c, 'tower', 1650, 900, 0.7);
-H.insignia(c, 'chevrons', 1820, 900, 0.5);
-H.shipIcon(c, 1250, 640, 180, P.goldHi);
+c.fillStyle = '#0E1426'; c.fillRect(0,0,1920,1080);
+D.emblem(c, 330, 330, 0.75, {}, {});
+D.hoodBust(c, 900, 260, 110, { wings: 0.9, smile: 1 });
+c.fillStyle = '#C9DCEB'; c.fillRect(1180, 0, 740, 540);
+D.emperyanFace(c, 1550, 250, 120, { wings: 0.6 });
+D.atmos(c, 180, 820, 120);
+D.judas(c, 470, 820, 120);
+D.empyreanSword(c, 620, 1000, 520, -0.55);
+c.fillStyle = '#2A1E3A'; c.fillRect(1150, 560, 770, 520);
+for (let i = 0; i < 6; i++) D.dominusFront(c, 1190 + i*60, 1040, 150, i*0.1, { col: '#151A28', wing: '#F4F5F8', trim: '#D9AE52' });
+for (let i = 0; i < 3; i++) D.dominusSide(c, 1580 + i*110, 1040, 220, i*0.2, { col: '#151A28', wing: '#F4F5F8', pennant: '#2F5BD8' });
+const kinds = ['crystal','flame','sun','key','hunt','rex','astra','eye','ticket','bat','sickle','coin'];
+kinds.forEach((k, i) => D.sigil(c, k, 1220 + (i%6)*110, 640 + Math.floor(i/6)*110, 0.4));
+D.wanted(c, 980, 820, 260, 360, 'BEAMERS', { rot: 0.04 });
+D.stamp(c, 'CAPTURED', 980, 820, 50, '#C8231F');
+D.emptySeat(c, 1060, 540, 140, '#0A1830', '#59C8FF');
 window.done = true;
 </script></body></html>

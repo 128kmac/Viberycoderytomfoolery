@@ -601,7 +601,8 @@ export function insignia(ctx, kind, x, y, S, col = PAL.goldHi, dark = PAL.gold) 
 }
 
 // Crimson wax seal with an embossed star; seed shapes the rim.
-export function waxSeal(ctx, cx, cy, R, seed = 4, squash = 0) {
+export function waxSeal(ctx, cx, cy, R, seed = 4, squash = 0, C = null) {
+  const hi = C ? C.hi : PAL.crimsonHi, mid = C ? C.mid : PAL.crimson, lo = C ? C.lo : PAL.crimsonLo, emb = C ? C.emb : '#E86070';
   ctx.save(); ctx.translate(cx, cy); ctx.scale(1 + squash, 1 - squash * 0.6);
   ctx.beginPath();
   for (let i = 0; i <= 64; i++) {
@@ -611,13 +612,13 @@ export function waxSeal(ctx, cx, cy, R, seed = 4, squash = 0) {
   }
   ctx.closePath();
   const g = ctx.createRadialGradient(-R * 0.3, -R * 0.35, R * 0.1, 0, 0, R * 1.05);
-  g.addColorStop(0, PAL.crimsonHi); g.addColorStop(0.6, PAL.crimson); g.addColorStop(1, PAL.crimsonLo);
+  g.addColorStop(0, hi); g.addColorStop(0.6, mid); g.addColorStop(1, lo);
   ctx.fillStyle = g; ctx.fill();
   ctx.lineWidth = R * 0.06; ctx.strokeStyle = 'rgba(60,0,10,0.45)'; ctx.stroke();
   ctx.beginPath(); ctx.arc(0, 0, R * 0.72, 0, TAU); ctx.lineWidth = R * 0.03; ctx.strokeStyle = 'rgba(255,140,140,0.35)'; ctx.stroke();
   ctx.beginPath(); ctx.arc(0, 0, R * 0.7, 0, TAU); ctx.lineWidth = R * 0.03; ctx.strokeStyle = 'rgba(40,0,6,0.5)'; ctx.stroke();
   star8(ctx, 2, 3, R * 0.55, R * 0.22, 0, 'rgba(50,0,8,0.55)', 'rgba(50,0,8,0.55)');
-  star8(ctx, -1, -1, R * 0.55, R * 0.22, 0, '#E86070', PAL.crimson);
+  star8(ctx, -1, -1, R * 0.55, R * 0.22, 0, emb, mid);
   ctx.restore();
 }
 

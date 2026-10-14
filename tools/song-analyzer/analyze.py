@@ -62,6 +62,17 @@ def parse_time(s):
     return float(s)
 
 
+def clean(o):
+    """JSON-safe copy: NaN/inf (e.g. the loudness of a silent bar) become null."""
+    if isinstance(o, float):
+        return o if math.isfinite(o) else None
+    if isinstance(o, dict):
+        return {k: clean(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [clean(v) for v in o]
+    return o
+
+
 def mmss(t):
     return f"{int(t // 60)}:{t % 60:05.2f}"
 
@@ -190,8 +201,13 @@ def pick(r, gap, thr):
     return np.array(out, int)
 
 
+# A dB-rise onset peaks a little after the attack starts (the rise is measured over 3 frames).
+# Measured against librosa's backtracked onsets on a dense rock mix, the bias is ~12-16 ms; take it off.
+ONSET_LAT = 0.012
+
+
 def refine(env, idx):
-    """Sub-frame peak times by parabolic interpolation."""
+    """Sub-frame peak times by parabolic interpolation, latency-compensated."""
     out = []
     for i in idx:
         if 0 < i < len(env) - 1:
@@ -200,7 +216,7 @@ def refine(env, idx):
             out.append(i + (0.5 * (a - c) / den if den != 0 else 0.0))
         else:
             out.append(float(i))
-    return np.array(out) / FR
+    return np.array(out) / FR - ONSET_LAT
 
 
 def phase_coherence(t, w, p):
@@ -709,8 +725,9 @@ def analyze(path, start, end, fps, lyrics_path=None, cache=None, vocal_model=Non
     grid["offset"], grid["beats"] = float(off), beats
     nb = len(beats)
     near = lambda tt: np.min(np.abs(beats[:, None] - tt[None, :]), axis=0) if len(tt) else np.array([])
-    s_on = float(np.mean(near(s_idx / FR) < 0.045)) if len(s_idx) else 0
-    k_on = float(np.mean(np.minimum(near(k_idx / FR), np.abs(near(k_idx / FR) - per / 2)) < 0.045)) if len(k_idx) else 0
+    k_t, s_t = refine(kick_env, k_idx), refine(snare_env, s_idx)
+    s_on = float(np.mean(near(s_t) < 0.045)) if len(s_idx) else 0
+    k_on = float(np.mean(np.minimum(near(k_t), np.abs(near(k_t) - per / 2)) < 0.045)) if len(k_idx) else 0
     grid["snare_on_beat"], grid["kick_on_8th"] = round(s_on, 3), round(k_on, 3)
     print(f"drums: {len(k_idx)} kicks ({k_on:.0%} on the 8th grid), {len(s_idx)} snares ({s_on:.0%} on beats), {len(crash)} crashes")
     print(f"grid: {grid['bpm']} bpm, coherence {grid['coherence']}, constant={grid['constant_tempo']}, "
@@ -847,7 +864,7 @@ def analyze(path, start, end, fps, lyrics_path=None, cache=None, vocal_model=Non
         if 0.12 <= d <= 1.2 and mom[idx].mean() < integ - 6:
             events.append({"t": round(idx[0] / FR, 3), "type": "stop", "end": round(idx[-1] / FR, 3), "label": f"{d:.2f}s"})
     for c in crash:
-        events.append({"t": round(c[0] / FR, 3), "type": "crash", "strength": round(float(c[1]), 3)})
+        events.append({"t": round(c[0] / FR - ONSET_LAT, 3), "type": "crash", "strength": round(float(c[1]), 3)})
     vr = np.array([n["midi"] for n in notes]) if notes else np.array([0])
     top = np.percentile(vr, 85)
     for n_ in notes:
@@ -877,9 +894,9 @@ def analyze(path, start, end, fps, lyrics_path=None, cache=None, vocal_model=Non
                      "bar_thresholds_lufs": [round(float(x), 2) for x in q]},
         "bars": bars,
         "sections": sections,
-        "drums": {"kick": [{"t": round(i / FR, 3), "s": round(float(s), 3)} for i, s in zip(k_idx, k_str)],
-                  "snare": [{"t": round(i / FR, 3), "s": round(float(s), 3)} for i, s in zip(s_idx, s_str)],
-                  "crash": [{"t": round(c[0] / FR, 3), "s": round(float(c[1]), 3)} for c in crash]},
+        "drums": {"kick": [{"t": round(float(tt), 3), "s": round(float(s), 3)} for tt, s in zip(k_t, k_str)],
+                  "snare": [{"t": round(float(tt), 3), "s": round(float(s), 3)} for tt, s in zip(s_t, s_str)],
+                  "crash": [{"t": round(c[0] / FR - ONSET_LAT, 3), "s": round(float(c[1]), 3)} for c in crash]},
         "vocals": {"phrases": phrases, "lines": group_lines(phrases), "notes": notes,
                    "range": [notes and min(n["name"] for n in notes), None],
                    "source": "separated stem (MDX-Net)" if stem else "DSP centre/foreground estimate",
@@ -897,7 +914,7 @@ def analyze(path, start, end, fps, lyrics_path=None, cache=None, vocal_model=Non
     # per-frame data the cues are built from (kept out of the json)
     lanes = {
         "tF": tF, "mom": mom, "st": st, "inst_db": inst_db, "vscoreF": vscoreF, "tv": tv, "f0": f0,
-        "kick": (k_idx / FR, k_str), "snare": (s_idx / FR, s_str), "crash": (np.array([c[0] for c in crash]) / FR,
+        "kick": (k_t, k_str), "snare": (s_t, s_str), "crash": (np.array([c[0] for c in crash]) / FR - ONSET_LAT,
                                                                              np.array([c[1] for c in crash])),
         "centroid": librosa.feature.spectral_centroid(S=Sm, sr=SR)[0],
     }
@@ -1029,7 +1046,7 @@ def analysis_bars_rel(A, t0, t1):
 def write_report(out_dir, analysis, excerpt, audio_src):
     tpl = (Path(__file__).parent / "report_template.html").read_text()
     slim = dict(analysis)
-    html = tpl.replace("/*__DATA__*/null", json.dumps(slim, separators=(",", ":"))) \
+    html = tpl.replace("/*__DATA__*/null", json.dumps(clean(slim), separators=(",", ":"), allow_nan=False)) \
               .replace("__AUDIO__", audio_src or "")
     (out_dir / "report.html").write_text(html)
 
@@ -1098,10 +1115,10 @@ def main():
 
     ex = shift(A, t0, t1)
     cues = build_cues(lanes, t0, t1, a.fps)
-    (out / "analysis.json").write_text(json.dumps(A, indent=1))
-    (out / "excerpt.json").write_text(json.dumps(ex, indent=1))
-    (out / "cues.json").write_text(json.dumps(cues, separators=(",", ":")))
-    (out / "beats.json").write_text(json.dumps(motion_reel_beats(A, t0, t1), indent=1))
+    (out / "analysis.json").write_text(json.dumps(clean(A), indent=1, allow_nan=False))
+    (out / "excerpt.json").write_text(json.dumps(clean(ex), indent=1, allow_nan=False))
+    (out / "cues.json").write_text(json.dumps(clean(cues), separators=(",", ":"), allow_nan=False))
+    (out / "beats.json").write_text(json.dumps(clean(motion_reel_beats(A, t0, t1)), indent=1, allow_nan=False))
     write_report(out, A, ex, a.audio_src)
     if a.excerpt_wav:
         seg = y[:, int(round(t0 * SR)):int(round(t1 * SR))].copy()

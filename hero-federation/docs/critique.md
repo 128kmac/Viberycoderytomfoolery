@@ -1,46 +1,44 @@
-# Critique log
+# Critique log: HERO, The Domini
 
-Scored 1–10 on hook, readability at phone size, motion, variety, brand (palette / type / originality),
-and sync. Sources: the per-scene stills and both beat contact sheets (`out/hero-federation/contact*.png`).
+Scored 1–10 on hook, readability, motion, variety, faithfulness to the lore and references, and sync.
+Sources: the per-scene stills, both beat contact sheets (`out/hero-federation/contact*.png`), and spot strips.
+(An earlier concept, a generic "Federation" built before the lore arrived, was scrapped in full.)
 
-## Round 1 (first build, per-scene stills)
-| hook | read | motion | variety | brand | sync | min |
-|  6   |  5   |   7    |    6    |   8   |  8   |  5  |
+## Round 1 (first Domini build, per-scene stills)
+| hook | read | motion | variety | lore | sync | min |
+|  9   |  6   |   7    |    6    |   8  |  8   |  6  |
 
 Worst three:
-1. [u32–40] The Legion (front): the soldiers were tiny and ink on an ink ground, so the shot read as an empty
-   synthwave grid. **Fix:** backlit by a horizon sun, a reflective parade ground, larger rows, distance fog, and
-   flag-bearers in the ranks.
-2. [u48–60, u120–136] The ships were too small to read as warships (they looked like fish). **Fix:** the fleet now
-   passes overhead at 5–6.5× scale, the armada uses a 32° telephoto, and the hulls are lighter steel.
-3. [u98–110] Ascent: the slogans were ink on the ink arch and unreadable. **Fix:** crimson plates with gold Cinzel.
-   Also fixed: the "LONG LIVE" / "THE CROWN" collision, the washed-out portrait face (features and hair engraving
-   added), the oversized crowd flags, and insignia vanishing for a frame on each beat (0.12-beat pre-roll).
+1. [u8–16, u120–128] The crowds of domini were dark on dark: rows of white wing shapes with no bodies. **Fix:** the
+   ranks are now backlit by a moonlit mist band, with fog by depth and gold rims on the hood voids (`crowdRows`), and
+   no wings in the crowds.
+2. [u80–88] The Lord Emperyan portrait was too small, and the title was white on white rays. **Fix:** the portrait is
+   ~40% larger, the rays are calmer, and the title sits in gold on a cobalt plate.
+3. [u76–80] The 3D crown read as rubble (edge-on band, broken crescents). **Fix:** this beat now uses the 2D Lord
+   crown (matching the user's reference: gold band, cobalt octagon gems, tall cobalt star, gold crescents), turning
+   slowly with gem glints. Also fixed: the sword washing out on white, the ladder slogan covering plaques, and the
+   moon behind the title.
 
 ## Round 2 (beat contact sheets)
-| hook | read | motion | variety | brand | sync | min |
-|  7   |  8   |   8    |    7    |   9   |  9   |  7  |
+| hook | read | motion | variety | lore | sync | min |
+|  9   |  8   |   8    |    7    |   9  |  9   |  7  |
 
 Worst three:
-1. [u80–88] The coronation held one composition for 8 beats. **Fix:** at u84 the camera pulls back and an honour
-   guard raises sabres toward the crest, staggered on the beats.
-2. [u120–136] The armada was one angle for 16 beats. **Fix:** at u128 it cuts to a low angle with the flagship
-   silhouetted against the sun.
-3. [u8–16] The sovereign shot was static, and the crash flash at u15 washed the frame for a whole beat. **Fix:** a
-   12% push toward the face, and a tighter flash (±0.45 beat, 80%).
+1. [u8–16] The order held one composition for 8 beats. **Fix:** at u12 it cuts in close on three faceless hoods.
+2. [u88–98] The court was static for 10 beats. **Fix:** close-ups at u93 (Atmos, "the voice of mercy") and u95.5
+   (Judas, "the old ways").
+3. [u20–32, u40–48] The hunter and march shots held one framing. **Fix:** a new framing on each slogan (wide,
+   medium-close, low), and a push on the march at u44. The raid city was also brightened (ambient, fog and beams).
 
-## Round 3 (spot checks: stills and the u79–81 strip)
-| hook | read | motion | variety | brand | sync | min |
-|  7   |  8   |   8    |    8    |   9   |  9   |  7  |
+## Round 3 (spot stills after fixes)
+| hook | read | motion | variety | lore | sync | min |
+|  9   |  8   |   8    |    8    |   9  |  9   |  8  |
 
 Remaining (next pass):
-- Hook: frame 0 is a half-engraved rosette on navy. It is elegant but quiet. The song starts mid-bridge, so a
-  harder open (the crest already glinting) would grab more.
-- The 3D crown at u79.9 hands off to the much smaller 2D crown on the crest. It is hidden by the impact flash but
-  not a true match cut.
-- The balcony crowd is abstract confetti at full size. Rows of figures under the flags would sell "the people" better.
+- The kneeling heirs are simple blobs. A proper kneeling figure with the shoulder rings would sell the houses' bow.
+- The raid's 3D city is flat-shaded boxes. Lit windows (emissive strips) would make it feel inhabited.
+- The enlist posters' first beat is mostly black while the first card flips in.
 
-Sync (`sync.py` against the song): 21/30 hits are within 20 ms of an audio onset, with a median of 15.6 ms. Every
-offset is picture-after-sound by about one frame, consistently: the analyzer times onsets at the peak of the dB
-rise rather than the start of the attack. It's under a frame at 60 fps and doesn't drift. A next pass could shift the
-grid 12 ms earlier. Flashes, pulses and glints come from the song's own kick / snare / crash envelopes.
+Sync: the grid comes from the analyzer with onset-latency compensation (beat rms 3.3 ms). Scene changes and slogans
+sit on beats. Flashes, pulses, glints, torch flicker and Emperyan's glow come from the song's own kick / snare /
+crash / vocal envelopes.
