@@ -1,0 +1,280 @@
+loaded murders/audio/Murders.mp3: 3:42.99 stereo @ 44100 Hz
+spectra + HPSS done
+drums: 421 kicks (75% on the 8th grid), 617 snares (56% on beats), 83 crashes
+grid: 144.002 bpm, coherence 0.516, constant=True, local deviation rms 18.39 ms
+bars: 134 (global phase 0)
+vocals: 96 phrases, 431 notes
+excerpt audio -> murders/audio/song.wav (222.991 s)
+
+=== SUMMARY ===
+tempo 144.002 bpm (constant, fit 18.39 ms), key B minor (r=0.632, next B major), integrated -10.37 LUFS, LRA 7.32 LU
+sections:
+  0:00.14-0:06.81  A verse/bridge (quiet)     4.0 bars   -11.3 LUFS  vox 0.40  B5 <
+  0:06.81-0:25.14  B verse/bridge (quiet)    11.0 bars   -10.7 LUFS  vox 0.80  F5 G5 F#5 G B5 E5 N <
+  0:25.14-0:38.48  B verse/bridge (loud)      8.0 bars   -10.1 LUFS  vox 0.76  F5 G5 F#5 G B5 E5 F# N <
+  0:38.48-0:58.48  C verse/bridge (quiet)    12.0 bars   -11.2 LUFS  vox 0.67  N E5 D5 F#5 G5 B5 <
+  0:58.48-1:08.47  D verse/bridge (quiet)     6.0 bars   -11.9 LUFS  vox 0.46  G Bb B5 E5 N <
+  1:08.47-1:23.47  B verse/bridge (loud)      9.0 bars    -9.3 LUFS  vox 0.78  E5 N Bm F5 G F#5 A5 Ab5 D <
+  1:23.47-1:43.47  C verse/bridge (loud)     12.0 bars    -9.6 LUFS  vox 0.79  F#5 F5 E5 D5 F Bbm G Bm D F# Gm <
+  1:43.47-2:00.14  E verse/bridge (loud)     10.0 bars    -9.4 LUFS  vox 0.90  Gm F#5 Ebm Em D C#m F# Bm <
+  2:00.14-2:21.81  F verse/bridge (loud)     13.0 bars    -9.1 LUFS  vox 0.24  Bm C# G F# N Em <
+  2:21.81-2:41.81  G instrumental            12.0 bars   -12.9 LUFS  vox 0.00  D F5 F# G B5 Em Bb5 N <
+  2:41.81-3:01.81  H instrumental            12.0 bars   -15.3 LUFS  vox 0.03  N Bb5 Bb Ebm <
+  3:01.81-3:11.81  I verse/bridge (quiet)     6.0 bars   -13.0 LUFS  vox 0.35  Ebm N <
+  3:11.81-3:19.72  J final chorus            4.75 bars    -7.2 LUFS  vox 0.76  D F# Bm <
+  3:19.72-3:31.81  K instrumental            7.25 bars   -13.7 LUFS  vox 0.11  Bm N C5 B Bb5 A5 Ab <
+  3:31.81-3:42.99  L outro                   6.75 bars   -33.9 LUFS  vox 0.66  Ebm F5 N <
+excerpt 0:00.00-3:42.99: bars
+  bar   0 0:00.14 medium  -11.6  K 0 S 3 CR hat 0.33 bass 0.87 gtr 0.78 str 0.54 vox 0.00  B5 B5 B5 B5
+  bar   1 0:01.81 medium  -11.8  K 1 S 4 CR hat 0.30 bass 0.79 gtr 0.76 str 0.54 vox 0.00  B5 B5 B5 B5
+  bar   2 0:03.48 medium  -11.2  K 4 S 4    hat 0.20 bass 0.69 gtr 0.72 str 0.56 vox 0.69  B5 B5 B5 B5
+  bar   3 0:05.14 medium  -10.6  K 3 S 4 CR hat 0.28 bass 0.80 gtr 0.74 str 0.43 vox 0.90  B5 B5 B5 B5
+  bar   4 0:06.81 medium  -10.8  K 1 S 4 CR hat 0.25 bass 0.70 gtr 0.70 str 0.48 vox 0.91  F5 F5 G5 F#5
+  bar   5 0:08.48 medium  -10.8  K 5 S 4    hat 0.28 bass 0.71 gtr 0.68 str 0.51 vox 0.72  F#5 F#5 F#5 F#5
+  bar   6 0:10.14 loud     -9.9  K 3 S 4    hat 0.29 bass 0.67 gtr 0.77 str 0.47 vox 0.76  G G G G
+  bar   7 0:11.81 loud     -9.6  K 1 S 4    hat 0.25 bass 0.81 gtr 0.74 str 0.51 vox 0.94  G B5 B5 B5
+  bar   8 0:13.48 medium  -11.2  K 3 S 4 CR hat 0.21 bass 0.80 gtr 0.68 str 0.48 vox 0.69  B5 B5 B5 E5
+  bar   9 0:15.14 medium  -10.7  K 2 S 4    hat 0.19 bass 0.72 gtr 0.73 str 0.45 vox 0.86  E5 N N N
+  bar  10 0:16.81 loud    -10.3  K 3 S 3 CR hat 0.27 bass 0.76 gtr 0.76 str 0.49 vox 0.72  N N N N
+  bar  11 0:18.48 medium  -11.4  K 1 S 3    hat 0.21 bass 0.70 gtr 0.74 str 0.51 vox 0.49  N N N N
+  bar  12 0:20.14 medium  -12.4  K 4 S 4 CR hat 0.13 bass 0.34 gtr 0.33 str 0.23 vox 0.93  N N N N
+  bar  13 0:21.81 medium  -11.0  K 4 S 4    hat 0.20 bass 0.70 gtr 0.61 str 0.49 vox 0.88  N N B5 B5
+  bar  14 0:23.48 loud    -10.1  K 3 S 4    hat 0.22 bass 0.86 gtr 0.69 str 0.45 vox 0.95  B5 B5 B5 B5
+  bar  15 0:25.14 loud    -10.0  K 2 S 4 CR hat 0.20 bass 0.67 gtr 0.68 str 0.44 vox 0.96  F5 F5 G5 F#5
+  bar  16 0:26.81 medium  -11.1  K 5 S 4 CR hat 0.22 bass 0.65 gtr 0.69 str 0.53 vox 0.73  F#5 F#5 F#5 F#5
+  bar  17 0:28.48 medium  -11.4  K 4 S 4 CR hat 0.33 bass 0.61 gtr 0.78 str 0.39 vox 0.44  G G G G
+  bar  18 0:30.14 loud     -9.9  K 3 S 4 CR hat 0.30 bass 0.70 gtr 0.76 str 0.47 vox 0.84  G B5 B5 B5
+  bar  19 0:31.81 loud     -9.2  K 2 S 4 CR hat 0.35 bass 0.73 gtr 0.75 str 0.41 vox 0.96  B5 B5 B5 E5
+  bar  20 0:33.48 loud     -9.0  K 1 S 4 CR hat 0.36 bass 0.75 gtr 0.86 str 0.39 vox 0.92  E5 F5 F# F#
+  bar  21 0:35.14 loud     -9.4  K 4 S 4 CR hat 0.33 bass 0.60 gtr 0.85 str 0.40 vox 0.70  F# F# F# G
+  bar  22 0:36.81 medium  -10.5  K 6 S 4 CR hat 0.40 bass 0.61 gtr 0.81 str 0.41 vox 0.50  G G N N
+  bar  23 0:38.48 medium  -11.3  K 5 S 4    hat 0.13 bass 0.44 gtr 0.29 str 0.14 vox 0.97  N N N N
+  bar  24 0:40.14 loud    -10.2  K 4 S 7    hat 0.15 bass 0.60 gtr 0.20 str 0.40 vox 0.89  N N E5 E5
+  bar  25 0:41.81 medium  -11.0  K 4 S 7    hat 0.15 bass 0.67 gtr 0.20 str 0.47 vox 0.78  E5 E5 E5 E5
+  bar  26 0:43.48 quiet   -14.2  K 4 S 7    hat 0.17 bass 0.64 gtr 0.26 str 0.57 vox 0.17  D5 D5 D5 D5
+  bar  27 0:45.14 medium  -11.2  K 1 S 7    hat 0.20 bass 0.65 gtr 0.37 str 0.56 vox 0.69  D5 D5 F#5 F#5
+  bar  28 0:46.81 loud     -9.3  K 5 S 8    hat 0.14 bass 0.67 gtr 0.38 str 0.48 vox 1.00  F#5 F#5 F#5 F#5
+  bar  29 0:48.48 quiet   -13.6  K 3 S 4    hat 0.18 bass 0.70 gtr 0.42 str 0.52 vox 0.08  G5 G5 G5 B5
+  bar  30 0:50.14 loud     -9.9  K 4 S 8    hat 0.17 bass 0.70 gtr 0.42 str 0.48 vox 0.72  B5 B5 E5 E5
+  bar  31 0:51.81 loud     -9.6  K 3 S 7    hat 0.13 bass 0.63 gtr 0.45 str 0.47 vox 1.00  E5 E5 E5 E5
+  bar  32 0:53.47 quiet   -14.3  K 4 S 3    hat 0.17 bass 0.53 gtr 0.40 str 0.54 vox 0.11  D5 D5 D5 D5
+  bar  33 0:55.14 medium  -11.4  K 4 S 5    hat 0.18 bass 0.60 gtr 0.48 str 0.51 vox 0.74  D5 D5 F#5 F#5
+  bar  34 0:56.81 peak     -7.7  K 4 S 5    hat 0.20 bass 0.66 gtr 0.56 str 0.56 vox 0.93  F#5 F#5 F#5 F#5
+  bar  35 0:58.47 peak     -7.8  K 1 S 4 CR hat 0.43 bass 0.68 gtr 0.86 str 0.40 vox 0.95  G G G Bb
+  bar  36 1:00.14 medium  -12.3  K 2 S 4 CR hat 0.31 bass 0.61 gtr 0.69 str 0.69 vox 0.07  Bb Bb B5 B5
+  bar  37 1:01.81 quiet   -14.2  K 4 S 4    hat 0.17 bass 0.52 gtr 0.52 str 0.74 vox 0.00  B5 B5 B5 B5
+  bar  38 1:03.47 quiet   -15.3  K 1 S 3    hat 0.18 bass 0.70 gtr 0.47 str 0.57 vox 0.00  E5 E5 N N
+  bar  39 1:05.14 medium  -12.6  K 1 S 4 CR hat 0.18 bass 0.72 gtr 0.35 str 0.42 vox 0.76  N B5 B5 B5
+  bar  40 1:06.81 loud     -9.4  K 0 S 1 CR hat 0.27 bass 0.86 gtr 0.70 str 0.71 vox 0.98  B5 B5 B5 B5
+  bar  41 1:08.47 loud     -9.7  K 2 S 4 CR hat 0.31 bass 0.70 gtr 0.82 str 0.69 vox 0.93  E5 E5 N N
+  bar  42 1:10.14 peak     -8.8  K 2 S 2    hat 0.43 bass 0.59 gtr 0.92 str 0.41 vox 0.74  N N N N
+  bar  43 1:11.81 medium  -11.3  K 4 S 3    hat 0.25 bass 0.57 gtr 0.68 str 0.35 vox 0.51  N N N N
+  bar  44 1:13.47 peak     -8.9  K 5 S 5 CR hat 0.45 bass 0.60 gtr 0.84 str 0.40 vox 0.83  N Bm Bm Bm
+  bar  45 1:15.14 loud     -9.0  K 5 S 4    hat 0.50 bass 0.75 gtr 0.86 str 0.38 vox 0.91  Bm Bm Bm F5
+  bar  46 1:16.81 loud     -9.2  K 4 S 3 CR hat 0.45 bass 0.68 gtr 0.87 str 0.47 vox 0.92  F5 G F#5 F#5
+  bar  47 1:18.47 peak     -8.9  K 4 S 4 CR hat 0.40 bass 0.73 gtr 0.85 str 0.47 vox 0.72  F#5 F#5 F#5 Bm
+  bar  48 1:20.14 peak     -8.9  K 5 S 5 CR hat 0.53 bass 0.76 gtr 0.90 str 0.38 vox 0.51  Bm Bm Bm Bm
+  bar  49 1:21.81 loud     -9.4  K 4 S 3 CR hat 0.21 bass 0.41 gtr 0.70 str 0.71 vox 1.00  Bm A5 Ab5 D
+  bar  50 1:23.47 peak     -8.3  K 4 S 6    hat 0.23 bass 0.72 gtr 0.53 str 0.44 vox 0.87  F#5 F5 E5 E5
+  bar  51 1:25.14 loud     -9.5  K 4 S 7    hat 0.18 bass 0.71 gtr 0.41 str 0.48 vox 0.88  E5 E5 E5 E5
+  bar  52 1:26.81 medium  -12.8  K 4 S 4    hat 0.13 bass 0.70 gtr 0.47 str 0.51 vox 0.58  D5 D5 D5 D5
+  bar  53 1:28.47 loud     -9.7  K 3 S 4    hat 0.18 bass 0.69 gtr 0.53 str 0.57 vox 0.81  D5 F F#5 F#5
+  bar  54 1:30.14 loud     -9.1  K 4 S 9    hat 0.16 bass 0.66 gtr 0.56 str 0.52 vox 1.00  F#5 F#5 Bbm Bbm
+  bar  55 1:31.81 medium  -12.3  K 4 S 7    hat 0.20 bass 0.73 gtr 0.48 str 0.57 vox 0.15  G G G Bm
+  bar  56 1:33.47 peak     -7.9  K 4 S 8 CR hat 0.26 bass 0.69 gtr 0.48 str 0.46 vox 0.83  Bm Bm E5 E5
+  bar  57 1:35.14 peak     -8.0  K 3 S 7    hat 0.20 bass 0.62 gtr 0.49 str 0.50 vox 0.96  E5 E5 D D
+  bar  58 1:36.81 medium  -12.2  K 4 S 6    hat 0.17 bass 0.69 gtr 0.33 str 0.55 vox 0.62  D D D D
+  bar  59 1:38.47 loud    -10.1  K 3 S 5    hat 0.18 bass 0.74 gtr 0.55 str 0.51 vox 0.79  E5 F5 F# F#
+  bar  60 1:40.14 peak     -7.7  K 4 S 5    hat 0.22 bass 0.73 gtr 0.64 str 0.49 vox 1.00  F# F# F# F#
+  bar  61 1:41.81 peak     -8.2  K 4 S 4 CR hat 0.31 bass 0.70 gtr 0.70 str 0.51 vox 0.93  G G G Gm
+  bar  62 1:43.47 medium  -10.6  K 3 S 8 CR hat 0.20 bass 0.49 gtr 0.51 str 0.77 vox 0.74  Gm Gm F#5 F#5
+  bar  63 1:45.14 loud     -9.2  K 3 S 9    hat 0.17 bass 0.44 gtr 0.26 str 0.84 vox 1.00  F#5 F#5 F#5 F#5
+  bar  64 1:46.81 loud     -9.2  K 2 S 9    hat 0.19 bass 0.69 gtr 0.16 str 0.73 vox 0.83  Ebm Ebm Em Em
+  bar  65 1:48.47 loud     -9.4  K 1 S 5    hat 0.18 bass 0.76 gtr 0.15 str 0.70 vox 1.00  D D Em Em
+  bar  66 1:50.14 loud     -9.9  K 2 S 7    hat 0.23 bass 0.71 gtr 0.28 str 0.52 vox 0.86  D D Ebm Ebm
+  bar  67 1:51.81 loud     -9.3  K 3 S 7    hat 0.16 bass 0.70 gtr 0.34 str 0.63 vox 1.00  Ebm Ebm Ebm Ebm
+  bar  68 1:53.47 loud     -9.2  K 3 S10    hat 0.18 bass 0.72 gtr 0.15 str 0.67 vox 0.96  Ebm Ebm C#m C#m
+  bar  69 1:55.14 loud    -10.3  K 5 S10    hat 0.12 bass 0.65 gtr 0.22 str 0.64 vox 0.93  C#m C#m F# F#
+  bar  70 1:56.81 loud     -9.1  K 3 S10    hat 0.16 bass 0.50 gtr 0.23 str 0.83 vox 0.77  F# F# F# C#m
+  bar  71 1:58.47 peak     -7.6  K 3 S10 CR hat 0.24 bass 0.64 gtr 0.23 str 0.68 vox 0.90  C#m C#m Bm Bm
+  bar  72 2:00.14 peak     -7.1  K 5 S 9 CR hat 0.51 bass 0.64 gtr 0.90 str 0.67 vox 0.75  Bm Bm Bm Bm
+  bar  73 2:01.81 loud     -9.1  K 4 S 4    hat 0.63 bass 0.73 gtr 0.93 str 0.39 vox 0.17  Bm Bm Bm Bm
+  bar  74 2:03.47 loud     -9.2  K 3 S 4    hat 0.68 bass 0.70 gtr 0.92 str 0.21 vox 0.00  C# C# G F#
+  bar  75 2:05.14 peak     -8.9  K 5 S 4 CR hat 0.69 bass 0.66 gtr 0.94 str 0.16 vox 0.28  F# F# F# F#
+  bar  76 2:06.81 loud     -9.1  K 5 S 7    hat 0.74 bass 0.61 gtr 0.95 str 0.36 vox 0.00  G G G G
+  bar  77 2:08.47 loud     -9.6  K 4 S 6    hat 0.66 bass 0.68 gtr 0.93 str 0.26 vox 0.00  G Bm Bm Bm
+  bar  78 2:10.14 loud     -9.8  K 5 S 4    hat 0.65 bass 0.70 gtr 0.93 str 0.25 vox 0.00  Bm Bm Bm Bm
+  bar  79 2:11.81 loud     -9.3  K 5 S 7    hat 0.68 bass 0.70 gtr 0.94 str 0.06 vox 0.11  Bm Bm F# F#
+  bar  80 2:13.47 peak     -8.9  K 5 S 4 CR hat 0.74 bass 0.65 gtr 0.96 str 0.23 vox 0.43  F# F# F# G
+  bar  81 2:15.14 peak     -8.2  K 4 S 4 CR hat 0.83 bass 0.60 gtr 0.99 str 0.19 vox 0.00  G G G G
+  bar  82 2:16.81 peak     -8.7  K 4 S 5 CR hat 0.74 bass 0.61 gtr 0.97 str 0.26 vox 0.03  G N N N
+  bar  83 2:18.47 loud     -9.7  K 2 S 1    hat 0.66 bass 0.57 gtr 0.98 str 0.29 vox 0.46  N N Em Em
+  bar  84 2:20.14 medium  -10.6  K 2 S 5 CR hat 0.61 bass 0.68 gtr 0.89 str 0.22 vox 0.89  Em Em Em Em
+  bar  85 2:21.81 medium  -12.8  K 6 S11    hat 0.46 bass 0.55 gtr 0.70 str 0.70 vox 0.00  D D D D
+  bar  86 2:23.47 medium  -12.2  K 2 S 6 CR hat 0.49 bass 0.44 gtr 0.78 str 0.39 vox 0.00  D F5 F# F#
+  bar  87 2:25.14 medium  -12.3  K 2 S 7 CR hat 0.64 bass 0.32 gtr 0.83 str 0.30 vox 0.00  F# F# F# F#
+  bar  88 2:26.81 quiet   -14.2  K 5 S10    hat 0.53 bass 0.22 gtr 0.67 str 0.61 vox 0.00  G G G B5
+  bar  89 2:28.47 medium  -12.2  K 3 S 5    hat 0.51 bass 0.35 gtr 0.85 str 0.29 vox 0.00  B5 B5 Em Em
+  bar  90 2:30.14 medium  -11.4  K 6 S 7 CR hat 0.63 bass 0.47 gtr 0.88 str 0.27 vox 0.00  Em Em Em Em
+  bar  91 2:31.81 medium  -13.2  K 6 S 8    hat 0.49 bass 0.48 gtr 0.69 str 0.69 vox 0.00  D D D D
+  bar  92 2:33.47 medium  -11.9  K 3 S 3    hat 0.49 bass 0.40 gtr 0.81 str 0.34 vox 0.00  D D F# F#
+  bar  93 2:35.14 medium  -11.5  K 2 S 4 CR hat 0.61 bass 0.50 gtr 0.90 str 0.27 vox 0.00  F# F# F# F#
+  bar  94 2:36.81 medium  -12.3  K 2 S 3 CR hat 0.51 bass 0.58 gtr 0.85 str 0.35 vox 0.00  G G G G
+  bar  95 2:38.47 medium  -13.1  K 0 S 2 CR hat 0.41 bass 0.68 gtr 0.81 str 0.35 vox 0.00  Bb5 Bb5 Bb5 Bb5
+  bar  96 2:40.14 quiet   -18.1  K 1 S 0    hat 0.13 bass 0.60 gtr 0.39 str 0.45 vox 0.00  Bb5 N N N
+  bar  97 2:41.81 quiet   -17.6  K 5 S 5    hat 0.08 bass 0.27 gtr 0.01 str 0.49 vox 0.00  N N N N
+  bar  98 2:43.47 medium  -13.3  K 7 S 5 CR hat 0.10 bass 0.32 gtr 0.28 str 0.76 vox 0.00  Bb5 Bb5 Bb5 Bb5
+  bar  99 2:45.14 quiet   -15.3  K 4 S 3    hat 0.12 bass 0.33 gtr 0.08 str 0.60 vox 0.00  Bb5 Bb5 Bb5 Bb5
+  bar 100 2:46.81 quiet   -15.8  K 6 S 3    hat 0.05 bass 0.49 gtr 0.01 str 0.73 vox 0.00  Bb5 Bb5 N Bb
+  bar 101 2:48.47 quiet   -15.8  K 6 S 3    hat 0.05 bass 0.43 gtr 0.03 str 0.72 vox 0.00  Bb Bb Bb Bb
+  bar 102 2:50.14 quiet   -15.6  K 6 S 4    hat 0.11 bass 0.49 gtr 0.18 str 0.71 vox 0.00  Bb Bb Bb Bb
+  bar 103 2:51.81 quiet   -15.6  K 3 S 5    hat 0.12 bass 0.18 gtr 0.25 str 0.67 vox 0.00  Bb Bb N N
+  bar 104 2:53.47 quiet   -13.5  K 5 S 5    hat 0.11 bass 0.39 gtr 0.34 str 0.94 vox 0.00  N Bb5 Bb5 Bb5
+  bar 105 2:55.14 quiet   -15.1  K 5 S 3    hat 0.10 bass 0.17 gtr 0.11 str 0.83 vox 0.00  Bb5 Bb5 Bb5 Bb5
+  bar 106 2:56.81 quiet   -14.7  K 4 S 4    hat 0.14 bass 0.55 gtr 0.07 str 0.66 vox 0.00  Bb5 Bb5 Bb5 Bb5
+  bar 107 2:58.47 quiet   -17.1  K 5 S 3    hat 0.17 bass 0.40 gtr 0.03 str 0.62 vox 0.00  N N N N
+  bar 108 3:00.14 quiet   -14.8  K 3 S 4 CR hat 0.21 bass 0.57 gtr 0.43 str 0.62 vox 0.38  N N Ebm Ebm
+  bar 109 3:01.81 quiet   -15.1  K 3 S 3 CR hat 0.23 bass 0.49 gtr 0.67 str 0.59 vox 0.00  Ebm Ebm Ebm Ebm
+  bar 110 3:03.47 medium  -13.3  K 3 S 5    hat 0.20 bass 0.16 gtr 0.64 str 0.66 vox 0.65  Ebm Ebm Ebm Ebm
+  bar 111 3:05.14 medium  -13.0  K 2 S 4 CR hat 0.25 bass 0.50 gtr 0.72 str 0.59 vox 0.40  Ebm Ebm Ebm Ebm
+  bar 112 3:06.81 quiet   -15.9  K 4 S 5 CR hat 0.25 bass 0.33 gtr 0.66 str 0.61 vox 0.00  N N N N
+  bar 113 3:08.47 quiet   -15.4  K 3 S 5 CR hat 0.25 bass 0.25 gtr 0.60 str 0.60 vox 0.02  N Ebm Ebm Ebm
+  bar 114 3:10.14 peak     -5.6  K 0 S 3 CR hat 0.41 bass 0.51 gtr 0.83 str 0.41 vox 1.00  Ebm Ebm Ebm Ebm
+  bar 115 3:11.81 peak     -5.8  K 3 S 5 CR hat 0.51 bass 0.55 gtr 0.86 str 0.45 vox 1.00  D D D F#
+  bar 116 3:14.72 peak     -6.3  K 3 S 3 CR hat 0.55 bass 0.68 gtr 0.88 str 0.42 vox 0.84  Bm Bm Bm Bm
+  bar 117 3:16.39 loud     -9.9  K 2 S 2 CR hat 0.62 bass 0.63 gtr 0.92 str 0.46 vox 0.14  Bm Bm Bm F#
+  bar 118 3:18.06 peak     -8.1  K 3 S 2 CR hat 0.45 bass 0.65 gtr 0.89 str 0.45 vox 0.85  F# F# Bm Bm
+  bar 119 3:19.72 medium  -12.8  K 2 S 2 CR hat 0.27 bass 0.71 gtr 0.76 str 0.41 vox 0.52  Bm N N N
+  bar 120 3:21.39 quiet   -16.4  K 4 S 3    hat 0.15 bass 0.12 gtr 0.63 str 0.64 vox 0.00  N N N N
+  bar 121 3:23.06 quiet   -17.9  K 2 S 1    hat 0.14 bass 0.00 gtr 0.53 str 0.69 vox 0.00  N N N N
+  bar 122 3:23.47 quiet   -18.0  K 2 S 2    hat 0.12 bass 0.14 gtr 0.57 str 0.64 vox 0.00  N N N N
+  bar 123 3:25.14 medium  -12.6  K 1 S 4 CR hat 0.37 bass 0.64 gtr 0.79 str 0.51 vox 0.00  C5 C5 C5 B
+  bar 124 3:28.06 medium  -10.8  K 0 S 2 CR hat 0.52 bass 0.80 gtr 0.86 str 0.43 vox 0.00  Bb5 Bb5 Bb5 Bb5
+  bar 125 3:29.72 medium  -11.5  K 0 S 0    hat 0.34 bass 0.83 gtr 0.84 str 0.12 vox 0.00  A5 A5 Ab Ab
+  bar 126 3:30.14 medium  -12.0  K 2 S 3 CR hat 0.38 bass 0.53 gtr 0.81 str 0.41 vox 0.28  A5 Ab Ab Ab
+  bar 127 3:31.81 medium  -12.8  K 0 S 2    hat 0.10 bass 0.15 gtr 0.58 str 0.71 vox 0.92  Ebm Ebm Ebm Ebm
+  bar 128 3:33.47 quiet   -15.7  K 1 S 3    hat 0.16 bass 0.04 gtr 0.48 str 0.65 vox 0.77  Ebm Ebm Ebm Ebm
+  bar 129 3:35.14 medium  -13.3  K 0 S 2    hat 0.11 bass 0.34 gtr 0.42 str 0.65 vox 0.95  Ebm Ebm Ebm F5
+  bar 130 3:36.81 quiet   -16.6  K 1 S 2    hat 0.14 bass 0.33 gtr 0.43 str 0.58 vox 0.99  F5 N N N
+  bar 131 3:38.47 quiet   -22.1  K 0 S 1    hat 0.10 bass 0.45 gtr 0.05 str 0.33 vox 0.52  N N N N
+  bar 132 3:40.97 quiet  -110.3  K 2 S 3    hat 0.00 bass 0.00 gtr 0.00 str 0.00 vox 0.00  N N N N
+  bar 133 3:42.64 quiet  -120.7  K 0 S 1    hat 0.00 bass 0.00 gtr 0.00 str 0.00 vox 0.00  N
+vocal lines in excerpt: 43  (phrases: 96)
+  0:03.92-0:09.24   5.32s  ~16 syl  peak 0.98  top 54.09
+  0:09.61-0:11.45   1.83s  ~ 5 syl  peak 1.00  top 53.09
+  0:11.73-0:14.19   2.46s  ~ 5 syl  peak 0.99  top 53.79
+  0:15.14-0:17.14   2.00s  ~ 6 syl  peak 0.98  top 49.94
+  0:17.55-0:18.86   1.30s  ~ 4 syl  peak 0.98  top 52.82
+  0:19.71-0:21.45   1.74s  ~ 5 syl  peak 0.99  top 59.86
+  0:21.85-0:27.54   5.69s  ~14 syl  peak 1.00  top 59.17
+  0:28.00-0:29.19   1.18s  ~ 4 syl  peak 0.99  top 52.65
+  0:30.39-0:31.18   0.79s  ~ 2 syl  peak 0.97  top 48.57
+  0:31.39-0:35.50   4.11s  ~12 syl  peak 1.00  top 52.99
+  0:35.92-0:37.20   1.28s  ~ 4 syl  peak 1.00  top 52.81
+  0:38.06-0:43.26   5.20s  ~14 syl  peak 1.00  top 61.28
+  0:43.75-0:44.30   0.56s  ~ 1 syl  peak 0.74  top 54.23
+  0:45.53-0:48.60   3.06s  ~ 4 syl  peak 1.00  top 58.99
+  0:50.50-0:53.64   3.13s  ~ 7 syl  peak 1.00  top 61.69
+  0:55.59-1:00.23   4.64s  ~10 syl  peak 1.00  top 66.99
+  1:05.55-1:10.91   5.36s  ~18 syl  peak 0.99  top 53.93
+  1:11.38-1:12.61   1.23s  ~ 3 syl  peak 1.00  top 53.11
+  1:13.44-1:14.95   1.51s  ~ 5 syl  peak 1.00  top 53.39
+  1:15.16-1:18.78   3.62s  ~12 syl  peak 0.98  top 53.83
+  1:19.18-1:20.53   1.35s  ~ 3 syl  peak 0.99  top 52.69
+  1:21.36-1:27.77   6.41s  ~14 syl  peak 1.00  top 61.12
+  1:28.70-1:32.04   3.34s  ~ 5 syl  peak 1.00  top 58.9
+  1:33.76-1:36.87   3.11s  ~ 5 syl  peak 1.00  top 59.09
+  1:37.29-1:38.31   1.02s  ~ 1 syl  peak 0.85  top 57.18
+  1:38.82-1:43.54   4.71s  ~11 syl  peak 1.00  top 66.99
+  1:43.86-1:46.93   3.06s  ~ 9 syl  peak 1.00  top 58.69
+  1:47.23-1:56.68   9.45s  ~14 syl  peak 0.98  top 57.89
+  1:57.19-2:01.09   3.90s  ~ 6 syl  peak 1.00  top 62.19
+  2:01.53-2:03.60   2.07s  ~ 4 syl  peak 0.81  top 62.03
+  2:05.71-2:06.43   0.72s  ~ 4 syl  peak 0.78  top 58.59
+  2:12.21-2:12.47   0.26s  ~ 2 syl  peak 0.75  top 59.73
+  2:13.26-2:13.58   0.33s  ~ 3 syl  peak 0.76  top 60.92
+  2:13.91-2:14.56   0.65s  ~ 2 syl  peak 0.84  top 58.85
+  2:15.14-2:15.47   0.33s  ~ 1 syl  peak 0.67  top 61.02
+  2:17.37-2:17.65   0.28s  ~ 1 syl  peak 0.73  top 62.03
+  2:19.32-2:23.66   4.34s  ~ 4 syl  peak 0.80  top 79.49
+  3:00.51-3:01.14   0.63s  ~ 1 syl  peak 0.94  top 57.99
+  3:03.86-3:05.78   1.93s  ~ 3 syl  peak 0.97  top 58.99
+  3:10.10-3:16.12   6.01s  ~ 4 syl  peak 1.00  top 58.09
+  3:17.83-3:20.62   2.79s  ~ 6 syl  peak 1.00  top 59.09
+  3:31.35-3:34.04   2.69s  ~ 5 syl  peak 0.97  top 58.19
+  3:34.55-3:39.87   5.32s  ~13 syl  peak 0.98  top 58.09
+events in excerpt:
+  0:06.81 section    B verse/bridge (quiet)
+  0:20.14 dropout    -1.0 LU, band -0.29
+  0:20.14 build      6 bars
+  0:21.81 impact     +1.3 LU, band +0.24
+  0:25.14 section    B verse/bridge (loud)
+  0:30.14 impact     +1.5 LU, band +0.01
+  0:38.48 section    C verse/bridge (quiet)
+  0:38.48 dropout    -0.8 LU, band -0.32
+  0:41.81 build      2 bars
+  0:43.48 dropout    -3.3 LU, band +0.02
+  0:43.48 build      8 bars
+  0:45.14 impact     +3.0 LU, band +0.05
+  0:48.48 dropout    -4.3 LU, band +0.04
+  0:50.14 impact     +3.7 LU, band -0.00
+  0:52.36 held_note  C#4
+  0:53.47 dropout    -4.8 LU, band -0.03
+  0:55.14 impact     +3.0 LU, band +0.05
+  0:56.81 impact     +3.7 LU, band +0.06
+  0:58.48 section    D verse/bridge (quiet)
+  0:59.33 held_note  F#4
+  1:00.14 dropout    -4.5 LU, band -0.12
+  1:01.81 build      2 bars
+  1:05.14 impact     +2.7 LU, band -0.04
+  1:06.81 impact     +3.1 LU, band +0.19
+  1:08.47 section    B verse/bridge (loud)
+  1:13.47 impact     +2.4 LU, band +0.13
+  1:21.81 dropout    -0.5 LU, band -0.29
+  1:23.47 section    C verse/bridge (loud)
+  1:26.81 dropout    -3.3 LU, band -0.00
+  1:26.81 build      4 bars
+  1:28.47 impact     +3.0 LU, band +0.04
+  1:31.81 dropout    -3.2 LU, band +0.01
+  1:33.47 impact     +4.4 LU, band +0.01
+  1:36.81 dropout    -4.2 LU, band -0.04
+  1:42.61 held_note  G4
+  1:43.47 section    E verse/bridge (loud)
+  1:55.14 build      2 bars
+  1:58.47 impact     +1.5 LU, band +0.07
+  1:59.77 held_note  C#4
+  2:00.14 impact     +0.5 LU, band +0.32
+  2:00.14 section    F verse/bridge (loud)
+  2:00.56 held_note  D4
+  2:09.78 held_note  D4
+  2:19.25 held_note  G5
+  2:21.81 section    G instrumental
+  2:22.78 held_note  G5
+  2:40.14 dropout    -5.1 LU, band -0.26
+  2:40.14 build      2 bars
+  2:41.81 dropout    +0.6 LU, band -0.26
+  2:41.81 section    H instrumental
+  2:43.47 impact     +4.2 LU, band +0.11
+  2:55.14 build      3 bars
+  2:56.81 build      8 bars
+  3:00.14 impact     +2.3 LU, band +0.20
+  3:01.81 section    I verse/bridge (quiet)
+  3:03.47 build      8 bars
+  3:06.81 dropout    -2.9 LU, band -0.07
+  3:10.14 impact     +9.8 LU, band +0.22
+  3:11.81 section    J final chorus
+  3:16.39 dropout    -3.6 LU, band +0.02
+  3:18.06 impact     +1.8 LU, band -0.06
+  3:19.72 dropout    -4.6 LU, band -0.08
+  3:19.72 section    K instrumental
+  3:21.39 dropout    -3.6 LU, band -0.28
+  3:23.06 build      2 bars
+  3:25.14 impact     +5.4 LU, band +0.33
+  3:28.06 impact     +1.8 LU, band +0.12
+  3:31.81 dropout    -0.8 LU, band -0.30
+  3:31.81 section    L outro
+  3:33.47 dropout    -2.9 LU, band -0.05
+  3:36.81 dropout    -3.2 LU, band +0.01
+  3:38.47 dropout    -5.5 LU, band -0.10
+
+-> murders/analysis/analysis.json excerpt.json cues.json beats.json report.html

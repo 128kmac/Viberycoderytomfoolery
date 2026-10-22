@@ -6,3 +6,10 @@ hero-federation/audio/*.wav
 hero-federation/analysis/.vocal_*
 *.onnx
 __pycache__/
+murders/audio/
+murders/analysis/.vocal_*
+models/
+final/*.mp4
+# review stills are large PNGs; the contact sheets are committed as JPEG
+murders/review/*.png
+murders/review/contact/*.png

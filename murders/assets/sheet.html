@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face { font-family: Display; src: url(../fonts/display.ttf); font-weight: 400 900; }
+@font-face { font-family: UI; src: url(../fonts/ui.otf); }
+body{margin:0;background:#000}</style></head><body><canvas id="c" width="1920" height="1080"></canvas>
+<script type="module">
+import * as P from '../lib/paper.js';
+await document.fonts.load('700 30px Display');
+const c = document.getElementById('c').getContext('2d');
+const g = c.createLinearGradient(0,0,0,1080); g.addColorStop(0,'#0D0E22'); g.addColorStop(1,'#232A5C'); c.fillStyle=g; c.fillRect(0,0,1920,1080);
+c.drawImage(P.forestLayer(1920, 700, 11, { color: "#1E2350", count: 12, minH: 300, maxH: 600, top: 0 }), 0, 380);
+c.drawImage(P.forestLayer(1920, 600, 12, { color: "#0D0E22", count: 9, minH: 350, maxH: 560, top: 0 }), 0, 520);
+P.simon(c, 260, 900, 300, { armF: [-1.1, -0.5], legF: [0.4, 0.1], legB: [-0.4, 0.6], scarf: 1, lean: 0.12 }, { lantern: true });
+P.simon(c, 520, 900, 300, { armF: [-2.6, -0.6], armB: [2.6, 0.6], mouth: 'O', brows: 2, head: -0.1 });
+P.her(c, 760, 900, 290, {}, {});
+P.her(c, 1000, 960, 260, {}, { lying: true, eyesClosed: true });
+for (let i = 0; i < 9; i++) P.flower(c, 860 + i * 30, 965 + (i % 2) * 10, 14);
+P.owl(c, 1250, 600, 200, 1, 0.5, { glow: true });
+P.owl(c, 1450, 600, 200, 0.2, 0);
+P.owl(c, 1700, 700, 300, 1, 0, { wig: true, stern: 1 });
+P.mirror(c, 1300, 880, 140, 190, { thread: 100 }, (cx, w, h) => P.face(cx, 0, 0, 60, 'fear', { stretch: 1.2 }));
+P.frame(c, 1480, 760, 260, 300, 40, { label: 'SIMON' });
+P.face(c, 1610, 910, 70, 'grief', { tear: 0.5 });
+P.villager(c, 120, 1060, 140, 0.2);
+P.ribbonBow(c, 700, 1000, 5, 0.6);
+P.snow(c, 1920, 1080, 3.2, 120, 1);
+window.done = true;
+</script></body></html>
