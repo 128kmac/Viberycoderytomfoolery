@@ -4,7 +4,7 @@
 # ///
 """Check the delivered video against the song file.
 
-    uv run murders/tools/verify.py final/music-video.mp4 murders/audio/Murders.mp3
+    uv run murders/tools/verify.py final/music-video.mp4 murders/audio/Murders.mp3 [murders/analysis/analysis.json]
 
 1. Streams: codec, size, frame rate, pixel format, audio codec, durations, start times.
 2. A full decode of every video and audio packet (ffmpeg -f null); any decoder error fails the check.
@@ -13,6 +13,9 @@
    to put pts 0 at sample 0), then cross-correlated in 4 s windows across the song. An offset of 0 samples
    means the music sits exactly where it does in the song file. AAC is lossy, so the correlation peak is a
    little under 1.
+5. Picture vs music (with the analysis file): the delivered video is decoded at 64x36, its 25 biggest hard cuts are
+   found (at least 0.2 s apart, so a shot's follow-through motion isn't counted as a second cut), and each is matched
+   to the nearest measured musical event (section start, impact, dropout, crash, bar line, start of the final silence).
 """
 import json, subprocess, sys
 import numpy as np
@@ -89,5 +92,29 @@ for start in (5, 20, 45, 60, 90, 120, 150, 180, 200, 215):
     worst = max(worst, abs(lag))
     print(f"     at {start:>3} s: offset {lag:+d} samples ({lag / SR * 1000:+.2f} ms), correlation {corr:.4f}")
 check('music in sync', worst <= 1, f"largest offset {worst} samples")
+if len(sys.argv) > 3:
+    print('5. picture vs music (hard cuts in the delivered video against measured events)')
+    A = json.load(open(sys.argv[3]))
+    ev = sorted({round(e['t'], 3) for e in A['events'] if e['type'] in ('section', 'impact', 'dropout')} |
+                {round(c['t'], 3) for c in A['drums']['crash']} | {round(b['start'], 3) for b in A['bars']} |
+                {round(b['start'], 3) for b in A['bars'] if b['lufs'] < -60})
+    raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', video, '-vf', 'scale=64:36:flags=area,format=gray', '-f', 'rawvideo', '-'],
+                         capture_output=True, check=True).stdout
+    F = np.frombuffer(raw, dtype=np.uint8).reshape(-1, 36, 64).astype(np.float32)
+    d = np.abs(np.diff(F, axis=0)).mean(axis=(1, 2))           # d[i]: change from frame i to frame i+1
+    cuts = []
+    for i in np.argsort(-d):
+        if len(cuts) == 25:
+            break
+        if all(abs(int(i) - c) > 6 for c in cuts):
+            cuts.append(int(i))
+    near = 0
+    for c in sorted(cuts):
+        t = (c + 1) / 30                                        # the new shot's first frame
+        e = min(ev, key=lambda x: abs(x - t))
+        hit = abs(e - t) <= 1.5 / 30
+        near += hit
+        print(f"     cut at {t:7.3f} s (frame {c + 1}, change {d[c]:5.1f}): nearest event {e:7.3f} s ({(t - e) * 1000:+5.0f} ms){'' if hit else '  <- not on an event'}")
+    check('hard cuts on measured events', near >= 20, f"{near} of {len(cuts)} biggest cuts are within 1.5 frames of a measured event")
 print('ALL CHECKS PASSED' if ok else 'SOME CHECKS FAILED')
 sys.exit(0 if ok else 1)

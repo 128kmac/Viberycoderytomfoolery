@@ -27,7 +27,7 @@ function since(list, t, a = -1e9) { let best = Infinity; for (const x of list) i
 // Section boundaries measured by tools/song-analyzer (seconds).
 const T = {
   s1: 6.81, s2: 20.14, find: 21.81, s3: 25.14, ring: 30.14, run: 33.48, s4: 38.48, s4peak: 56.81, s5: 58.48, burn: 65.14,
-  s6: 68.47, board: 76.81, s7: 83.47, gallery: 98.14, crack: 102.61, s8: 103.47, s9: 120.14, lift: 139.25, s10: 141.81,
+  s6: 68.47, board: 76.81, s7: 83.47, gallery: 98.47, crack: 102.61, s8: 103.47, s9: 120.14, lift: 139.25, s10: 141.81,
   s11: 160.14, s12: 161.81, s13: 181.81, s14: 190.14, s15: 199.72, moon: 205.14, s16: 211.81, end: 221.0,
 };
 
