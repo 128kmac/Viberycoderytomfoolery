@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ModMorpher Web</title>
+<style>
+  :root {
+    --bg: #f4f1ea; --panel: #ffffff; --ink: #1f2420; --muted: #5d665f; --line: #d9d4c7;
+    --accent: #3f8a3a; --accent-ink: #ffffff; --accent-soft: #e3f0df;
+    --warn: #a4560c; --warn-soft: #fbeedd; --err: #b3261e; --err-soft: #fbe3e1;
+    --track: #e8e3d7; --code-bg: #f7f5ef;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161a17; --panel: #1f2420; --ink: #e9ece7; --muted: #a2aba3; --line: #343b35;
+      --accent: #6cbf5c; --accent-ink: #0f1a0d; --accent-soft: #233420;
+      --warn: #f0a85a; --warn-soft: #3a2a17; --err: #f08b84; --err-soft: #3d1f1d;
+      --track: #2c332d; --code-bg: #181c19;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+  header h1 { margin: 0 0 6px; font-size: 1.9rem; letter-spacing: -0.01em; }
+  header h1 span { color: var(--accent); }
+  header p { margin: 0; color: var(--muted); }
+  .panel {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    padding: 24px; margin-top: 24px;
+  }
+  .drop {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+    border: 2px dashed var(--line); border-radius: 12px; padding: 36px 16px; text-align: center;
+    cursor: pointer; transition: border-color .15s, background .15s;
+  }
+  .drop:hover, .drop.over { border-color: var(--accent); background: var(--accent-soft); }
+  .drop strong { font-size: 1.05rem; }
+  .drop small { color: var(--muted); }
+  .drop .file { font-weight: 600; color: var(--accent); word-break: break-all; }
+  .drop svg { width: 40px; height: 40px; color: var(--accent); }
+  label.check { display: flex; gap: 10px; align-items: flex-start; margin: 18px 0; color: var(--muted); font-size: .95rem; }
+  label.check input { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--accent); flex: none; }
+  button, .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 10px;
+    padding: 12px 20px; font: inherit; font-weight: 600; cursor: pointer; text-decoration: none;
+  }
+  button:disabled { opacity: .45; cursor: not-allowed; }
+  .btn.secondary { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .msg { white-space: pre-wrap; margin-top: 14px; padding: 10px 14px; border-radius: 10px; font-size: .95rem; }
+  .msg.err { background: var(--err-soft); color: var(--err); }
+  .msg.warn { background: var(--warn-soft); color: var(--warn); }
+  .stage { display: flex; justify-content: space-between; gap: 12px; font-size: .95rem; margin-bottom: 8px; }
+  .stage .pct { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .bar { height: 10px; background: var(--track); border-radius: 99px; overflow: hidden; }
+  .bar div { height: 100%; width: 0; background: var(--accent); border-radius: 99px; transition: width .3s; }
+  .bar.indeterminate div { width: 30% !important; transition: none; animation: slide 1.2s ease-in-out infinite; }
+  @keyframes slide { from { margin-left: -30%; } to { margin-left: 100%; } }
+  h2 { font-size: 1.15rem; margin: 0 0 14px; }
+  .muted { color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 20px; }
+  .chip { background: var(--accent-soft); border-radius: 99px; padding: 4px 12px; font-size: .88rem; }
+  .chip b { font-variant-numeric: tabular-nums; }
+  details { margin-top: 18px; }
+  summary { cursor: pointer; color: var(--muted); font-size: .95rem; }
+  pre {
+    background: var(--code-bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px;
+    max-height: 320px; overflow: auto; font-size: .8rem; line-height: 1.45; white-space: pre-wrap; word-break: break-word;
+  }
+  footer { margin-top: 32px; color: var(--muted); font-size: .85rem; }
+  footer a { color: inherit; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Java mod <span>→</span> Bedrock add-on</h1>
+    <p>Upload a Forge, NeoForge or Fabric <code>.jar</code> and get back a <code>.mcaddon</code>, converted by ModMorpher.</p>
+  </header>
+
+  {% if not ready %}
+  <div class="msg err">ModMorpher isn't installed on this server yet. Run <code>setup.sh</code>, then restart.</div>
+  {% endif %}
+
+  <section class="panel" id="upload-panel">
+    <form id="form">
+      <label class="drop" id="drop">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/>
+        </svg>
+        <strong id="drop-title">Drop your mod's .jar here</strong>
+        <small id="drop-sub">or click to choose a file · up to {{ max_upload_mb }} MB</small>
+        <input type="file" id="file" name="mod" accept=".jar" hidden>
+      </label>
+      <label class="check">
+        <input type="checkbox" id="permission">
+        <span>I made this mod, or I have the author's permission to convert it. (ModMorpher's license only allows converting mods you have permission for.)</span>
+      </label>
+      <button type="submit" id="go" disabled>Convert to .mcaddon</button>
+      <div class="msg err" id="upload-error" hidden></div>
+    </form>
+  </section>
+
+  <section class="panel" id="progress-panel" hidden>
+    <h2 id="progress-title">Converting…</h2>
+    <div class="stage"><span id="stage">Uploading</span><span class="pct" id="pct"></span></div>
+    <div class="bar indeterminate" id="bar"><div></div></div>
+    <p class="muted" id="elapsed" style="margin:12px 0 0;font-size:.9rem"></p>
+    <details>
+      <summary>Show log</summary>
+      <pre id="log"></pre>
+    </details>
+  </section>
+
+  <section class="panel" id="result-panel" hidden>
+    <h2 id="result-title"></h2>
+    <div class="chips" id="chips"></div>
+    <div class="row" id="result-actions">
+      <a class="btn" id="download" href="#">Download .mcaddon</a>
+      <a class="btn secondary" id="notes-link" href="#" target="_blank" rel="noopener">Porting notes</a>
+      <button class="btn secondary" type="button" id="again">Convert another</button>
+    </div>
+    <div class="msg warn" id="result-warn">This is a starting point, not a finished add-on. Check the porting notes for anything that needs fixing by hand.</div>
+    <div class="msg err" id="result-error" hidden></div>
+    <details id="notes-box" hidden>
+      <summary>Preview porting notes</summary>
+      <pre id="notes"></pre>
+    </details>
+  </section>
+
+  <footer>
+    Conversion by <a href="https://github.com/Indozilla1234/Modmorpher" target="_blank" rel="noopener">ModMorpher</a> by Indozilla1234, used under its Source Available License.
+    Uploaded files are deleted after about an hour.
+  </footer>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const fileInput = $("file"), drop = $("drop"), go = $("go"), perm = $("permission");
+let pollTimer = null;
+
+function refreshButton() { go.disabled = !(fileInput.files.length && perm.checked); }
+
+function pickFile(file) {
+  if (!file) return;
+  const dt = new DataTransfer();
+  dt.items.add(file);
+  fileInput.files = dt.files;
+  $("drop-title").innerHTML = "";
+  const name = document.createElement("span");
+  name.className = "file";
+  name.textContent = file.name;
+  $("drop-title").appendChild(name);
+  $("drop-sub").textContent = (file.size / 1048576).toFixed(1) + " MB · click to choose a different file";
+  $("upload-error").hidden = true;
+  refreshButton();
+}
+
+fileInput.addEventListener("change", () => pickFile(fileInput.files[0]));
+perm.addEventListener("change", refreshButton);
+["dragenter", "dragover"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add("over"); }));
+["dragleave", "drop"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove("over"); }));
+drop.addEventListener("drop", (e) => pickFile(e.dataTransfer.files[0]));
+
+function showError(el, text) { el.textContent = text; el.hidden = false; }
+
+$("form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const body = new FormData();
+  body.append("mod", fileInput.files[0]);
+  body.append("permission", perm.checked ? "yes" : "no");
+
+  $("upload-panel").hidden = true;
+  $("progress-panel").hidden = false;
+  $("progress-title").textContent = "Converting " + fileInput.files[0].name;
+  $("stage").textContent = "Uploading";
+  $("pct").textContent = "";
+  $("bar").classList.add("indeterminate");
+
+  // XHR rather than fetch so the upload itself can show progress.
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "/api/convert");
+  xhr.upload.onprogress = (ev) => {
+    if (!ev.lengthComputable) return;
+    const p = Math.round((ev.loaded / ev.total) * 100);
+    $("bar").classList.remove("indeterminate");
+    $("bar").firstElementChild.style.width = p + "%";
+    $("pct").textContent = p + "%";
+  };
+  xhr.onload = () => {
+    let data = {};
+    try { data = JSON.parse(xhr.responseText); } catch (_) {}
+    if (xhr.status !== 200) {
+      reset();
+      showError($("upload-error"), data.error || "Upload failed (HTTP " + xhr.status + ").");
+      return;
+    }
+    poll(data.id);
+  };
+  xhr.onerror = () => { reset(); showError($("upload-error"), "Couldn't reach the server."); };
+  xhr.send(body);
+});
+
+function poll(id) {
+  fetch("/api/jobs/" + id).then((r) => r.json()).then((j) => {
+    const bar = $("bar");
+    if (j.status === "queued") {
+      $("stage").textContent = "Waiting for another conversion to finish";
+      $("pct").textContent = "";
+      bar.classList.add("indeterminate");
+    } else if (j.status === "running") {
+      $("stage").textContent = j.stage || "Decompiling Java classes";
+      if (j.stage) {
+        bar.classList.remove("indeterminate");
+        bar.firstElementChild.style.width = j.percent + "%";
+        $("pct").textContent = j.percent + "%";
+      } else {
+        bar.classList.add("indeterminate");
+        $("pct").textContent = "";
+      }
+    }
+    $("elapsed").textContent = j.elapsed ? j.elapsed + "s elapsed" : "";
+    $("log").textContent = j.log.join("\n");
+    if (j.status === "done" || j.status === "failed") return finish(id, j);
+    pollTimer = setTimeout(() => poll(id), 1000);
+  }).catch(() => { pollTimer = setTimeout(() => poll(id), 2000); });
+}
+
+function finish(id, j) {
+  $("progress-panel").hidden = true;
+  $("result-panel").hidden = false;
+  const ok = j.status === "done";
+  $("result-title").textContent = ok ? "Done in " + j.elapsed + "s" : "Conversion failed";
+  $("download").hidden = !ok;
+  $("result-warn").hidden = !ok;
+  $("download").href = "/api/jobs/" + id + "/addon";
+  $("notes-link").hidden = !j.has_notes;
+  $("notes-link").href = "/api/jobs/" + id + "/notes";
+  $("result-error").hidden = ok;
+  if (!ok) showError($("result-error"), j.error + (j.log.length ? "\n\nLast log lines:\n" + j.log.slice(-8).join("\n") : ""));
+
+  const chips = $("chips");
+  chips.innerHTML = "";
+  Object.entries(j.summary || {}).forEach(([folder, n]) => {
+    const c = document.createElement("span");
+    c.className = "chip";
+    const label = folder.replace(/^bp\//, "behavior · ").replace(/^rp\//, "resource · ").replace(/_/g, " ");
+    c.innerHTML = "<b></b> ";
+    c.firstChild.textContent = n;
+    c.appendChild(document.createTextNode(label));
+    chips.appendChild(c);
+  });
+
+  if (j.has_notes) {
+    fetch("/api/jobs/" + id + "/notes").then((r) => r.text()).then((t) => {
+      $("notes").textContent = t;
+      $("notes-box").hidden = false;
+    });
+  }
+}
+
+function reset() {
+  clearTimeout(pollTimer);
+  $("upload-panel").hidden = false;
+  $("progress-panel").hidden = true;
+  $("result-panel").hidden = true;
+  $("notes-box").hidden = true;
+}
+
+$("again").addEventListener("click", () => {
+  reset();
+  fileInput.value = "";
+  $("drop-title").textContent = "Drop your mod's .jar here";
+  $("drop-sub").textContent = "or click to choose a file · up to {{ max_upload_mb }} MB";
+  refreshButton();
+});
+</script>
+</body>
+</html>
