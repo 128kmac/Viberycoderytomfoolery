@@ -378,6 +378,9 @@ function Fighter.dash(f, dirUnit, dist, time, opts)
 	if not S.alive(f) then
 		return 0
 	end
+	if f.statuses.Caked then
+		dist *= 0.8 -- Mud: Caked Soles
+	end
 	local flat = Vector3.new(dirUnit.X, opts.allowY and dirUnit.Y or 0, dirUnit.Z)
 	if flat.Magnitude < 1e-3 then
 		flat = Vector3.new(f.root.CFrame.LookVector.X, 0, f.root.CFrame.LookVector.Z)

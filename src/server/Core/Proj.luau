@@ -251,6 +251,20 @@ local function step(p, dt)
 	if wallRes then
 		p.pos = wallRes.Position
 		local obj = S.Objects.fromPart(wallRes.Instance)
+		-- objects may intercept projectiles (mirrors reflect, lenses bend...)
+		if obj and obj.onProjectile then
+			local r = obj.onProjectile(obj, p, wallRes.Normal, wallRes.Position)
+			if r == "consumed" then
+				p.pos = wallRes.Position + wallRes.Normal * (p.radius + 0.4)
+				if p.part then
+					p.part.CFrame = CFrame.lookAt(p.pos, p.pos + p.vel)
+				end
+				return
+			elseif r == "stop" then
+				Proj.stop(p, "intercepted", wallRes.Position)
+				return
+			end
+		end
 		local result
 		if p.onWall then
 			result = p.onWall(p, wallRes.Position, wallRes.Normal, obj)

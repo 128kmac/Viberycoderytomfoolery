@@ -783,7 +783,7 @@ function K.zone(c, opts)
 		noVisual = opts.noVisual,
 		onTick = function(z, list)
 			for _, t in ipairs(list) do
-				if opts.dmg and S.isEnemy(f, t) or (opts.dmg and opts.includeOwner and t == f) then
+				if opts.dmg and (opts.dmgAll or S.isEnemy(f, t) or (opts.includeOwner and t == f)) then
 					local amt = opts.dmg
 					if opts.cap then
 						local done = capTotals[t] or 0
