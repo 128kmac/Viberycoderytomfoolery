@@ -1038,6 +1038,66 @@ function K.leap(c, target, time, heightM)
 	return K.feet(f)
 end
 
+-- rise heightM and hover for dur seconds; only vertical velocity is constrained so the player can steer.
+-- Returns a handle with :stop().
+function K.hover(f, heightM, dur, riseTime)
+	f = F(f)
+	local h = { alive = true }
+	if not S.alive(f) or not f.humanoid then
+		return h
+	end
+	local att = f.root:FindFirstChild("EBMoveAtt")
+	if not att then
+		att = Instance.new("Attachment")
+		att.Name = "EBMoveAtt"
+		att.Parent = f.root
+	end
+	local old = f.root:FindFirstChild("EBHover")
+	if old then
+		old:Destroy()
+	end
+	local lv = Instance.new("LinearVelocity")
+	lv.Name = "EBHover"
+	lv.Attachment0 = att
+	lv.RelativeTo = Enum.ActuatorRelativeTo.World
+	lv.VelocityConstraintMode = Enum.VelocityConstraintMode.Line
+	lv.LineDirection = Vector3.yAxis
+	lv.MaxForce = 1e6
+	riseTime = riseTime or 0.4
+	lv.LineVelocity = heightM * M / riseTime
+	lv.Parent = f.root
+	f.hovering = true
+	task.delay(riseTime, function()
+		if lv.Parent then
+			lv.LineVelocity = 0
+		end
+	end)
+	function h.stop()
+		if not h.alive then
+			return
+		end
+		h.alive = false
+		f.hovering = false
+		if lv.Parent then
+			lv:Destroy()
+		end
+	end
+	function h.extend(sec)
+		dur += sec
+	end
+	task.spawn(function()
+		local t0 = S.now()
+		while h.alive and S.now() - t0 < dur do
+			task.wait(0.05)
+			if not S.alive(f) then
+				break
+			end
+		end
+		h.stop()
+	end)
+	return h
+end
+
 function K.face(c, dir)
 	if c.face then
 		c:face(dir)
