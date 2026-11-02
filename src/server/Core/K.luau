@@ -487,7 +487,7 @@ function K.proj(c, opts)
 		end or nil,
 		onHit = function(pp, t)
 			if opts.dmg then
-				K.dmg(c, t, opts.dmg, { fromPos = pp.pos, projectile = true, guardDmg = opts.guardDmg, cap = opts.cap })
+				K.dmg(c, t, opts.dmg * (pp.data.dmgMult or 1), { fromPos = pp.pos, projectile = true, guardDmg = opts.guardDmg, cap = opts.cap })
 			end
 			if opts.hit then
 				return opts.hit(t, pp)
