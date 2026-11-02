@@ -385,6 +385,7 @@ function Fighter.dash(f, dirUnit, dist, time, opts)
 		dist *= 0.85 -- Snow: Powder Layer (consumed by the dash)
 		Status.remove(f, "Powdered", "consumed")
 	end
+	S.emit("dashed", f)
 	local flat = Vector3.new(dirUnit.X, opts.allowY and dirUnit.Y or 0, dirUnit.Z)
 	if flat.Magnitude < 1e-3 then
 		flat = Vector3.new(f.root.CFrame.LookVector.X, 0, f.root.CFrame.LookVector.Z)
@@ -681,7 +682,7 @@ function Fighter.tick(f, dt, now)
 		end
 	elseif now - f.lastGuardHit >= Config.GUARD_RECOVER_DELAY and now - f.lastDirectHit >= Config.GUARD_RECOVER_DELAY then
 		if not (f.guardBrokenUntil and f.guardBrokenUntil > now) then
-			f.guard = math.min(Config.MAX_GUARD, f.guard + Config.GUARD_RECOVER * dt)
+			f.guard = math.min(f.maxGuard or Config.MAX_GUARD, f.guard + Config.GUARD_RECOVER * dt * (f.guardRecoverMult or 1))
 		end
 	end
 	-- dodge recharge (sequential)
