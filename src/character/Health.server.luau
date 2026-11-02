@@ -1,0 +1,2 @@
+-- Replaces Roblox's default health-regeneration script. EB: Proxima health is fully server-controlled;
+-- ordinary healing only comes from abilities.

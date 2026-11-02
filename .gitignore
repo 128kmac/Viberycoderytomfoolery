@@ -1,0 +1,3 @@
+# build output (regenerate with: python3 tools/build_place.py)
+*.rbxlx.lock
+__pycache__/
