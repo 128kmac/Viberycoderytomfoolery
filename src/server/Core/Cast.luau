@@ -545,10 +545,17 @@ function Cast.begin(f, slot, unstable, mod)
 	if (def.windup or 0) > 0 then
 		S.FX.highlight(model, color, def.windup, 0.75)
 	end
+	local stationaryWindup = f.kit.stationaryWindup and f.kit.stationaryWindup[slot]
 	task.spawn(function()
 		local okW = true
 		if (def.windup or 0) > 0 then
+			if stationaryWindup then
+				f.stationary += 1
+			end
 			okW = c:wait(def.windup)
+			if stationaryWindup then
+				f.stationary -= 1
+			end
 		end
 		if okW then
 			c.phase = "active"

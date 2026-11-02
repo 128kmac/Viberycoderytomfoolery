@@ -164,7 +164,9 @@ function FX.beam(a, b, width, color, dur, transparency)
 		color = color,
 		transparency = transparency or 0.2,
 	})
-	fadeAndDestroy(p, dur or 0.2)
+	if dur ~= false then
+		fadeAndDestroy(p, dur or 0.2)
+	end
 	return p
 end
 

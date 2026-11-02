@@ -172,6 +172,13 @@ function Combat.shield(target, amount, duration, name, src)
 	local now = S.now()
 	name = name or "shield"
 	duration = duration or 4
+	if src and src.noShieldGen and src.noShieldGen > now then
+		return 0
+	end
+	if src then
+		amount *= Status.shieldOutMult(src)
+	end
+	amount *= Status.shieldInMult(target)
 	local info = { amount = amount, duration = duration, name = name, src = src }
 	hook(target, "beforeShield", info)
 	extraHooks(target, "beforeShield", info)
@@ -261,6 +268,12 @@ function Combat.heal(src, target, amount, opts)
 		return 0
 	end
 	local now = S.now()
+	if src and src.healOutMult then
+		amount *= src.healOutMult
+	end
+	if src and src.healOutCap then
+		amount = math.min(amount, src.healOutCap)
+	end
 	local info = { amount = amount * Status.healMult(target), src = src, opts = opts }
 	hook(target, "beforeHeal", info)
 	extraHooks(target, "beforeHeal", info)
@@ -505,6 +518,9 @@ function Combat.control(target, kind, duration, src, opts)
 	end
 	if Combat.isInvulnerable(target) and not opts.force then
 		return 0
+	end
+	if src and src.controlOutMult then
+		duration *= src.controlOutMult
 	end
 	local info = { kind = kind, duration = duration, src = src }
 	hook(target, "beforeControl", info)

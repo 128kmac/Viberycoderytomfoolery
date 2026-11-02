@@ -260,6 +260,14 @@ local function step(p, dt)
 				S.Objects.damage(obj, p.objDmg or p.dmg or 40, p.owner, { projectile = p })
 			end
 		end
+		if result == "bounce" then
+			p.pos = wallRes.Position + wallRes.Normal * (p.radius + 0.3)
+			p.hits = p.data.keepHits and p.hits or {}
+			if p.part then
+				p.part.CFrame = CFrame.lookAt(p.pos, p.pos + p.vel)
+			end
+			return
+		end
 		if result ~= "pass" and result ~= "continue" then
 			Proj.stop(p, "wall", wallRes.Position)
 			return

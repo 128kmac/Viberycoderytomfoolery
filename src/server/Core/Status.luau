@@ -59,7 +59,7 @@ function Status.apply(f, name, opts)
 		if opts.source then
 			st.source = opts.source
 		end
-		for _, k in ipairs({ "slow", "speed", "dr", "drShred", "vuln", "dmgBonus", "healMult", "label" }) do
+		for _, k in ipairs({ "slow", "speed", "dr", "drShred", "vuln", "dmgBonus", "healMult", "label", "shieldShred", "shieldIn" }) do
 			if opts[k] ~= nil then
 				st[k] = opts[k]
 			end
@@ -95,6 +95,8 @@ function Status.apply(f, name, opts)
 			vuln = opts.vuln,
 			dmgBonus = opts.dmgBonus,
 			healMult = opts.healMult,
+			shieldShred = opts.shieldShred,
+			shieldIn = opts.shieldIn,
 			tick = opts.tick,
 			nextTick = opts.tick and (now + opts.tick) or nil,
 			onTick = opts.onTick,
@@ -260,6 +262,28 @@ function Status.healMult(f)
 	for _, st in pairs(f.statuses) do
 		if st.healMult and st.healMult < m then
 			m = st.healMult
+		end
+	end
+	return m
+end
+
+-- outgoing shield strength multiplier (e.g. Corrupt Infection: -5% per stack)
+function Status.shieldOutMult(f)
+	local shred = 0
+	for _, st in pairs(f.statuses) do
+		if st.shieldShred then
+			shred += st.shieldShred * st.stacks
+		end
+	end
+	return math.max(0, 1 - shred)
+end
+
+-- incoming new-shield multiplier (strongest applies)
+function Status.shieldInMult(f)
+	local m = 1
+	for _, st in pairs(f.statuses) do
+		if st.shieldIn and st.shieldIn < m then
+			m = st.shieldIn
 		end
 	end
 	return m

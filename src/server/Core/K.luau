@@ -699,6 +699,38 @@ function K.ringHit(c, pos, innerM, outerM, opts)
 	return list
 end
 
+-- arc of a ring between two angles (degrees, 0 = +X axis), used for marked gaps / sectors
+function K.arcFX(pos, radiusM, fromDeg, toDeg, color, dur, thicknessM)
+	local r = radiusM * M
+	local span = toDeg - fromDeg
+	local segs = math.max(2, math.floor(math.abs(span) / 10))
+	local th = (thicknessM or 0.3) * M
+	local model = Instance.new("Model")
+	model.Name = "Arc"
+	for i = 0, segs - 1 do
+		local a = math.rad(fromDeg + span * (i + 0.5) / segs)
+		local segLen = 2 * math.pi * r * math.abs(span) / 360 / segs * 1.05
+		local cf = CFrame.new(pos + Vector3.new(math.cos(a) * r, 0.2, math.sin(a) * r)) * CFrame.Angles(0, -a, 0)
+		FX.base({ size = Vector3.new(th, 0.25, segLen), cf = cf, color = color, transparency = 0.15, parent = model })
+	end
+	model.Parent = S.folders.FX
+	if dur then
+		game:GetService("Debris"):AddItem(model, dur)
+	end
+	return model
+end
+
+-- angle (degrees, 0 = +X, matching arcFX) of a point around a centre
+function K.angleOf(center, p)
+	return math.deg(math.atan2(p.Z - center.Z, p.X - center.X)) % 360
+end
+
+-- true if angle a lies inside the sector [from, from+width]
+function K.inSector(a, from, width)
+	local d = (a - from) % 360
+	return d <= width
+end
+
 -- telegraphs -----------------------------------------------------------------------------------
 function K.telegraph(c, pos, rM, t, color)
 	return FX.telegraph(pos, rM * M, t, color or K.color(c))
@@ -759,7 +791,7 @@ function K.zone(c, opts)
 						capTotals[t] = done + math.max(0, amt)
 					end
 					if amt > 0 then
-						Combat.damage(f, t, amt, { kind = opts.kind or "field", element = f.kitName, fromPos = z.pos, slot = c.slot, isUlt = c.isUlt })
+						Combat.damage(f, t, amt, { kind = opts.kind or "field", element = f.kitName, fromPos = z.pos, slot = c.slot, isUlt = c.isUlt, cast = c.f and c or nil })
 					end
 				end
 				if opts.heal and S.isAlly(f, t) then

@@ -205,6 +205,9 @@ function Objects.stripLayer(obj)
 end
 
 function Objects.heal(obj, amount)
+	if obj.data.noRepairUntil and obj.data.noRepairUntil > S.now() then
+		return
+	end
 	if obj.alive then
 		obj.hp = math.min(obj.maxHp, obj.hp + amount)
 		refreshLabel(obj)
