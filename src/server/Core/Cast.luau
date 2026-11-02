@@ -367,6 +367,7 @@ function Ctx:form(duration, opts)
 	opts = opts or {}
 	local f = self.f
 	local form = { alive = true, ends = S.now() + duration, c = self }
+	local conn
 	f.formActive = (f.formActive or 0) + 1
 	if opts.deferCooldown ~= false and self.isUlt then
 		self:deferCooldown()
@@ -377,6 +378,10 @@ function Ctx:form(duration, opts)
 			return
 		end
 		form.alive = false
+		if conn then
+			conn()
+			conn = nil
+		end
 		f.formActive = math.max(0, (f.formActive or 1) - 1)
 		if f.formActive == 0 then
 			f.formActive = nil
@@ -392,11 +397,9 @@ function Ctx:form(duration, opts)
 	task.delay(duration, function()
 		form.finish("expired")
 	end)
-	local conn
 	conn = S.on("defeated", function(df)
 		if df == f then
 			form.finish("defeated")
-			conn()
 		end
 	end)
 	return form

@@ -94,7 +94,7 @@ function FX.ring(pos, radius, color, dur, thickness)
 	thickness = thickness or 0.35
 	local model = Instance.new("Model")
 	model.Name = "Ring"
-	local segs = 24
+	local segs = math.clamp(math.floor(radius * 1.2), 8, 24)
 	local segLen = 2 * math.pi * radius / segs * 1.05
 	for i = 1, segs do
 		local a = (i / segs) * math.pi * 2

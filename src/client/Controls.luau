@@ -168,7 +168,7 @@ function Controls.init(c)
 		Controls.locked = false
 	end
 	UserInputService.InputBegan:Connect(function(io, processed)
-		if io.KeyCode == Enum.KeyCode.Tab then
+		if io.KeyCode == Enum.KeyCode.Tab or (io.KeyCode == Enum.KeyCode.M and not processed) or io.KeyCode == Enum.KeyCode.ButtonSelect then
 			ctx.KitMenu.toggle()
 			return
 		end

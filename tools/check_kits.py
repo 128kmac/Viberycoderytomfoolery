@@ -66,5 +66,22 @@ for fn in sorted(os.listdir(kits_dir)):
     for m in re.finditer(r'(?<![\w.])(z|zone|zz|bank):(\w+)\(', code):
         if m.group(2) not in ZONE:
             print(f'{fn}: unknown zone method :{m.group(2)}'); problems += 1
+# lint: `x and nil or y` / `x and false or y` always yields y in Lua
+for root, _, fs in os.walk(os.path.join(ROOT, 'src')):
+    for fn in fs:
+        if fn.endswith('.luau'):
+            path = os.path.join(root, fn)
+            for i, line in enumerate(open(path, encoding='utf-8'), 1):
+                if re.search(r'\band\s+(nil|false)\s+or\b', line):
+                    print(f'{os.path.relpath(path, ROOT)}:{i}: `and nil/false or` always takes the or-branch'); problems += 1
+for fn in sorted(os.listdir(kits_dir)):
+    if fn.endswith('.luau') and fn != 'init.luau':
+        src = open(os.path.join(kits_dir, fn), encoding='utf-8').read()
+        if len(re.findall(r'^Kit\.requires\s*=', src, re.M)) > 1:
+            print(f'{fn}: Kit.requires assigned more than once'); problems += 1
+        for i in range(1, 6):
+            n = len(re.findall(r'^Kit\[%d\]\s*=\s*function' % i, src, re.M))
+            if n != 1:
+                print(f'{fn}: slot {i} defined {n} times'); problems += 1
 print(f'kit API check: {problems} problem(s)')
 sys.exit(1 if problems else 0)

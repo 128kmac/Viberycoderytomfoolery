@@ -43,9 +43,9 @@ Kit[1] = function(c)
 			shape = "Block",
 			size = Vector3.new(1.2, 0.2, 1.2),
 			color = real and DREAD or Color3.fromRGB(60, 40, 60),
-			filter = real and nil or function()
+			filter = (not real) and function()
 				return false
-			end,
+			end or nil,
 			dmg = real and 75 or nil,
 			finish = (not real) and function(pos)
 				K.FX.ring(K.ground(pos), K.m(1), Color3.fromRGB(200, 200, 200), 0.6, 0.2) -- hollow outline

@@ -272,7 +272,7 @@ function HUD.init(c)
 	refs.help = T.label({
 		Position = UDim2.fromOffset(-120, 174),
 		Size = UDim2.new(1, 240, 0, 14),
-		Text = "Q E R F moves · G ultimate (hold 1s at 60+ Heat = Unstable) · LMB basic · RMB guard · Shift dodge · Ctrl modifier · V kit action · Z camera · Tab powers",
+		Text = "Q E R F moves · G ultimate (hold 1s at 60+ Heat = Unstable) · LMB basic · RMB guard · Shift dodge · Ctrl modifier · V kit action · Z camera · Tab/M powers",
 		TextSize = 11,
 		TextColor3 = T.dim,
 		TextXAlignment = Enum.TextXAlignment.Center,

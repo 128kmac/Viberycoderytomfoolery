@@ -536,7 +536,10 @@ function K.beam(c, opts)
 	local origin = opts.origin or (c.chest and c:chest()) or f.root.Position
 	local dir = (opts.dir or (c.dir3 and c:dir3()) or f.root.CFrame.LookVector).Unit
 	local len = (opts.length or (c.def and c.def.range) or 20) * M
-	local res = opts.throughWalls and nil or Hit.raycast(origin, dir * len, opts.ignoreConstructs)
+	local res = nil
+	if not opts.throughWalls then
+		res = Hit.raycast(origin, dir * len, opts.ignoreConstructs)
+	end
 	local endPos = res and res.Position or (origin + dir * len)
 	local width = (opts.width or 0.5) * M
 	local hits = Hit.segment(origin, endPos, width / 2, opts.filter or K.enemyFilter(c))
@@ -849,7 +852,11 @@ function K.object(c, opts)
 	size = size * M
 	local pos = opts.pos or K.feet(f)
 	local o = table.clone(opts)
-	o.owner = opts.neutral and nil or f
+	if opts.neutral then
+		o.owner = nil
+	else
+		o.owner = f
+	end
 	o.cf = opts.cf or CFrame.new(pos + Vector3.new(0, size.Y / 2, 0))
 	o.size = size
 	o.color = opts.color or K.color(f)
