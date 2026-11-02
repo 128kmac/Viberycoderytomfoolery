@@ -590,6 +590,7 @@ function Cast.begin(f, slot, unstable, mod)
 			if rec == nil then
 				rec = Config.DEFAULT_RECOVERY
 			end
+			rec = math.max(0, rec - (c.recoveryBonus or 0))
 			f.lockUntil = S.now() + rec
 			-- buffered input
 			local buf = f.buffer
