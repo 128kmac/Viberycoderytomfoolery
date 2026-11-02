@@ -164,8 +164,8 @@ function Status.cleanse(f, category, count)
 		if not best then
 			break
 		end
-		-- stacking statuses lose one stack per cleanse
-		if best.stacks > 1 and best.max > 1 then
+		-- stacking statuses lose one stack per cleanse (unless they are cleared whole, e.g. Poison Load)
+		if best.stacks > 1 and best.max > 1 and not best.data.cleanseAll then
 			Status.removeStacks(f, best.name, 1)
 		else
 			Status.remove(f, best.name, "cleansed")

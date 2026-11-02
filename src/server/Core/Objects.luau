@@ -21,7 +21,7 @@ Objects.list = list
 ]]
 function Objects.create(opts)
 	nextId += 1
-	local p = Instance.new("Part")
+	local p = Instance.new(opts.class or "Part")
 	p.Anchored = true
 	p.CanCollide = opts.solid ~= false
 	local blocks = opts.blocks
@@ -35,7 +35,9 @@ function Objects.create(opts)
 	p.Color = opts.color or Color3.fromRGB(200, 200, 200)
 	p.Material = opts.material or Enum.Material.SmoothPlastic
 	p.Transparency = opts.transparency or 0
-	if opts.shape == "Ball" then
+	if p:IsA("TrussPart") then
+		-- trusses are climbable; nothing else to configure
+	elseif opts.shape == "Ball" then
 		p.Shape = Enum.PartType.Ball
 	elseif opts.shape == "Cylinder" then
 		p.Shape = Enum.PartType.Cylinder
