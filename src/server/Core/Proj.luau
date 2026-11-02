@@ -255,8 +255,9 @@ local function step(p, dt)
 		if p.onWall then
 			result = p.onWall(p, wallRes.Position, wallRes.Normal, obj)
 		end
-		if obj and result ~= "pass" then
-			if not (p.owner and obj.owner and not S.isEnemy(p.owner, obj.owner) and obj.allyPass) then
+		-- shots never erode constructs owned by their own side
+		if obj and result ~= "pass" and result ~= "bounce" then
+			if not (p.owner and obj.owner and S.isAlly(p.owner, obj.owner)) then
 				S.Objects.damage(obj, p.objDmg or p.dmg or 40, p.owner, { projectile = p })
 			end
 		end

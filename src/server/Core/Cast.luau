@@ -475,7 +475,8 @@ local function canStart(f, slot, unstable)
 		return false, "cooldown"
 	end
 	local cost = (def.energy or 0) * (f.energyCostMult or 1)
-	if f.energy < cost then
+	local credit = f.kit.energyCredit and f.kit.energyCredit(f, slot) or 0
+	if f.energy + credit < cost then
 		return false, "Energy"
 	end
 	if slot == 5 and f.proxima < Config.MAX_PROXIMA then
@@ -512,7 +513,14 @@ function Cast.begin(f, slot, unstable, mod)
 	end
 	-- commit
 	local cost = (def.energy or 0) * (f.energyCostMult or 1)
-	Combat.spendEnergy(f, cost)
+	if f.energy < cost then
+		local borrowed = cost - f.energy
+		f.energy = 0
+		f.lastEnergySpend = S.now()
+		Combat.hook(f, "borrowEnergy", borrowed, c)
+	else
+		Combat.spendEnergy(f, cost)
+	end
 	local heat = def.heat or 0
 	if c.p60 then
 		heat += Config.P60_EXTRA_HEAT

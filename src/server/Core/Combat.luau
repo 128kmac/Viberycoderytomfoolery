@@ -416,6 +416,13 @@ function Combat.damage(src, target, amount, opts)
 	info.prevented = prevented
 	info.guarded = guarded
 	info.perfect = perfect
+	if dmg > 0 then
+		-- post-shield hook: may defer or redirect health damage
+		hook(target, "beforeHealth", info)
+		extraHooks(target, "beforeHealth", info)
+		dmg = math.max(0, info.final)
+		info.final = dmg
+	end
 	-- apply to health
 	if dmg > 0 then
 		target.health -= dmg
