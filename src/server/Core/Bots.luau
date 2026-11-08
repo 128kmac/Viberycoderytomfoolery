@@ -655,8 +655,12 @@ RunService.Heartbeat:Connect(function(dt)
 					end
 				end
 				faceStep(f, dt)
-			elseif f.humanoid and not active(f) then
+				f.botWasActive = true
+			elseif f.botWasActive and f.humanoid and not active(f) then
+				-- stop once when a bot becomes inactive (phase change); never fight other controllers
+				f.botWasActive = false
 				f.humanoid:Move(Vector3.zero)
+				f.botMoveGoal = nil
 			end
 		elseif f.isDummy and S.alive(f) and S.Fighter.canAct(f) then
 			if now >= (f.dummyThink or 0) then

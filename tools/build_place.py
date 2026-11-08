@@ -70,12 +70,15 @@ def main():
              'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
              'xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">']
     parts.append(service('Workspace', '', '<bool name="StreamingEnabled">false</bool>'))
-    parts.append(service('Lighting', ''))
+    # Future lighting cannot be enabled from scripts; the rest of the look is set at runtime by Arena.lua
+    parts.append(service('Lighting', '', '<token name="Technology">4</token><float name="ClockTime">17.4</float>'
+                         '<float name="Brightness">2.4</float><bool name="GlobalShadows">true</bool>'))
     parts.append(service('ReplicatedStorage', build_dir('Shared', os.path.join(src, 'shared'))))
     parts.append(service('ServerScriptService', build_dir('Server', os.path.join(src, 'server'))))
     starter_player = (
         f'<Item class="StarterPlayerScripts" referent="{nref()}"><Properties><string name="Name">StarterPlayerScripts</string></Properties>'
-        + build_dir('Client', os.path.join(src, 'client')) + '</Item>'
+        + build_dir('Client', os.path.join(src, 'client'))
+        + build_children(os.path.join(src, 'playerscripts')) + '</Item>'
         + f'<Item class="StarterCharacterScripts" referent="{nref()}"><Properties><string name="Name">StarterCharacterScripts</string></Properties>'
         + build_children(os.path.join(src, 'character')) + '</Item>')
     parts.append(service('StarterPlayer', starter_player, '<bool name="EnableMouseLockOption">false</bool>'))

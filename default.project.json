@@ -3,20 +3,43 @@
   "tree": {
     "$className": "DataModel",
     "ReplicatedStorage": {
-      "Shared": { "$path": "src/shared" }
+      "Shared": {
+        "$path": "src/shared"
+      }
     },
     "ServerScriptService": {
-      "Server": { "$path": "src/server" }
+      "Server": {
+        "$path": "src/server"
+      }
     },
     "StarterPlayer": {
-      "$properties": { "EnableMouseLockOption": false },
-      "StarterPlayerScripts": {
-        "Client": { "$path": "src/client" }
+      "$properties": {
+        "EnableMouseLockOption": false
       },
-      "StarterCharacterScripts": { "$path": "src/character" }
+      "StarterPlayerScripts": {
+        "Client": {
+          "$path": "src/client"
+        },
+        "RbxCharacterSounds": {
+          "$path": "src/playerscripts/RbxCharacterSounds.client.luau"
+        }
+      },
+      "StarterCharacterScripts": {
+        "$path": "src/character"
+      }
     },
     "Players": {
-      "$properties": { "CharacterAutoLoads": false }
+      "$properties": {
+        "CharacterAutoLoads": false
+      }
+    },
+    "Lighting": {
+      "$properties": {
+        "Technology": "Future",
+        "ClockTime": 17.4,
+        "Brightness": 2.4,
+        "GlobalShadows": true
+      }
     }
   }
 }

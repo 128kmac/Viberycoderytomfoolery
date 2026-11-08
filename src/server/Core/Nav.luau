@@ -22,9 +22,6 @@ rayParams.FilterType = Enum.RaycastFilterType.Include
 rayParams.RespectCanCollide = true
 rayParams.IgnoreWater = true
 
-local boxParams = OverlapParams.new()
-boxParams.FilterType = Enum.RaycastFilterType.Include
-boxParams.RespectCanCollide = true
 
 local function key(i, j)
 	return i * 4096 + j
@@ -42,9 +39,16 @@ local function halfHeight(part)
 	return math.abs(r.Y) * sz.X / 2 + math.abs(u.Y) * sz.Y / 2 + math.abs(l.Y) * sz.Z / 2
 end
 
+-- headroom above a surface point. Upward rays test real geometry (bounding-box queries would reject
+-- every point on a wedge ramp, whose box fills the space above its slope).
+local CLEAR_OFFSETS = { Vector3.new(0, 0, 0), Vector3.new(0.9, 0, 0), Vector3.new(-0.9, 0, 0), Vector3.new(0, 0, 0.9), Vector3.new(0, 0, -0.9) }
 local function clearance(p)
-	local parts = workspace:GetPartBoundsInBox(CFrame.new(p + Vector3.new(0, 0.6 + BODY_H / 2, 0)), Vector3.new(2.2, BODY_H, 2.2), boxParams)
-	return #parts == 0
+	for _, o in ipairs(CLEAR_OFFSETS) do
+		if workspace:Raycast(p + o + Vector3.new(0, 1, 0), Vector3.new(0, BODY_H - 0.6, 0), rayParams) then
+			return false
+		end
+	end
+	return true
 end
 
 local function lineClear(a, b, h)
@@ -67,7 +71,6 @@ function Nav.build(bounds, roots)
 	table.clear(Nav.nodes)
 	table.clear(buckets)
 	rayParams.FilterDescendantsInstances = roots or { S.folders.Arena }
-	boxParams.FilterDescendantsInstances = roots or { S.folders.Arena }
 	local c = bounds.center
 	local half = bounds.half
 	local top = bounds.top or (bounds.floorY + 90)

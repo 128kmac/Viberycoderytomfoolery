@@ -146,6 +146,14 @@ end
 
 local function sign(name, size, cf, face, text, color)
 	local p = box(name, size, cf, Enum.Material.SmoothPlastic, Color3.fromRGB(28, 26, 36), { CanCollide = false, CanQuery = false })
+	-- district signs stand on a pair of posts (gateway), never floating
+	if name == "DistrictSign" then
+		for _, sx in ipairs({ -1, 1 }) do
+			local top = cf * Vector3.new(sx * (size.X / 2 - 0.6), -size.Y / 2, 0)
+			cyl("SignPost", 0.45, top.Y, Vector3.new(top.X, FLOOR_Y, top.Z), Enum.Material.Metal, Color3.fromRGB(70, 66, 80))
+		end
+		box("SignTrim", Vector3.new(size.X, 0.15, size.Z + 0.1), cf * CFrame.new(0, size.Y / 2 + 0.08, 0), Enum.Material.Neon, color, { CanCollide = false, CanQuery = false })
+	end
 	local sg = Instance.new("SurfaceGui")
 	sg.Face = face
 	sg.Parent = p
@@ -458,14 +466,14 @@ local function buildSpire()
 	cyl("SpireBase", 14, h, c, Enum.Material.Basalt, stone)
 	cyl("SpireTrim", 14.4, 0.5, c + Vector3.new(0, h - 0.5, 0), Enum.Material.Neon, STORM, { CanCollide = false, CanQuery = false })
 	-- main ramp on the west side, rising northward from the west avenue
-	ramp("SpireRamp", Vector3.new(c.X - 12, 0, c.Z + 28), Vector3.new(0, 0, -1), 26, 8, h, Enum.Material.Basalt, stone)
+	-- its high end meets the platform edge flush (edge at dz = sqrt(14^2 - 11^2) from the centre)
+	ramp("SpireRamp", Vector3.new(c.X - 11, 0, c.Z + 8.6 + 26), Vector3.new(0, 0, -1), 26, 7, h, Enum.Material.Basalt, stone)
 	-- jump route: two stepping blocks on the north-east side (4 and 7.5 studs)
 	box("SpireStep", Vector3.new(6, 4, 6), CFrame.new(c + polar(21, 300) + Vector3.new(0, 2, 0)), Enum.Material.Basalt, stone)
 	box("SpireStep", Vector3.new(6, 7.5, 6), CFrame.new(c + polar(16.5, 310) + Vector3.new(0, 3.75, 0)), Enum.Material.Basalt, stone)
-	for k = 0, 7 do
-		if k % 2 == 1 then
-			wall("SpireParapet", c + polar(13, k * 45 + 8, h), c + polar(13, k * 45 + 37, h), 2.6, 1, Enum.Material.Basalt, Color3.fromRGB(70, 66, 90))
-		end
+	-- parapet sections leave the ramp top (~170°), the jump route (~300°) and the bridge (0°) open
+	for _, seg in ipairs({ { 30, 70 }, { 82, 118 }, { 200, 255 } }) do
+		wall("SpireParapet", c + polar(13, seg[1], h), c + polar(13, seg[2], h), 2.6, 1, Enum.Material.Basalt, Color3.fromRGB(70, 66, 90))
 	end
 	for _, a in ipairs({ 200, 290 }) do
 		local p = c + polar(7, a, h)
@@ -684,6 +692,15 @@ function Arena.build()
 	workspace.Gravity = 196.2
 	S.arenaBounds = { center = Vector3.new(0, FLOOR_Y, 30), half = 140, floorY = FLOOR_Y }
 	buildIsland()
+	-- district ground tints (flush, non-colliding): each quarter has its own floor material and colour
+	for _, g in ipairs({
+		{ 315, Enum.Material.Cobblestone, Color3.fromRGB(96, 70, 62) },
+		{ 45, Enum.Material.Slate, Color3.fromRGB(78, 98, 116) },
+		{ 135, Enum.Material.Ground, Color3.fromRGB(96, 92, 70) },
+		{ 225, Enum.Material.Basalt, Color3.fromRGB(78, 70, 104) },
+	}) do
+		cyl("DistrictFloor", 30, 0.08, polar(63, g[1], FLOOR_Y - 0.03), g[2], g[3], { CanCollide = false, CanQuery = false, CastShadow = false })
+	end
 	buildPlaza()
 	buildForge()
 	buildCistern()

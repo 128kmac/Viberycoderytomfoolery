@@ -109,6 +109,8 @@ class Sim:
         self._load_dir('Server', os.path.join(src, 'server'), svc.ServerScriptService)
         sp = svc.StarterPlayer
         self._load_dir('Client', os.path.join(src, 'client'), sp.StarterPlayerScripts)
+        if os.path.isdir(os.path.join(src, 'playerscripts')):
+            self._load_children(os.path.join(src, 'playerscripts'), sp.StarterPlayerScripts)
         if os.path.isdir(os.path.join(src, 'character')):
             self._load_children(os.path.join(src, 'character'), sp.StarterCharacterScripts)
         # mirror place-file properties written by tools/build_place.py

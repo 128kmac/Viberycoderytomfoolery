@@ -425,7 +425,14 @@ local function cast(origin, dir, params, inflate)
 		candBuf[ci] = nil
 		local d = DATA[part]
 		local pr = d.props
-		if R.parts[part] and pr.CanQuery and (not respect or pr.CanCollide) then
+		-- physics probes collide on CanCollide alone (CanQuery only affects spatial queries)
+		local eligible
+		if params and params.EBPhysics then
+			eligible = pr.CanCollide
+		else
+			eligible = pr.CanQuery and (not respect or pr.CanCollide)
+		end
+		if R.parts[part] and eligible then
 			if rayAabb(aabb(d), ox, oy, oz, dx, dy, dz, inflate) and passes(part, set, mode) then
 				local t, n = rayPart(d, origin, dir, inflate)
 				if t and t < bestT then
@@ -949,6 +956,7 @@ function CM.ZoomToExtents() end
 ---------------------------------------------------------------- simulation step
 local CHAR_RADIUS = 1.0
 local excludeParams = R.RaycastParams.new()
+excludeParams.EBPhysics = true
 
 local function constraintsOf(root)
 	local out = {}
