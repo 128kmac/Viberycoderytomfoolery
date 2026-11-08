@@ -1,2 +1,4 @@
 out/
 tests/kits_report.json
+render3d/node_modules/
+render3d/_page.html
