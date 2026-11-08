@@ -490,11 +490,18 @@ function V.ring(pos, r0, r1, color, life, opts)
 	local center = pos
 	local function layout(r, tr)
 		pos = center
-		local segLen = 2 * math.pi * r / segs * (dashed and 0.6 or 1.06)
+		local span = opts.arc and math.abs(opts.arc[2] - opts.arc[1]) / 360 or 1
+		local segLen = 2 * math.pi * r * span / segs * (dashed and 0.6 or 1.06)
 		for _, p in ipairs(parts) do
 			local i = segIndex[p]
 			if i then
-				local ang = (i - 0.5) / segs * math.pi * 2 + (opts.spin and os.clock() * opts.spin or 0)
+				local ang
+				if opts.arc then
+					ang = math.rad(opts.arc[1] + (opts.arc[2] - opts.arc[1]) * (i - 0.5) / segs)
+				else
+					ang = (i - 0.5) / segs * math.pi * 2
+				end
+				ang += (opts.spin and os.clock() * opts.spin or 0)
 				local off = Vector3.new(math.cos(ang) * r, y, math.sin(ang) * r)
 				p.Size = Vector3.new(width, 0.12, math.max(0.1, segLen))
 				p.CFrame = CFrame.new(pos) * rot * CFrame.new(off) * CFrame.Angles(0, -ang, 0)
@@ -1237,6 +1244,31 @@ H.rect = function(d)
 		end,
 	})
 	V.burstParticles(cf.Position, st.particle, st, 8, 0.8)
+end
+-- partial ring (gameplay sectors): exact radius and angles
+H.arc = function(d)
+	local st = styleOf(d)
+	local span = math.abs((d.a1 or 0) - (d.a0 or 0))
+	local e = V.ring(groundAt(d.p), d.r, d.r, d.c or st.glow, d.d or 0.3, {
+		width = math.max(0.25, d.w or 0.4),
+		arc = { d.a0, d.a1 },
+		segments = math.clamp(math.floor(span / 8), 3, 24),
+		tr0 = 0.1,
+		hold = 0.6,
+	})
+	if e then
+		e.id = d.id
+		byId[d.id] = e
+	end
+	if span >= 30 and st.particle then
+		local mid = math.rad((d.a0 + d.a1) / 2)
+		V.burstParticles(d.p + Vector3.new(math.cos(mid) * d.r, 1, math.sin(mid) * d.r), st.particle, st, 3, 0.6, 0)
+	end
+end
+H.phase = function(d)
+	if ctx.Showcase and ctx.Showcase.phase then
+		ctx.Showcase.phase(d)
+	end
 end
 H.beam = function(d)
 	ctx.Fam.beam(d.a, d.b, d.w, styleOf(d), d.d, d.c, d.id)

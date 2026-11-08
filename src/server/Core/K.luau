@@ -696,25 +696,22 @@ function K.ringHit(c, pos, innerM, outerM, opts)
 	return list
 end
 
--- arc of a ring between two angles (degrees, 0 = +X axis), used for marked gaps / sectors
+-- arc of a ring between two angles (degrees, 0 = +X axis), used for marked gaps / sectors.
+-- Rendered client-side (cue); the exact sector is what gameplay checks with K.inSector.
 function K.arcFX(pos, radiusM, fromDeg, toDeg, color, dur, thicknessM)
-	local r = radiusM * M
-	local span = toDeg - fromDeg
-	local segs = math.max(2, math.floor(math.abs(span) / 10))
-	local th = (thicknessM or 0.3) * M
-	local model = Instance.new("Model")
-	model.Name = "Arc"
-	for i = 0, segs - 1 do
-		local a = math.rad(fromDeg + span * (i + 0.5) / segs)
-		local segLen = 2 * math.pi * r * math.abs(span) / 360 / segs * 1.05
-		local cf = CFrame.new(pos + Vector3.new(math.cos(a) * r, 0.2, math.sin(a) * r)) * CFrame.Angles(0, -a, 0)
-		FX.base({ size = Vector3.new(th, 0.25, segLen), cf = cf, color = color, transparency = 0.15, parent = model })
-	end
-	model.Parent = S.folders.FX
-	if dur then
-		game:GetService("Debris"):AddItem(model, dur)
-	end
-	return model
+	local id = FX.cue("arc", { p = pos, r = radiusM * M, a0 = fromDeg, a1 = toDeg, c = color, d = dur or 0.3, w = (thicknessM or 0.3) * M })
+	return FX.ghost(id, {})
+end
+
+-- showcase choreography beats (client VFX sync to exact gameplay moments)
+function K.phase(c, name, data)
+	local f = F(c)
+	data = data or {}
+	data.phase = name
+	data.k = f.kitName
+	data.o = f.id
+	data.unstable = c.unstable or nil
+	FX.event("phase", data)
 end
 
 -- angle (degrees, 0 = +X, matching arcFX) of a point around a centre

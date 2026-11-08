@@ -168,11 +168,14 @@ Kit[5] = function(c)
 	local center = c:aimPoint(22)
 	local core = K.object(c, { name = "KingdomCore", pos = center, size = 1.6, shape = "Ball", hp = 240, duration = 5, isUlt = true, color = VIOLET, material = Enum.Material.Neon })
 	K.FX.ring(center, K.m(8), VIOLET, 4.5, 0.4)
+	K.phase(c, "begin", { p = center, r = K.m(8) })
 	for cycle = 1, 2 do
 		if not core.alive then
+			K.phase(c, "finish", { p = center, broken = true })
 			return
 		end
 		-- upward force
+		K.phase(c, "up", { p = center, r = K.m(8), cycle = cycle })
 		for _, t in ipairs(K.enemiesIn(c, center, 8)) do
 			K.lift(c, t, 0.5, 1.5)
 			weigh(f, t)
@@ -184,7 +187,9 @@ Kit[5] = function(c)
 		end
 		-- downward pulse
 		K.telegraph(c, center, 8, 0.3, VIOLET)
+		K.phase(c, "downWarn", { p = center, r = K.m(8), cycle = cycle })
 		task.wait(0.3)
+		K.phase(c, "down", { p = center, r = K.m(8), cycle = cycle })
 		for _, t in ipairs(K.enemiesIn(c, center, 8, { above = 8 })) do
 			K.dmg(c, t, 100, { fromPos = center + Vector3.new(0, 12, 0) })
 			gravPush(c, t, Vector3.new(0, -1, 0) + K.flat(center - t.root.Position) * 0.01, 0.5)
@@ -193,8 +198,10 @@ Kit[5] = function(c)
 		task.wait(0.7)
 		local _ = cycle
 	end
+	K.phase(c, "finish", { p = center })
 	if c.unstable and core.alive then
 		-- Singularity Debt: a finite pull draws the caster in too
+		K.phase(c, "collapse", { p = center, r = K.m(10) })
 		for _, t in ipairs(K.Hit.cylinder(center, K.m(10), function()
 			return true
 		end)) do

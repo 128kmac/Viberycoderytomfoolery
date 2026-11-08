@@ -141,6 +141,7 @@ Kit[5] = function(c)
 	local center = c:aimPoint(22)
 	local core = K.object(c, { name = "SunCore", pos = center, size = 1.6, shape = "Ball", hp = 220, duration = 6.2, isUlt = true, color = LIGHT, material = Enum.Material.Neon })
 	K.FX.disc(center, K.m(8), LIGHT, 6, 0.75)
+	K.phase(c, "begin", { p = center, r = K.m(8), d = 6 })
 	local totals = {}
 	local lastHit = {}
 	local t0 = K.now()
@@ -169,7 +170,9 @@ Kit[5] = function(c)
 		end
 		task.wait(0.1)
 	end
+	K.phase(c, "finish", { p = center })
 	if c.unstable and core.alive then
+		K.phase(c, "flare", { p = center, r = K.m(8) })
 		K.telegraph(c, center, 8, 0.5, LIGHT)
 		task.wait(0.5)
 		K.circle(c, center, 8, { dmg = 120, color = LIGHT })

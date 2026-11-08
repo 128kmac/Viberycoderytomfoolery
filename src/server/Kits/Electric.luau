@@ -193,12 +193,18 @@ Kit[5] = function(c)
 		})
 	end
 	local totals = {}
+	local rodPos = {}
+	for i, r in ipairs(rods) do
+		rodPos[i] = r.part.Position
+	end
+	K.phase(c, "begin", { p = center, rods = rodPos })
 	for loop = 1, 3 do
 		for i = 1, 3 do
 			local a, b = rods[i], rods[i % 3 + 1]
 			if a.alive and b.alive then
 				local pa, pb = a.part.Position + Vector3.new(0, 1, 0), b.part.Position + Vector3.new(0, 1, 0)
 				arc(pa, pb)
+				K.phase(c, "surge", { a = pa, b = pb, loop = loop })
 				for _, h in ipairs(K.Hit.segment(pa, pb, K.m(0.8), K.enemyFilter(c))) do
 					local t = h.f
 					local d = math.min(70, 280 - (totals[t] or 0))
@@ -212,7 +218,9 @@ Kit[5] = function(c)
 		end
 		local _ = loop
 	end
+	K.phase(c, "finish", { p = center })
 	if c.unstable then
+		K.phase(c, "overload", { p = center })
 		K.telegraph(c, center, 3, 0.5, YELLOW)
 		task.wait(0.5)
 		for _, t in ipairs(K.Hit.cylinder(center, K.m(3), function()

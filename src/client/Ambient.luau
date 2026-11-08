@@ -16,6 +16,13 @@ local function add(kind, inst)
 	local rec = { kind = kind, phase = math.random() * 10 }
 	if inst:IsA("Model") then
 		rec.base = inst:GetPivot()
+		-- remember each part relative to the pivot; posing from these never accumulates error
+		rec.rel = {}
+		for _, d in ipairs(inst:GetDescendants()) do
+			if d:IsA("BasePart") then
+				rec.rel[d] = rec.base:ToObjectSpace(d.CFrame)
+			end
+		end
 	elseif inst:IsA("BasePart") then
 		rec.base = inst.CFrame
 		rec.size = inst.Size
@@ -34,8 +41,11 @@ local function step(dt)
 			items[inst] = nil
 		elseif r.kind == "spin" then
 			local speed = (inst:GetAttribute("SpinSpeed") or 4) * (reducedMotion and 0.3 or 1)
-			r.angle = (r.angle or 0) + math.rad(speed) * dt
-			inst:PivotTo(r.base * CFrame.Angles(0, r.angle, 0))
+			r.angle = ((r.angle or 0) + math.rad(speed) * dt) % (math.pi * 2)
+			local cf = r.base * CFrame.Angles(0, r.angle, 0)
+			for part, rel in pairs(r.rel) do
+				part.CFrame = cf * rel
+			end
 		elseif r.kind == "sway" and not reducedMotion then
 			local a = math.sin(t * 0.9 + r.phase) * 0.05 + math.sin(t * 2.3 + r.phase) * 0.015
 			inst.CFrame = r.base * CFrame.Angles(a, 0, a * 0.6)
@@ -43,7 +53,10 @@ local function step(dt)
 			inst.CFrame = r.base + Vector3.new(0, math.sin(t * 1.1 + r.phase) * 0.12, 0)
 		elseif r.kind == "drift" and not reducedMotion then
 			local off = Vector3.new(math.sin(t * 0.05 + r.phase) * 6, math.sin(t * 0.13 + r.phase) * 3, math.cos(t * 0.04 + r.phase) * 6)
-			inst:PivotTo(r.base + off)
+			local cf = r.base + off
+			for part, rel in pairs(r.rel) do
+				part.CFrame = cf * rel
+			end
 		elseif r.kind == "flicker" then
 			local k = reducedFlash and 0.04 or 0.18
 			inst.Brightness = r.bright * (1 + math.noise(t * 6, r.phase) * k * 2)

@@ -171,10 +171,13 @@ Kit[5] = function(c)
 	local center = c:aimPoint(22)
 	local totals = {}
 	local terraces = {}
+	K.phase(c, "begin", { p = center, r = K.m(9) })
 	for q = 0, 3 do
 		local a0 = q * 90
 		K.arcFX(center, 4.5, a0, a0 + 90, Color3.fromRGB(255, 160, 60), 1, 9)
+		K.phase(c, "warn", { p = center, r = K.m(9), a0 = a0, q = q })
 		task.wait(1)
+		K.phase(c, "rise", { p = center, r = K.m(9), a0 = a0, q = q })
 		local a = math.rad(a0 + 45)
 		local mid = center + Vector3.new(math.cos(a), 0, math.sin(a)) * K.m(3.2)
 		for _, t in ipairs(K.enemiesIn(c, center, 9)) do
@@ -198,8 +201,10 @@ Kit[5] = function(c)
 			material = Enum.Material.Rock,
 		})
 	end
+	K.phase(c, "finish", { p = center })
 	if c.unstable then
 		task.wait(0.5)
+		K.phase(c, "drop", { p = center, r = K.m(9) })
 		K.telegraph(c, center, 9, 0.6, Color3.fromRGB(255, 80, 40))
 		task.wait(0.6)
 		for _, o in ipairs(terraces) do

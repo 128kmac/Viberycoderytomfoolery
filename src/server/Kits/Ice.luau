@@ -143,13 +143,16 @@ Kit[5] = function(c)
 			material = Enum.Material.Ice,
 		})
 	end
+	K.phase(c, "begin", { p = center, r = K.m(7) })
 	for lane = 1, 3 do
 		local a, b = pillars[lane], pillars[lane + 3]
 		local pa, pb = (a.part.Position), (b.part.Position)
 		local open = not (a.alive and b.alive)
 		K.FX.beam(pa, pb, K.m(1.5), open and Color3.fromRGB(120, 255, 140) or Color3.fromRGB(255, 80, 80), 0.7, 0.6)
+		K.phase(c, "warn", { a = pa, b = pb, open = open or nil })
 		task.wait(0.7)
 		if not open then
+			K.phase(c, "strike", { a = pa, b = pb })
 			K.FX.beam(pa, pb, K.m(1.5), ICE, 0.3)
 			for _, h in ipairs(K.Hit.segment(pa, pb, K.m(0.9), K.enemyFilter(c))) do
 				K.dmg(c, h.f, 80, { fromPos = pa })
@@ -161,7 +164,9 @@ Kit[5] = function(c)
 		end
 		task.wait(0.4)
 	end
+	K.phase(c, "finish", { p = center })
 	if c.unstable then
+		K.phase(c, "shatter", { p = center })
 		local any = false
 		for _, p in ipairs(pillars) do
 			if p.alive then

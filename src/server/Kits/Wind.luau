@@ -144,6 +144,7 @@ Kit[5] = function(c)
 	local totals = {}
 	local revolutions = 3
 	local dirSign = 1
+	K.phase(c, "begin", { p = center, r = K.m(8) })
 	for rev = 1, revolutions do
 		local final = rev == revolutions
 		if c.unstable and final then
@@ -152,6 +153,7 @@ Kit[5] = function(c)
 			dirSign = -1
 		end
 		local hitRev = {}
+		K.phase(c, "rev", { p = center, r = K.m(8), rev = rev, sign = dirSign })
 		local t0 = K.now()
 		while K.now() - t0 < 1.6 do
 			local base = (K.now() - t0) / 1.6 * 360 * dirSign
@@ -175,6 +177,7 @@ Kit[5] = function(c)
 			task.wait(0.08)
 		end
 	end
+	K.phase(c, "finish", { p = center })
 	local _ = f
 end
 

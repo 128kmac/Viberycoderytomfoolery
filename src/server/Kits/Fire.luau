@@ -199,11 +199,14 @@ Kit[5] = function(c)
 	local color = c.unstable and WHITEFIRE or FIRE
 	local extraLen = K.partner(c, "Wind", 20) and 2 or 0
 	local emberTotals = {}
+	K.phase(c, "begin", { p = center, dir = dir, side = side, len = K.m(9 + extraLen) })
 	for i = -1, 1 do
 		local lineCenter = center + dir * K.m(3 * i)
 		local from = lineCenter - side * K.m(4.5 + extraLen / 2)
 		K.telegraphLine(c, from, side, 9 + extraLen, 1.6, 0.8, color)
+		K.phase(c, "warn", { i = i + 2, a = from, b = from + side * K.m(9 + extraLen) })
 		task.wait(0.8)
+		K.phase(c, "strike", { i = i + 2, a = from, b = from + side * K.m(9 + extraLen) })
 		local list
 		if c.unstable then
 			local mid = from + side * K.m((9 + extraLen) / 2)
@@ -235,6 +238,7 @@ Kit[5] = function(c)
 			S.Objects.remove(e, "ignited")
 		end
 	end
+	K.phase(c, "finish", { p = center })
 	if K.partner(c, "Ash", 25) then
 		local ash = K.partner(c, "Ash", 25)
 		local kit = S.Kits.get("Ash")

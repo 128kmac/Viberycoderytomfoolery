@@ -195,8 +195,11 @@ Kit[5] = function(c)
 		end
 		wall:Destroy()
 	end
+	K.phase(c, "begin", { p = start, dir = dir, len = K.m(12), w = K.m(8) })
 	sweep(start, dir, 8, 140, hitOut)
+	K.phase(c, "pause", { p = start + dir * K.m(12), dir = dir, w = K.m(8) })
 	task.wait(1)
+	K.phase(c, "return", { p = start + dir * K.m(12), dir = -dir, len = K.m(12), w = K.m(8) })
 	local finish = start + dir * K.m(12)
 	local returned = {}
 	local pullBack = function(t)
@@ -209,6 +212,7 @@ Kit[5] = function(c)
 	else
 		sweep(finish, -dir, 8, 100, returned, pullBack)
 	end
+	K.phase(c, "finish", { p = start })
 	local _ = f
 end
 
