@@ -327,8 +327,9 @@ local function buildForge()
 	end
 	-- hall A east of the trench, hall B west of it; the grated trench is the alley between them
 	hall(polar(56, 330), 22, 12, { W = true, S = true, N = true })
-	hall(polar(62, 296), 12, 20, { E = true, S = true, W = true })
-	for _, p in ipairs({ polar(54, 334), polar(58, 322), polar(62, 300) }) do
+	-- hall B sits north of the Gale ramp (which runs along z = -45) with a clear lane between them
+	hall(polar(66, 292), 12, 20, { E = true, S = true, W = true })
+	for _, p in ipairs({ polar(54, 334), polar(58, 322), polar(66, 292) }) do
 		box("Anvil", Vector3.new(4, 3, 2.4), CFrame.new(p + Vector3.new(0, 1.5, 0)) * CFrame.Angles(0, math.rad(30), 0), Enum.Material.Metal, Color3.fromRGB(60, 60, 66))
 	end
 	-- metal crates line the alley (cover), one destructible coal crate stack per side

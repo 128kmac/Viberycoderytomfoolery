@@ -92,6 +92,8 @@ local active = {} -- sound -> { key, t }
 local activeCount = 0
 local perKey = {}
 local MAX_VOICES = 28
+-- cues allowed to exceed the voice budget slightly (keys are bank / family stage names)
+local PRIORITY = { hitmarker = true, ko = true, perfect = true, block = true, ultRelease = true, ultCharge = true, countdown = true, fight = true, victory = true, defeat = true, death = true, uiClick = true }
 local MAX_PER_KEY = 4
 local rng = Random.new()
 
@@ -156,8 +158,8 @@ local function playLayer(layer, where, volMul, pitchMul, grp, key)
 		return
 	end
 	if activeCount >= MAX_VOICES then
-		-- drop the quietest new layer rather than cutting existing ones
-		if layer[3] * volMul < 0.25 then
+		-- voice budget: only priority cues (feedback the player must hear) get a small overflow allowance
+		if not PRIORITY[key:match("^%a+")] or activeCount >= MAX_VOICES + 6 then
 			return
 		end
 	end

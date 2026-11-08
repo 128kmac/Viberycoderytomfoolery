@@ -325,7 +325,11 @@ RunService.Heartbeat:Connect(function(dt)
 		local batch = syncQueue
 		syncQueue = {}
 		if syncRemote then
-			syncRemote:FireAllClients(batch)
+			-- UnreliableRemoteEvent payloads are capped (~1 KB): send in small chunks
+			local CHUNK = 12
+			for i = 1, #batch, CHUNK do
+				syncRemote:FireAllClients(table.move(batch, i, math.min(#batch, i + CHUNK - 1), 1, {}))
+			end
 		end
 	end
 	for _, p in pairs(list) do

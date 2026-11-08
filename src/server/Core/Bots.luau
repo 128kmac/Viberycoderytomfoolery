@@ -89,7 +89,8 @@ local function preferredRange(f)
 			end
 		end
 	end
-	local m = n > 0 and math.clamp(sum / n * 0.6, 2.2, 13) or 4
+	-- stay inside the Proxima contest band (12 m) so duels build toward ultimates
+	local m = n > 0 and math.clamp(sum / n * 0.5, 2.2, 9) or 4
 	f.botRange = m * M
 	return f.botRange
 end

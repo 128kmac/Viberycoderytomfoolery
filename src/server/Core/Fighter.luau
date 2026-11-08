@@ -760,8 +760,9 @@ function Fighter.tick(f, dt, now)
 	setAttr(f, "Proxima", math.floor(f.proxima))
 	setAttr(f, "Guard", math.floor(f.guard + 0.5))
 	setAttr(f, "Guarding", f.guarding == true)
-	if f.aim and f.aim.dir then
-		setAttr(f, "AimPitch", math.floor(math.deg(math.asin(math.clamp(f.aim.dir.Y, -1, 1))) / 3 + 0.5) * 3)
+	local ad = f.aim and f.aim.dir
+	if ad and ad.Y == ad.Y and ad.X == ad.X and ad.Magnitude > 0.5 then
+		setAttr(f, "AimPitch", math.floor(math.deg(math.asin(math.clamp(ad.Y, -1, 1))) / 3 + 0.5) * 3)
 	end
 	setAttr(f, "Dodge", f.dodgeCharges)
 	setAttr(f, "Rupture", f.rupturePending == true)

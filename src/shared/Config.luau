@@ -26,7 +26,9 @@ Config.BURNOUT_TIME = 3
 Config.BURNOUT_END_HEAT = 40
 
 -- Proxima gain / loss
-Config.CONTEST_WINDOW = 4
+-- PACING TUNE (deviation from the compendium, documented in README): compendium values were
+-- CONTEST_WINDOW 4, P_DECAY_DELAY 3, P_DECAY_RATE 6. Softened so sustained fights reliably reach ultimates.
+Config.CONTEST_WINDOW = 6
 Config.P_NEAR_RANGE = 6 -- metres
 Config.P_NEAR_RATE = 4
 Config.P_FAR_RANGE = 12
@@ -36,8 +38,8 @@ Config.P_PERFECT_GUARD_GAIN = 5
 Config.P_PERFECT_GUARD_ICD = 2
 Config.P_SUPPORT_GAIN = 3
 Config.P_MAX_PER_SECOND = 10
-Config.P_DECAY_DELAY = 3
-Config.P_DECAY_RATE = 6
+Config.P_DECAY_DELAY = 5
+Config.P_DECAY_RATE = 3
 
 -- Movement (metres / second)
 Config.RUN_SPEED = 6
