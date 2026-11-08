@@ -667,7 +667,7 @@ def("UIGridStyleLayout", "UIComponent", { creatable = false, props = {
 		return R.layoutContentSize(obj)
 	end),
 } })
-def("UIListLayout", "UIGridStyleLayout", { props = { Padding = P("UDim", R.UDim.new(0, 0)), Wraps = B(false), HorizontalFlex = ANY(), VerticalFlex = ANY(), ItemLineAlignment = ANY() } })
+def("UIListLayout", "UIGridStyleLayout", { props = { FillDirection = E("FillDirection", "Vertical"), Padding = P("UDim", R.UDim.new(0, 0)), Wraps = B(false), HorizontalFlex = ANY(), VerticalFlex = ANY(), ItemLineAlignment = ANY() } })
 def("UIGridLayout", "UIGridStyleLayout", { props = { CellSize = U2(R.UDim2.fromOffset(100, 100)), CellPadding = U2(R.UDim2.fromOffset(5, 5)), FillDirectionMaxCells = N(0), StartCorner = ANY() } })
 def("UIPageLayout", "UIGridStyleLayout", {})
 def("UITableLayout", "UIGridStyleLayout", {})

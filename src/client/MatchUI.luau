@@ -139,12 +139,13 @@ local function buildPanel(gui)
 	local tabBar = T.new("Frame", { Position = UDim2.fromOffset(0, 32), Size = UDim2.new(1, 0, 0, 32), BackgroundTransparency = 1, Parent = panel })
 	T.new("UIListLayout", { FillDirection = Enum.FillDirection.Horizontal, Padding = UDim.new(0, 6), Parent = tabBar })
 	local body = T.new("Frame", { Position = UDim2.fromOffset(0, 72), Size = UDim2.new(1, 0, 1, -72), BackgroundTransparency = 1, Parent = panel })
+	local tabCount = 0
 	local function page(name)
 		local pg = T.new("ScrollingFrame", {
 			Size = UDim2.fromScale(1, 1),
 			BackgroundTransparency = 1,
 			ScrollBarThickness = 4,
-			CanvasSize = UDim2.new(),
+			CanvasSize = UDim2.new(1, 0, 0, 0),
 			AutomaticCanvasSize = Enum.AutomaticSize.Y,
 			Visible = false,
 			Parent = body,
@@ -153,6 +154,8 @@ local function buildPanel(gui)
 		local b = button(tabBar, name, UDim2.new(0.25, -5, 1, 0), T.panel2, function()
 			showTab(name)
 		end)
+		tabCount += 1
+		b.LayoutOrder = tabCount
 		tabs[name] = { page = pg, btn = b }
 		return pg
 	end
@@ -389,6 +392,10 @@ end
 local lastCount
 local function updateTop()
 	local state = workspace:GetAttribute("MatchState") or "Practice"
+	-- full-screen menus take over the top of the screen
+	refs.top.Visible = not (ctx.KitMenu.isOpen and ctx.KitMenu.isOpen())
+	refs.startBtn.Visible = state == "Practice" or state == "Results"
+	refs.endBtn.Visible = state ~= "Practice"
 	local phaseEnd = workspace:GetAttribute("PhaseEnd") or 0
 	local now = workspace:GetServerTimeNow()
 	local target = workspace:GetAttribute("KOTarget") or 5

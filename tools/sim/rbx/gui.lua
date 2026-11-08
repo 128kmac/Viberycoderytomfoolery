@@ -99,7 +99,7 @@ local function rawSize(obj, pw, ph)
 				end
 			end
 		end
-		if p.Text and p.TextBounds then
+		if type(p.Text) == "string" then
 			local tb = R.textBounds(p, (auto == "Y") and (w - pl - pr) or nil)
 			cw = max(cw, tb.X)
 			ch = max(ch, tb.Y)
@@ -346,7 +346,7 @@ function R.exportGui(playerGui)
 					local gp = DATA[grad].props
 					item.grad = { colorT(gp.Color.Keypoints[1].Value), colorT(gp.Color.Keypoints[#gp.Color.Keypoints].Value), gp.Rotation }
 				end
-				if p.Text ~= nil and p.TextBounds ~= nil then
+				if type(p.Text) == "string" then
 					item.text = (p.Text or ""):gsub("<[^>]+>", "")
 					item.textColor = colorT(p.TextColor3)
 					item.textT = p.TextTransparency
@@ -365,7 +365,7 @@ function R.exportGui(playerGui)
 				end
 				out[#out + 1] = item
 				local nclip = clip
-				if p.ClipsDescendants then
+				if p.ClipsDescendants or cd.cls.name == "ScrollingFrame" then
 					nclip = { item.x, item.y, item.w, item.h }
 				end
 				walk(c, nclip, depth + 1)
