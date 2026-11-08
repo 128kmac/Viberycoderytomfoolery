@@ -38,7 +38,7 @@ function Kit.passive.tick(f)
 end
 function Kit.passive.cast(f, c)
 	if c.slot <= 3 then
-		task.spawn(function()
+		K.FX.spawnCtx(function()
 			while f.action == c do
 				task.wait(0.05)
 			end

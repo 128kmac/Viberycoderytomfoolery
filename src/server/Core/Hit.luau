@@ -209,9 +209,10 @@ function Hit.raycast(a, dir, ignoreConstructs)
 	return workspace:Raycast(a, dir, ignoreConstructs and arenaParams or worldParams)
 end
 
--- ground below a point (returns position, or nil if over the void)
+-- ground below a point within maxDown studs (returns position, or nil if over the void).
+-- The ray starts slightly above `pos` so a point resting on a surface still finds it.
 function Hit.ground(pos, maxDown)
-	local res = workspace:Raycast(pos + Vector3.new(0, 4, 0), Vector3.new(0, -(maxDown or 80), 0), worldParams)
+	local res = workspace:Raycast(pos + Vector3.new(0, 4, 0), Vector3.new(0, -((maxDown or 80) + 4), 0), worldParams)
 	if res then
 		return res.Position, res.Instance
 	end

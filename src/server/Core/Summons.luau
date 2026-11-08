@@ -199,6 +199,7 @@ RunService.Heartbeat:Connect(function(dt)
 			Summons.remove(f, "dead")
 		else
 			local sm = f.sm
+			S.FX.current = S.FX.ctxOf(f)
 			if sm.expires and now >= sm.expires then
 				Summons.remove(f, "expired")
 			elseif f.owner and f.owner.dead and not sm.persist then
@@ -297,6 +298,7 @@ RunService.Heartbeat:Connect(function(dt)
 			end
 		end
 	end
+	S.FX.current = nil
 end)
 
 -- death of summons is routed through the defeated event

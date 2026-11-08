@@ -179,7 +179,17 @@ function Status.cleanse(f, category, count)
 end
 
 function Status.update(f, now)
+	-- snapshot: tick/expire callbacks may apply or clear statuses
+	local list = {}
 	for name, st in pairs(f.statuses) do
+		list[#list + 1] = name
+		list[#list + 1] = st
+	end
+	for i = 1, #list, 2 do
+		local name, st = list[i], list[i + 1]
+		if f.statuses[name] ~= st then
+			continue
+		end
 		if st.tick and st.nextTick and now >= st.nextTick and now <= st.expires + 0.05 then
 			st.nextTick += st.tick
 			if st.onTick then

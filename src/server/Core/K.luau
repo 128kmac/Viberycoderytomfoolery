@@ -92,18 +92,18 @@ function K.los(a, b)
 end
 function K.after(t, fn, ...)
 	local args = table.pack(...)
-	return task.delay(t, function()
+	return FX.delayCtx(t, function()
 		S.safe(fn, table.unpack(args, 1, args.n))
 	end)
 end
 function K.spawn(fn, ...)
-	return task.spawn(function(...)
+	return FX.spawnCtx(function(...)
 		S.safe(fn, ...)
 	end, ...)
 end
 -- run fn(i, elapsed) every interval for duration (non-blocking). fn returns false to stop.
 function K.every(interval, duration, fn)
-	return task.spawn(function()
+	return FX.spawnCtx(function()
 		local start = S.now()
 		local i = 0
 		while S.now() - start < duration do
@@ -367,11 +367,7 @@ end
 function K.reveal(c, t, dur)
 	local st = Status.apply(t, "Revealed", { duration = dur, source = F(c), category = "reveal", label = "Revealed" })
 	if st and t.model and not st.data.hl then
-		local h = FX.highlight(t.model, Color3.fromRGB(255, 255, 255), dur, 1)
-		if h then
-			h.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-		end
-		st.data.hl = h
+		st.data.hl = FX.highlight(t.model, Color3.fromRGB(255, 255, 255), dur, 1, "top")
 	end
 	return st
 end
@@ -399,10 +395,8 @@ function K.conceal(f, dur, transparency)
 			p.Transparency = 1
 		end
 	end
-	if f.plate then
-		f.plate.Enabled = false
-	end
 	f.concealed = (f.concealed or 0) + 1
+	f.model:SetAttribute("Concealed", true)
 	local function restore()
 		f.concealed = math.max(0, (f.concealed or 1) - 1)
 		if f.concealed > 0 then
@@ -413,8 +407,8 @@ function K.conceal(f, dur, transparency)
 				p.Transparency = tr
 			end
 		end
-		if f.plate then
-			f.plate.Enabled = true
+		if f.model then
+			f.model:SetAttribute("Concealed", false)
 		end
 	end
 	task.delay(dur, restore)
@@ -736,10 +730,13 @@ end
 
 -- telegraphs -----------------------------------------------------------------------------------
 function K.telegraph(c, pos, rM, t, color)
-	return FX.telegraph(pos, rM * M, t, color or K.color(c))
+	S.Danger.add({ shape = "circle", pos = pos, radius = rM * M, t1 = S.now() + t, owner = F(c) })
+	return FX.telegraph(pos, rM * M, t, color or K.color(c), F(c))
 end
 function K.telegraphLine(c, origin, dir, lengthM, widthM, t, color)
-	return FX.lineTelegraph(K.ground(origin) + Vector3.new(0, 0.2, 0), dir, lengthM * M, widthM * M, t, color or K.color(c))
+	local g = K.ground(origin)
+	S.Danger.add({ shape = "line", pos = g, dir = dir, length = lengthM * M, width = widthM * M, t1 = S.now() + t, owner = F(c) })
+	return FX.lineTelegraph(g + Vector3.new(0, 0.2, 0), dir, lengthM * M, widthM * M, t, color or K.color(c), F(c))
 end
 -- blocking warning; returns true if the cast is still valid
 function K.warn(c, pos, rM, t, color)
@@ -749,7 +746,7 @@ end
 -- independent delayed effect: telegraph now, fn(pos) after t
 function K.delayed(c, pos, rM, t, fn, color)
 	K.telegraph(c, pos, rM, t, color)
-	return task.delay(t, function()
+	return FX.delayCtx(t, function()
 		S.safe(fn, pos)
 	end)
 end
@@ -812,6 +809,12 @@ function K.zone(c, opts)
 		onExit = opts.exit,
 		onEnd = opts.finish,
 	})
+	-- bots avoid enemy fields that hurt or hinder
+	z.harmful = opts.dmg ~= nil or opts.slow ~= nil or opts.harmful == true
+	if z.visual then
+		z.visual:SetAttribute("Harmful", z.harmful)
+		z.visual:SetAttribute("Zone", true)
+	end
 	return z
 end
 

@@ -232,7 +232,7 @@ Kit[5] = function(c)
 	end
 	local alive = true
 	local t0 = K.now()
-	task.spawn(function()
+	K.FX.spawnCtx(function()
 		while alive and K.now() - t0 < 5 and K.alive(f) do
 			local a0 = (K.now() - t0) * 2.5
 			for i, sp in ipairs(spears) do

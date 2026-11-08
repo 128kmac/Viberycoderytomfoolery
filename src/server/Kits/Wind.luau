@@ -63,7 +63,7 @@ Kit[2] = function(c)
 	local f = c.f
 	if f.humanoid and f.humanoid.FloorMaterial == Enum.Material.Air then
 		f.state.airDashUsed = true
-		task.spawn(function()
+		K.FX.spawnCtx(function()
 			while K.alive(f) and f.humanoid.FloorMaterial == Enum.Material.Air do
 				task.wait(0.1)
 			end

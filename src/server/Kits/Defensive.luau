@@ -77,7 +77,7 @@ Kit[3] = function(c)
 	local dir = K.flat(dest - f.root.Position)
 	local dist = math.min(10, K.flatDist(dest, f) - (ally and 1.2 or 0))
 	local intercepted = false
-	task.spawn(function()
+	K.FX.spawnCtx(function()
 		local t0 = K.now()
 		while K.now() - t0 < 0.4 and not intercepted do
 			for _, p in ipairs(K.enemyProj(c, f.root.Position, 1.6)) do

@@ -17,6 +17,8 @@ local Zones = require(Core.Zones)
 require(Core.Proj)
 require(Core.Summons)
 local Cast = require(Core.Cast)
+require(Core.Danger)
+local Nav = require(Core.Nav)
 require(Core.K)
 require(Server:WaitForChild("Kits"))
 local Arena = require(Core.Arena)
@@ -39,14 +41,23 @@ local remotes = {
 	Pop = remote("Pop"),
 	Notice = remote("Notice"),
 	Feed = remote("Feed"),
+	MatchEvent = remote("MatchEvent"),
+	Cue = remote("Cue"),
+	ProjSync = remote("ProjSync", "UnreliableRemoteEvent"),
 }
 remoteFolder.Parent = ReplicatedStorage
 
+S.FX.init(remotes)
 Combat.init(remotes)
 Cast.init(remotes)
 
 Arena.build()
 Match.init(remotes)
+task.spawn(function()
+	local b = S.arenaBounds
+	local n = Nav.build({ center = b.center, half = b.half + 10, floorY = b.floorY, top = b.floorY + 80 })
+	print("[EB: Proxima] navigation graph: " .. n .. " nodes")
+end)
 
 -- Input --------------------------------------------------------------------------------------------
 local function isVec(v)
@@ -119,27 +130,24 @@ RunService.Heartbeat:Connect(function(dt)
 	acc = 0
 	local now = S.now()
 	for _, f in pairs(S.fighters) do
+		S.FX.current = S.FX.ctxOf(f)
 		local ok, err = pcall(Fighter.tick, f, step, now)
+		S.FX.current = nil
 		if not ok then
 			warn("[EB] fighter tick: " .. tostring(err))
 		end
 	end
 	local ok1, e1 = pcall(Zones.update, now)
+	S.FX.current = nil
 	if not ok1 then
 		warn("[EB] zones: " .. tostring(e1))
 	end
 	local ok2, e2 = pcall(Objects.update, now)
+	S.FX.current = nil
 	if not ok2 then
 		warn("[EB] objects: " .. tostring(e2))
 	end
 end)
 
-Players.PlayerAdded:Connect(function(p)
-	task.delay(2, function()
-		if p.Parent then
-			remotes.Notice:FireClient(p, "Welcome to EB: Proxima — press TAB to choose a power")
-		end
-	end)
-end)
 
 print("[EB: Proxima] server ready — " .. #S.Kits.index .. " powers loaded")

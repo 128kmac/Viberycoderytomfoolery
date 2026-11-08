@@ -14,7 +14,7 @@ function Kit.passive.cast(f, c)
 	f.state.prevSlot = c.slot
 	if prev and prev ~= c.slot then
 		local energyMark = c
-		task.spawn(function()
+		K.FX.spawnCtx(function()
 			while f.action == energyMark do
 				task.wait(0.05)
 			end

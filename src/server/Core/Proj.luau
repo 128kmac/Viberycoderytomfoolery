@@ -1,6 +1,5 @@
 -- Server-simulated projectiles. Default: 24 m/s, 0.3 m wide, stops on first solid collision.
 local RunService = game:GetService("RunService")
-local Debris = game:GetService("Debris")
 local S = require(script.Parent.S)
 
 local Proj = {}
@@ -11,6 +10,11 @@ local M = Config.METRE
 local list = {}
 local nextId = 0
 Proj.list = list
+local syncQueue = {}
+local syncRemote
+function Proj.init(r)
+	syncRemote = r.ProjSync
+end
 
 --[[ opts (studs unless noted):
 	owner, cast, origin, dir (unit), speed, radius, range, gravity (studs/s^2 downward, for lobs),
@@ -77,27 +81,28 @@ function Proj.fire(opts)
 		p.range = math.huge
 		p.lifetime = p.lifetime or (t + 2)
 	end
-	if not opts.noVisual then
-		local part = Instance.new("Part")
-		part.Anchored = true
-		part.CanCollide = false
-		part.CanQuery = false
-		part.CanTouch = false
-		part.CastShadow = false
-		part.Material = Enum.Material.Neon
-		part.Color = opts.color or (owner and S.Util.color(owner.kitName)) or Color3.new(1, 1, 1)
-		if opts.shape == "Block" then
-			part.Size = opts.size or Vector3.new(p.radius * 2, p.radius * 2, math.max(1, p.radius * 4))
-		else
-			part.Shape = Enum.PartType.Ball
-			part.Size = opts.size or Vector3.one * math.max(0.6, p.radius * 2)
-		end
-		part.Transparency = opts.transparency or 0.1
-		part.CFrame = CFrame.lookAt(p.pos, p.pos + p.vel)
-		part.Name = "Projectile"
-		part.Parent = S.folders.FX
-		p.part = part
-		S.FX.trail(part, part.Color)
+	-- clients render and extrapolate the projectile; the server only sends spawn / correction / end
+	p.visual = not opts.noVisual
+	if p.visual then
+		p.lastSync = S.now()
+		p.syncVel = p.vel
+		S.FX.cue("proj", {
+			pid = p.id,
+			p = p.pos,
+			v = p.vel,
+			g = p.gravity,
+			r = p.radius,
+			c = opts.color,
+			sz = opts.size,
+			sh = opts.shape,
+			kind = p.kind,
+			gr = p.ground or nil,
+			ho = p.homing and p.homing.model or nil,
+			tr = p.homing and p.turnRate or nil,
+			k = p.element,
+			o = owner and owner.id or nil,
+			life = p.lifetime,
+		})
 	end
 	list[p.id] = p
 	return p
@@ -109,8 +114,8 @@ function Proj.stop(p, reason, pos)
 	end
 	p.alive = false
 	list[p.id] = nil
-	if p.part then
-		Debris:AddItem(p.part, 0.05)
+	if p.visual then
+		S.FX.cue("projEnd", { pid = p.id, p = pos or p.pos, why = reason, k = p.element })
 	end
 	if p.onEnd then
 		S.safe(p.onEnd, p, pos or p.pos, reason)
@@ -126,8 +131,11 @@ function Proj.reflect(p, newOwner, newDir)
 	p.cast = nil
 	p.hits = {}
 	p.vel = (newDir or -p.vel).Unit * p.speed
-	if p.part then
-		p.part.Color = S.Util.color(newOwner.kitName)
+	p.element = newOwner.kitName
+	if p.visual then
+		S.FX.cue("projSync", { pid = p.id, p = p.pos, v = p.vel, k = p.element, reflect = true })
+		p.syncVel = p.vel
+		p.lastSync = S.now()
 	end
 	return true
 end
@@ -186,9 +194,14 @@ local function step(p, dt)
 	local move = p.vel * dt
 	local b = a + move
 	if p.ground then
-		local g = S.Hit.ground(b + Vector3.new(0, 2, 0), 8)
+		local g = S.Hit.ground(b + Vector3.new(0, 2.5, 0), 8)
 		if g then
 			b = Vector3.new(b.X, g.Y + p.radius + 0.3, b.Z)
+			-- climb small steps instead of treating the riser as a wall
+			local rise = b.Y - a.Y
+			if rise > 0 and rise <= 2.5 then
+				a = Vector3.new(a.X, b.Y, a.Z)
+			end
 			move = b - a
 		end
 	end
@@ -220,6 +233,7 @@ local function step(p, dt)
 		local f = c.f
 		p.hits[f] = true
 		if S.Combat.isInvulnerable(f) then
+			S.FX.hit(f, 0, "evade", p.owner, { projectile = true })
 			S.Combat.hook(f, "evaded", p.owner, { projectile = p })
 			S.Combat.extraHooks(f, "evaded", p.owner, { projectile = p })
 			S.emit("evaded", f, p.owner, { projectile = p })
@@ -256,9 +270,7 @@ local function step(p, dt)
 			local r = obj.onProjectile(obj, p, wallRes.Normal, wallRes.Position)
 			if r == "consumed" then
 				p.pos = wallRes.Position + wallRes.Normal * (p.radius + 0.4)
-				if p.part then
-					p.part.CFrame = CFrame.lookAt(p.pos, p.pos + p.vel)
-				end
+				p.needSync = true
 				return
 			elseif r == "stop" then
 				Proj.stop(p, "intercepted", wallRes.Position)
@@ -278,9 +290,8 @@ local function step(p, dt)
 		if result == "bounce" then
 			p.pos = wallRes.Position + wallRes.Normal * (p.radius + 0.3)
 			p.hits = p.data.keepHits and p.hits or {}
-			if p.part then
-				p.part.CFrame = CFrame.lookAt(p.pos, p.pos + p.vel)
-			end
+			p.needSync = true
+			S.FX.cue("projBounce", { pid = p.id, p = p.pos, n = wallRes.Normal, k = p.element })
 			return
 		end
 		if result ~= "pass" and result ~= "continue" then
@@ -290,11 +301,18 @@ local function step(p, dt)
 	end
 	p.pos = b
 	p.traveled += move.Magnitude
-	if p.part then
-		if p.vel.Magnitude > 0.01 then
-			p.part.CFrame = CFrame.lookAt(p.pos, p.pos + p.vel)
-		else
-			p.part.CFrame = CFrame.new(p.pos)
+	-- corrections: velocity changed by something other than gravity (homing, onStep, ground follow)
+	if p.visual then
+		local expect = p.syncVel
+		if p.gravity then
+			expect = expect - Vector3.new(0, p.gravity * (S.now() - p.lastSync), 0)
+		end
+		local now = S.now()
+		if p.needSync or ((p.vel - expect).Magnitude > 0.5 and now - p.lastSync > 0.08) or now - p.lastSync > 1 then
+			p.needSync = false
+			p.lastSync = now
+			p.syncVel = p.vel
+			syncQueue[#syncQueue + 1] = { p.id, p.pos, p.vel }
 		end
 	end
 	if p.traveled >= p.range then
@@ -303,9 +321,18 @@ local function step(p, dt)
 end
 
 RunService.Heartbeat:Connect(function(dt)
+	if #syncQueue > 0 then
+		local batch = syncQueue
+		syncQueue = {}
+		if syncRemote then
+			syncRemote:FireAllClients(batch)
+		end
+	end
 	for _, p in pairs(list) do
 		if p.alive then
+			S.FX.current = S.FX.ctxOf(p.owner)
 			local ok, err = pcall(step, p, dt)
+			S.FX.current = nil
 			if not ok then
 				warn("[EB] projectile error: " .. tostring(err))
 				Proj.stop(p, "error")

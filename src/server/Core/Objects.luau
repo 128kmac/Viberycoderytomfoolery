@@ -287,6 +287,7 @@ end
 
 function Objects.update(now)
 	for _, o in pairs(list) do
+		S.FX.current = S.FX.ctxOf(o.owner)
 		if o.alive then
 			if o.expires and now >= o.expires then
 				Objects.remove(o, "expired")

@@ -80,20 +80,24 @@ function Zone:buildVisual(transparency)
 end
 
 function Zone:contains(f)
-	local p = f.root.Position
+	return self:containsPoint(f.root.Position)
+end
+
+function Zone:containsPoint(p, margin)
+	margin = margin or 0.8
 	if p.Y > self.pos.Y + self.above + S.Config.BODY_DOWN or p.Y < self.pos.Y - S.m(2) then
 		return false
 	end
 	if self.shape == "rect" then
 		local cf = CFrame.lookAt(self.pos, self.pos + self.dir)
 		local lp = cf:PointToObjectSpace(p)
-		return math.abs(lp.X) <= self.width / 2 + 0.8 and -lp.Z >= -0.8 and -lp.Z <= self.length + 0.8
+		return math.abs(lp.X) <= self.width / 2 + margin and -lp.Z >= -margin and -lp.Z <= self.length + margin
 	end
 	local d = Vector3.new(p.X - self.pos.X, 0, p.Z - self.pos.Z).Magnitude
 	if self.shape == "ring" then
-		return d <= self.radius + 0.8 and d >= self.inner - 0.8
+		return d <= self.radius + margin and d >= self.inner - margin
 	end
-	return d <= self.radius + 0.8
+	return d <= self.radius + margin
 end
 
 function Zone:filter(f)
@@ -168,6 +172,7 @@ end
 
 function Zones.update(now)
 	for _, z in pairs(list) do
+		S.FX.current = S.FX.ctxOf(z.owner)
 		if z.alive then
 			if z.follow then
 				if S.alive(z.follow) then

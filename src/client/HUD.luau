@@ -83,11 +83,52 @@ function HUD.notice(text)
 	end)
 end
 
-function HUD.feed(text)
+local function hex(c)
+	return string.format("#%02X%02X%02X", math.floor(c.R * 255), math.floor(c.G * 255), math.floor(c.B * 255))
+end
+
+-- relation-coloured name: you (gold), allies (blue, ◆), enemies (red, ✕) — shape marks, not only colour
+local function nameTag(name, id, team)
+	if not name or name == "" then
+		return "<font color=\"#B0B4C0\">the arena</font>"
+	end
+	local myId = player.Character and player.Character:GetAttribute("FighterId")
+	local myTeam = player.Character and player.Character:GetAttribute("Team") or ""
+	if id and id == myId then
+		return "<font color=\"#FFD45A\"><b>" .. esc(name) .. "</b></font>"
+	elseif team and team ~= "" and team == myTeam then
+		return "<font color=\"#6FC8FF\">◆ " .. esc(name) .. "</font>"
+	end
+	return "<font color=\"#FF7A6E\">✕ " .. esc(name) .. "</font>"
+end
+
+function HUD.feed(data)
+	local text
+	if type(data) == "table" then
+		if data.kind == "ko" then
+			local kc = data.killerKit ~= "" and ctx.Util.color(data.killerKit) or Color3.new(1, 1, 1)
+			text = nameTag(data.killer, data.killerId, data.killerTeam)
+				.. (data.killerKit ~= "" and (" <font color=\"" .. hex(kc) .. "\">[" .. esc(data.killerKit) .. "]</font>") or "")
+				.. "  <b>KO</b>  "
+				.. nameTag(data.victim, data.victimId, data.victimTeam)
+			local myId = player.Character and player.Character:GetAttribute("FighterId")
+			if data.killerId == myId and data.victimId ~= myId and ctx.Audio then
+				ctx.Audio.play("ko")
+			end
+			if data.victimId == myId then
+				refs.lastKiller = data.killer ~= "" and (data.killer .. (data.killerKit ~= "" and (" [" .. data.killerKit .. "]") or "")) or "the arena"
+			end
+		else
+			text = esc(tostring(data.text or ""))
+		end
+	else
+		text = esc(tostring(data))
+	end
 	local item = T.label({
 		Size = UDim2.new(1, 0, 0, 20),
 		Text = text,
-		TextSize = 13,
+		RichText = true,
+		TextSize = 14,
 		Font = Enum.Font.GothamMedium,
 		TextXAlignment = Enum.TextXAlignment.Right,
 		TextStrokeTransparency = 0.4,
@@ -107,6 +148,19 @@ function HUD.feed(text)
 	if #kids > 6 then
 		kids[1]:Destroy()
 	end
+end
+
+-- crosshair hit confirmation (bigger for heavy hits / ultimates)
+function HUD.hitmarker(big)
+	refs.hitT = os.clock()
+	refs.hitBig = big
+end
+
+-- damage taken: edge vignette pulse + direction arc toward the attacker
+function HUD.damaged(amount, fromDir)
+	refs.dmgT = os.clock()
+	refs.dmgAmt = math.clamp(amount / 200, 0.25, 1)
+	refs.dmgDir = fromDir
 end
 
 local function buildSlot(parent, i)
@@ -324,6 +378,47 @@ function HUD.init(c)
 	})
 	T.corner(refs.cross, 3)
 	T.stroke(refs.cross, Color3.new(0, 0, 0), 1, 0.3)
+	refs.hitLines = {}
+	for i = 1, 4 do
+		local ln = T.new("Frame", {
+			AnchorPoint = Vector2.new(0.5, 0.5),
+			Position = UDim2.fromScale(0.5, 0.5),
+			Size = UDim2.fromOffset(2, 9),
+			Rotation = 45 + i * 90,
+			BackgroundColor3 = Color3.new(1, 1, 1),
+			BackgroundTransparency = 1,
+			ZIndex = 9,
+			Parent = gui,
+		})
+		refs.hitLines[i] = ln
+	end
+	-- damage / low-health vignette (four edge gradients)
+	refs.vig = {}
+	local edges = {
+		{ UDim2.new(0, 0, 0, 0), UDim2.new(1, 0, 0.18, 0), 90 },
+		{ UDim2.new(0, 0, 0.82, 0), UDim2.new(1, 0, 0.18, 0), 270 },
+		{ UDim2.new(0, 0, 0, 0), UDim2.new(0.14, 0, 1, 0), 0 },
+		{ UDim2.new(0.86, 0, 0, 0), UDim2.new(0.14, 0, 1, 0), 180 },
+	}
+	for i, e in ipairs(edges) do
+		local fr = T.new("Frame", { Position = e[1], Size = e[2], BackgroundColor3 = Color3.fromRGB(200, 20, 20), BackgroundTransparency = 1, ZIndex = 1, Parent = gui })
+		local g = Instance.new("UIGradient")
+		g.Rotation = e[3]
+		g.Transparency = NumberSequence.new(0, 1)
+		g.Parent = fr
+		refs.vig[i] = fr
+	end
+	-- direction arc toward the last attacker
+	refs.dmgArc = T.new("Frame", {
+		AnchorPoint = Vector2.new(0.5, 0.5),
+		Position = UDim2.fromScale(0.5, 0.5),
+		Size = UDim2.fromOffset(70, 6),
+		BackgroundColor3 = Color3.fromRGB(255, 60, 50),
+		BackgroundTransparency = 1,
+		ZIndex = 8,
+		Parent = gui,
+	})
+	T.corner(refs.dmgArc, 3)
 
 	-- notice + feed
 	refs.notice = T.label({
@@ -366,9 +461,10 @@ function HUD.init(c)
 	refs.dead = T.label({
 		AnchorPoint = Vector2.new(0.5, 0.5),
 		Position = UDim2.fromScale(0.5, 0.4),
-		Size = UDim2.fromOffset(500, 40),
+		Size = UDim2.fromOffset(700, 80),
 		Text = "",
-		TextSize = 30,
+		TextSize = 28,
+		TextWrapped = true,
 		Font = Enum.Font.GothamBlack,
 		TextXAlignment = Enum.TextXAlignment.Center,
 		TextStrokeTransparency = 0.3,
@@ -517,8 +613,54 @@ function HUD.update()
 	else
 		refs.tip.Visible = false
 	end
-	local hum = ch:FindFirstChildOfClass("Humanoid")
-	refs.dead.Text = (hum and hum.Health <= 0) and "DEFEATED — respawning..." or ""
+	-- hitmarker
+	local ht = os.clock() - (refs.hitT or -10)
+	for i, ln in ipairs(refs.hitLines) do
+		local a = math.clamp(ht / 0.22, 0, 1)
+		local d = 8 + a * 6 + (refs.hitBig and 4 or 0)
+		local ang = math.rad(45 + i * 90)
+		ln.Position = UDim2.new(0.5, math.cos(ang) * d, 0.5, math.sin(ang) * d)
+		ln.Size = UDim2.fromOffset(2, refs.hitBig and 12 or 8)
+		ln.BackgroundColor3 = refs.hitBig and Color3.fromRGB(255, 210, 80) or Color3.new(1, 1, 1)
+		ln.BackgroundTransparency = a
+		ln.Visible = refs.cross.Visible
+	end
+	-- damage vignette + low health pulse
+	local dt0 = os.clock() - (refs.dmgT or -10)
+	local hit = dt0 < 0.5 and (1 - dt0 / 0.5) * (refs.dmgAmt or 0.5) or 0
+	local low = hp > 0 and hp / maxHp < 0.3 and (0.25 + 0.15 * math.sin(os.clock() * 5)) or 0
+	if ctx.Settings and ctx.Settings.get("ReducedFlash") then
+		hit *= 0.5
+		low = hp > 0 and hp / maxHp < 0.3 and 0.25 or 0
+	end
+	local v = math.max(hit, low)
+	for _, fr in ipairs(refs.vig) do
+		fr.BackgroundTransparency = 1 - v * 0.75
+	end
+	if hit > 0 and refs.dmgDir then
+		local cam = workspace.CurrentCamera
+		local lv = cam.CFrame.LookVector
+		local fwd = Vector3.new(lv.X, 0, lv.Z)
+		local src = -refs.dmgDir
+		if fwd.Magnitude > 0.01 then
+			fwd = fwd.Unit
+			local right = fwd:Cross(Vector3.yAxis)
+			local a = math.atan2(src:Dot(right), src:Dot(fwd))
+			refs.dmgArc.Position = UDim2.new(0.5, math.sin(a) * 90, 0.5, -math.cos(a) * 90)
+			refs.dmgArc.Rotation = math.deg(a)
+		end
+		refs.dmgArc.BackgroundTransparency = 1 - hit
+	else
+		refs.dmgArc.BackgroundTransparency = 1
+	end
+	-- defeat overlay with killer and respawn countdown
+	if ch:GetAttribute("Dead") then
+		local at = player:GetAttribute("RespawnAt") or 0
+		local left = math.max(0, at - t)
+		refs.dead.Text = "KNOCKED OUT" .. (refs.lastKiller and ("  ·  by " .. refs.lastKiller) or "") .. (left > 0 and string.format("\nRespawning in %.1f", left) or "")
+	else
+		refs.dead.Text = ""
+	end
 end
 
 return HUD

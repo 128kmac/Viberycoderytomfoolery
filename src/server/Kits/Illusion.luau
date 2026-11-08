@@ -140,7 +140,7 @@ Kit[2] = function(c)
 	local d = decoy(c, start, 4, { extend = true, onReveal = function(obj)
 		S.Objects.remove(obj, "revealed")
 	end })
-	task.spawn(function()
+	K.FX.spawnCtx(function()
 		local t0 = K.now()
 		local base = hist[1] and hist[1].t or t0
 		while d.alive do

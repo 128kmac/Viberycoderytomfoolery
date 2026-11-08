@@ -101,10 +101,19 @@ function Fighter.new(model, opts)
 	end
 	model:SetAttribute("FighterId", f.id)
 	model:SetAttribute("MaxHealth", maxHealth)
+	model:SetAttribute("Health", maxHealth)
+	game:GetService("CollectionService"):AddTag(model, "EBFighter")
+	model:SetAttribute("DisplayName", f.name)
+	model:SetAttribute("IsSummon", f.isSummon == true)
+	model:SetAttribute("OwnerId", f.owner and f.owner.id or 0)
+	model:SetAttribute("Team", f.team or "")
+	model:SetAttribute("Dead", false)
+	model:SetAttribute("SpawnedAt", now)
 	if opts.kit then
 		Fighter.setKit(f, opts.kit)
 	end
-	Fighter.attachNameplate(f)
+	-- overhead plates are drawn by each client (friend/foe styling per viewer)
+	S.FX.event("spawn", { a = model, o = f.id, k = f.kitName })
 	return f
 end
 
@@ -287,12 +296,12 @@ end
 -- Movement ----------------------------------------------------------------------
 function Fighter.canMove(f)
 	local s = f.statuses
-	return not (s.stun or s.root or s.sleep or s.lift or s.guardbreak or s.lock) and f.stationary <= 0
+	return not (s.stun or s.root or s.sleep or s.lift or s.guardbreak or s.lock) and f.stationary <= 0 and not f.frozen
 end
 
 function Fighter.canAct(f)
 	local s = f.statuses
-	return not (s.stun or s.sleep or s.guardbreak or s.lock) and not f.dead
+	return not (s.stun or s.sleep or s.guardbreak or s.lock) and not f.dead and not f.frozen
 end
 
 function Fighter.applyMovement(f)
@@ -311,12 +320,12 @@ function Fighter.applyMovement(f)
 	elseif a and a.halfSpeed then
 		mult *= 0.5
 	end
-	if f.isDummy then
+	if f.isDummy and not f.dummyMobile then
 		mult = 0
 	end
 	local s = f.statuses
 	local jump = Config.JUMP_HEIGHT * M * (f.jumpMult or 1)
-	if s.stun or s.root or s.sleep or s.lift or s.guardbreak or s.lock or f.stationary > 0 then
+	if s.stun or s.root or s.sleep or s.lift or s.guardbreak or s.lock or f.stationary > 0 or f.frozen then
 		mult = 0
 		jump = 0
 	end
@@ -401,6 +410,9 @@ function Fighter.dash(f, dirUnit, dist, time, opts)
 		return real
 	end
 	Fighter.displace(f, flat, real, time, opts.up)
+	S.FX.event("dash", { a = f.model, dir = flat, d = time, dist = real, dodge = opts.dodge or nil, o = f.id })
+	f.model:SetAttribute("DashAt", S.now())
+	f.model:SetAttribute("DashDur", time)
 	return real
 end
 
@@ -505,8 +517,7 @@ function Fighter.dodge(f, moveDir)
 		f.iframeUntil = S.now() + Config.DODGE_IFRAME_LEN
 	end)
 	f.dodgingUntil = now + Config.DODGE_TIME
-	Fighter.dash(f, dir, Config.DODGE_DISTANCE * M, Config.DODGE_TIME)
-	S.FX.trail(f.root, Color3.fromRGB(220, 220, 255), 0.4)
+	Fighter.dash(f, dir, Config.DODGE_DISTANCE * M, Config.DODGE_TIME, { dodge = true })
 	S.Combat.hook(f, "dodge", dir)
 	S.Combat.extraHooks(f, "dodge", dir)
 	return true
@@ -529,6 +540,7 @@ function Fighter.basic(f)
 	end
 	f.lastBasic = now
 	f.guarding = false
+	f.model:SetAttribute("BasicAt", now)
 	if f.basicOverride then
 		S.safe(f.basicOverride, f)
 		return
@@ -606,6 +618,13 @@ function Fighter.kill(f, src)
 		f.humanoid.Health = 0
 	end
 	local killer = src and (src.owner or src) or f.lastDamager
+	if f.model then
+		f.model:SetAttribute("Dead", true)
+		f.model:SetAttribute("DiedAt", S.now())
+		f.model:SetAttribute("Casting", 0)
+		f.model:SetAttribute("CastPhase", "")
+	end
+	S.FX.event("death", { a = f.model, p = f.root and f.root.Position or nil, k = killer and killer.kitName or nil, victimKit = f.kitName, summon = f.isSummon or nil })
 	S.emit("defeated", f, killer)
 end
 
@@ -741,6 +760,9 @@ function Fighter.tick(f, dt, now)
 	setAttr(f, "Proxima", math.floor(f.proxima))
 	setAttr(f, "Guard", math.floor(f.guard + 0.5))
 	setAttr(f, "Guarding", f.guarding == true)
+	if f.aim and f.aim.dir then
+		setAttr(f, "AimPitch", math.floor(math.deg(math.asin(math.clamp(f.aim.dir.Y, -1, 1))) / 3 + 0.5) * 3)
+	end
 	setAttr(f, "Dodge", f.dodgeCharges)
 	setAttr(f, "Rupture", f.rupturePending == true)
 	setAttr(f, "Shield", math.floor(S.Combat.totalShield(f) + 0.5))

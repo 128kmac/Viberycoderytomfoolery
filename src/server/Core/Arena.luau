@@ -165,7 +165,7 @@ function Arena.build()
 	for i = 0, 7 do
 		local a = i * math.pi / 4 + math.pi / 8
 		local p = Vector3.new(math.cos(a) * 80, FLOOR_Y, math.sin(a) * 80)
-		table.insert(Arena.spawns, p)
+		table.insert(Arena.spawns, { Position = p, cf = CFrame.lookAt(p, Vector3.new(0, FLOOR_Y, 0)) })
 		part({
 			Name = "SpawnPad",
 			Shape = Enum.PartType.Cylinder,
@@ -191,6 +191,11 @@ function Arena.build()
 	for i = 1, 4 do
 		table.insert(Arena.dummySpots, Vector3.new(-80 + i * 9, FLOOR_Y, 88))
 	end
+	Arena.annex = {
+		spawn = CFrame.lookAt(Vector3.new(-57, FLOOR_Y, 70), Vector3.new(-57, FLOOR_Y, 88)),
+		dummySpots = Arena.dummySpots,
+		dummyFacing = Vector3.new(0, 0, -1),
+	}
 	part({
 		Name = "TrainingSign",
 		Size = Vector3.new(30, 4, 0.5),
@@ -241,7 +246,7 @@ function Arena.randomSpawn()
 		local score = 0
 		for _, f in pairs(S.fighters) do
 			if S.alive(f) and not f.isSummon then
-				score += math.min(60, (f.root.Position - p).Magnitude)
+				score += math.min(60, (f.root.Position - p.Position).Magnitude)
 			end
 		end
 		score += math.random() * 30
@@ -249,7 +254,7 @@ function Arena.randomSpawn()
 			best, bestScore = p, score
 		end
 	end
-	return (best or Vector3.new(0, 0, 0)) + Vector3.new(0, 4, 0)
+	return (best and best.Position or Vector3.new(0, 0, 0)) + Vector3.new(0, 4, 0)
 end
 
 return Arena

@@ -2,6 +2,8 @@
 local S = require(script.Parent.S)
 local Combat = require(script.Parent.Combat)
 
+local Poses = require(game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Poses"))
+
 local Cast = {}
 S.Cast = Cast
 
@@ -68,7 +70,14 @@ function Ctx:origin()
 	return self.f.root.Position
 end
 
+-- emission point: the leading hand for this slot (matches the client animator's reach target)
 function Ctx:chest()
+	local f = self.f
+	return Poses.handWorld(f.root.Position, self:dir(), self.hand or Poses.handFor(self.slot))
+end
+
+-- torso centre (for effects that should come from the body, e.g. auras)
+function Ctx:core()
 	return self.f.root.Position + Vector3.new(0, 0.8, 0)
 end
 
@@ -545,19 +554,22 @@ function Cast.begin(f, slot, unstable, mod)
 	Combat.extraHooks(f, "cast", c)
 	S.emit("cast", f, c)
 	local model = f.model
+	local t0 = S.now()
 	model:SetAttribute("Casting", slot)
-	model:SetAttribute("CastEnd", S.now() + (def.windup or 0))
-	local color = S.Util.color(f.kitName)
+	model:SetAttribute("CastEnd", t0 + (def.windup or 0))
+	model:SetAttribute("CastStart", t0)
+	model:SetAttribute("CastPhase", "windup")
+	model:SetAttribute("CastHand", Poses.handFor(slot))
+	model:SetAttribute("CastUlt", slot == 5)
+	model:SetAttribute("CastUnstable", c.unstable == true)
+	S.FX.castStart(f, slot, def, c)
 	if slot == 5 then
+		local color = S.Util.color(f.kitName)
 		S.FX.text(f.root, (c.unstable and "UNSTABLE " or "") .. string.upper(def.name), c.unstable and Color3.fromRGB(255, 90, 40) or color, math.max(1.2, def.windup or 1), 40)
-	elseif c.p60 then
-		S.FX.highlight(model, Color3.fromRGB(255, 240, 120), math.max(0.2, def.windup or 0.2), 0.8)
-	end
-	if (def.windup or 0) > 0 then
-		S.FX.highlight(model, color, def.windup, 0.75)
 	end
 	local stationaryWindup = f.kit.stationaryWindup and f.kit.stationaryWindup[slot]
 	task.spawn(function()
+		S.FX.bindThread(f)
 		local okW = true
 		if (def.windup or 0) > 0 then
 			if stationaryWindup then
@@ -572,6 +584,9 @@ function Cast.begin(f, slot, unstable, mod)
 			c.phase = "active"
 			c.active = true
 			model:SetAttribute("CastEnd", 0)
+			model:SetAttribute("CastPhase", "active")
+			model:SetAttribute("CastActive", S.now())
+			S.FX.release(f, slot, c)
 			local okRun, err = pcall(fn, c)
 			if not okRun then
 				warn("[EB] " .. tostring(f.kitName) .. " move " .. slot .. " error: " .. tostring(err))
@@ -587,13 +602,15 @@ function Cast.begin(f, slot, unstable, mod)
 			f.action = nil
 		end
 		if S.alive(f) then
-			model:SetAttribute("Casting", 0)
-			model:SetAttribute("CastEnd", 0)
 			local rec = c.recovery
 			if rec == nil then
 				rec = Config.DEFAULT_RECOVERY
 			end
 			rec = math.max(0, rec - (c.recoveryBonus or 0))
+			model:SetAttribute("Casting", 0)
+			model:SetAttribute("CastEnd", 0)
+			model:SetAttribute("CastPhase", "recovery")
+			model:SetAttribute("RecoverEnd", S.now() + rec)
 			f.lockUntil = S.now() + rec
 			-- buffered input
 			local buf = f.buffer
@@ -651,7 +668,11 @@ local function runRecast(f, slot, mod)
 		end
 		f.action = c2
 	end
+	f.model:SetAttribute("RecastAt", S.now())
+	f.model:SetAttribute("RecastSlot", slot)
+	S.FX.release(f, slot, c2)
 	task.spawn(function()
+		S.FX.bindThread(f)
 		local okRun, res = pcall(r.fn, c2)
 		if not okRun then
 			warn("[EB] recast error: " .. tostring(res))
@@ -771,7 +792,10 @@ function Cast.kitAction(f, arg)
 	if not S.Fighter.canAct(f) then
 		return
 	end
-	S.safe(f.kit.action, f, arg)
+	task.spawn(function()
+		S.FX.bindThread(f)
+		S.safe(f.kit.action, f, arg)
+	end)
 end
 
 return Cast

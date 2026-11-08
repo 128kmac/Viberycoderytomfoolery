@@ -63,7 +63,8 @@ local function showDetail(name)
 	local col = ctx.Util.color(d.name)
 	local hex = string.format("#%02x%02x%02x", math.floor(col.R * 255), math.floor(col.G * 255), math.floor(col.B * 255))
 	section(detail, 1, string.format("<font color=\"%s\">%02d  %s</font>", hex, d.num, esc(string.upper(d.name))), "<i>" .. esc(d.tagline) .. "</i>\n" .. esc(d.identity))
-	section(detail, 2, "Passive — " .. esc(d.passive.name), esc(d.passive.text), Color3.fromRGB(255, 225, 160))
+	local sty = ctx.Styles.of(d.name)
+	section(detail, 2, "Passive — " .. esc(d.passive.name), esc(d.passive.text) .. "\n<font color=\"#8f98ad\">" .. (sty.showcase and "★ Showcase power: every move has bespoke choreography, sound and camera work." or ("Visual family: " .. sty.family .. " (shared element language, tinted for " .. esc(d.name) .. ").")) .. "</font>", Color3.fromRGB(255, 225, 160))
 	for i = 1, 5 do
 		local m = d.moves[i]
 		local body = "<font color=\"#8fa0b8\">" .. esc(m.statline) .. "</font>\n" .. esc(m.desc)
@@ -108,7 +109,11 @@ end
 
 function KitMenu.close()
 	root.Visible = false
-	ctx.Controls.setMenuOpen(false)
+	ctx.Controls.setMenuOpen(ctx.MatchUI and ctx.MatchUI.isOpen() or false)
+end
+
+function KitMenu.isOpen()
+	return root ~= nil and root.Visible
 end
 
 function KitMenu.toggle()
@@ -158,34 +163,6 @@ function KitMenu.init(c)
 		Parent = root,
 	})
 	T.new("UIListLayout", { FillDirection = Enum.FillDirection.Horizontal, Padding = UDim.new(0, 8), SortOrder = Enum.SortOrder.LayoutOrder, Parent = settings })
-	local function toggle(label, attr, key, order)
-		local b = T.button({ Size = UDim2.fromOffset(170, 30), Text = "", LayoutOrder = order, Parent = settings })
-		local function refresh()
-			b.Text = label .. ": " .. (workspace:GetAttribute(attr) and "ON" or "OFF")
-			b.BackgroundColor3 = workspace:GetAttribute(attr) and Color3.fromRGB(40, 110, 70) or T.panel2
-		end
-		refresh()
-		workspace:GetAttributeChangedSignal(attr):Connect(refresh)
-		b.Activated:Connect(function()
-			ctx.remotes.Input:FireServer("setting", key, not workspace:GetAttribute(attr))
-		end)
-	end
-	toggle("Synergy Mode", "Synergy", "synergy", 1)
-	toggle("Teams", "Teams", "teams", 2)
-	local botsLbl = T.label({ Size = UDim2.fromOffset(110, 30), Text = "", TextXAlignment = Enum.TextXAlignment.Center, Font = Enum.Font.GothamBold, LayoutOrder = 4, Parent = settings })
-	local function refreshBots()
-		botsLbl.Text = "Bots: " .. tostring(workspace:GetAttribute("BotCount") or 0)
-	end
-	refreshBots()
-	workspace:GetAttributeChangedSignal("BotCount"):Connect(refreshBots)
-	local minus = T.button({ Size = UDim2.fromOffset(34, 30), Text = "-", LayoutOrder = 3, Parent = settings })
-	local plus = T.button({ Size = UDim2.fromOffset(34, 30), Text = "+", LayoutOrder = 5, Parent = settings })
-	minus.Activated:Connect(function()
-		ctx.remotes.Input:FireServer("setting", "bots", (workspace:GetAttribute("BotCount") or 0) - 1)
-	end)
-	plus.Activated:Connect(function()
-		ctx.remotes.Input:FireServer("setting", "bots", (workspace:GetAttribute("BotCount") or 0) + 1)
-	end)
 	local equip = T.button({
 		Size = UDim2.fromOffset(200, 30),
 		Text = "EQUIP SELECTED POWER",
@@ -199,12 +176,14 @@ function KitMenu.init(c)
 			KitMenu.close()
 		end
 	end)
-	local botBtn = T.button({ Size = UDim2.fromOffset(170, 30), Text = "Spawn bot with it", LayoutOrder = 7, Parent = settings })
+	local botBtn = T.button({ Size = UDim2.fromOffset(230, 30), Text = "Spar against it (practice)", LayoutOrder = 7, Parent = settings })
 	botBtn.Activated:Connect(function()
 		if selected then
+			ctx.remotes.Input:FireServer("setting", "spar", selected)
 			ctx.remotes.Input:FireServer("setting", "botKit", selected)
 		end
 	end)
+	T.label({ Size = UDim2.fromOffset(300, 30), Text = "★ = showcase power (bespoke choreography)", TextSize = 12, TextColor3 = T.dim, LayoutOrder = 8, Parent = settings })
 
 	-- list
 	search = T.new("TextBox", {
@@ -252,7 +231,7 @@ function KitMenu.init(c)
 		T.label({
 			Position = UDim2.fromOffset(16, 0),
 			Size = UDim2.new(1, -20, 1, 0),
-			Text = string.format("%02d  %s", e.num, e.name),
+			Text = string.format("%02d  %s%s", e.num, e.name, ctx.Styles.SHOWCASE[e.name] and "  ★" or ""),
 			Font = Enum.Font.GothamBold,
 			TextSize = 13,
 			TextWrapped = false,

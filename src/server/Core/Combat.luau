@@ -15,7 +15,10 @@ end
 local function hook(f, name, ...)
 	local h = f and f.hooks and f.hooks[name]
 	if h then
+		local prev = S.FX.current
+		S.FX.current = S.FX.ctxOf(f)
 		local ok, res = pcall(h, f, ...)
+		S.FX.current = prev
 		if not ok then
 			warn("[EB] hook " .. name .. " failed for " .. tostring(f.kitName) .. ": " .. tostring(res))
 			return nil
@@ -28,12 +31,15 @@ Combat.hook = hook
 
 local function extraHooks(f, name, ...)
 	if f and f.extraHooks and f.extraHooks[name] then
+		local prev = S.FX.current
+		S.FX.current = S.FX.ctxOf(f)
 		for _, fn in ipairs(table.clone(f.extraHooks[name])) do
 			local ok, err = pcall(fn, f, ...)
 			if not ok then
 				warn("[EB] extra hook " .. name .. ": " .. tostring(err))
 			end
 		end
+		S.FX.current = prev
 	end
 end
 Combat.extraHooks = extraHooks
@@ -55,9 +61,7 @@ function Combat.addHook(f, name, fn)
 end
 
 local function pop(pos, text, color, kind)
-	if remotes and remotes.Pop then
-		remotes.Pop:FireAllClients(pos, text, color, kind)
-	end
+	S.FX.pop(pos, text, color, kind)
 end
 Combat.pop = pop
 
@@ -302,7 +306,7 @@ function Combat.heal(src, target, amount, opts)
 		Combat.addProxima(src, Config.P_SUPPORT_GAIN, "support")
 	end
 	if amount >= 1 then
-		pop(target.root.Position, "+" .. math.floor(amount + 0.5), Color3.fromRGB(110, 255, 140), "heal")
+		S.FX.hit(target, amount, "heal", src, nil)
 	end
 	hook(src, "healed", target, amount)
 	return amount
@@ -328,7 +332,7 @@ function Combat.damage(src, target, amount, opts)
 		hook(target, "evaded", src, opts)
 		extraHooks(target, "evaded", src, opts)
 		S.emit("evaded", target, src, opts)
-		pop(target.root.Position, "EVADE", Color3.fromRGB(200, 200, 200), "info")
+		S.FX.hit(target, 0, "evade", src, opts)
 		return 0, "invulnerable"
 	end
 	local info = {
@@ -387,7 +391,6 @@ function Combat.damage(src, target, amount, opts)
 				target.lastPerfectGuard = now
 				Combat.addProxima(target, Config.P_PERFECT_GUARD_GAIN, "perfect")
 			end
-			pop(target.root.Position, "PERFECT", Color3.fromRGB(255, 255, 120), "info")
 			hook(target, "perfectGuard", src, info)
 			extraHooks(target, "perfectGuard", src, info)
 		else
@@ -459,12 +462,21 @@ function Combat.damage(src, target, amount, opts)
 	end
 	-- popups
 	local shown = dmg + absorbed
-	if shown >= 0.5 then
-		local col = guarded and Color3.fromRGB(150, 170, 255) or Color3.fromRGB(255, 220, 120)
-		if absorbed > 0 and dmg <= 0 then
-			col = Color3.fromRGB(140, 200, 255)
+	if shown >= 0.5 or guarded then
+		local cat = "hit"
+		if perfect then
+			cat = "perfect"
+		elseif guarded then
+			cat = "guard"
+		elseif absorbed > 0 and dmg <= 0 then
+			cat = "shield"
+		elseif info.kind == "dot" or info.kind == "field" then
+			cat = "tick"
 		end
-		pop(target.root.Position, tostring(math.floor(shown + 0.5)), col, info.kind)
+		info.isUlt = info.isUlt or opts.isUlt or (opts.cast and opts.cast.isUlt) or nil
+		info.projectile = opts.projectile
+		info.melee = opts.melee or opts.isBasic
+		S.FX.hit(target, shown, cat, src, info)
 	end
 	if S.Fighter then
 		S.Fighter.syncHealth(target)

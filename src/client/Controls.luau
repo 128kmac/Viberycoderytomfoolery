@@ -145,7 +145,6 @@ function Controls.setLocked(on)
 	local hum = ch and ch:FindFirstChildOfClass("Humanoid")
 	if hum then
 		hum.AutoRotate = not on
-		hum.CameraOffset = on and Vector3.new(1.75, 0.6, 0) or Vector3.zero
 	end
 	if ctx.HUD and ctx.HUD.setCrosshair then
 		ctx.HUD.setCrosshair(on)
@@ -171,6 +170,18 @@ function Controls.init(c)
 		if io.KeyCode == Enum.KeyCode.Tab or (io.KeyCode == Enum.KeyCode.M and not processed) or io.KeyCode == Enum.KeyCode.ButtonSelect then
 			ctx.KitMenu.toggle()
 			return
+		end
+		if (io.KeyCode == Enum.KeyCode.P and not processed) or io.KeyCode == Enum.KeyCode.ButtonStart then
+			if ctx.MatchUI then
+				ctx.MatchUI.togglePanel()
+			end
+			return
+		end
+		if io.UserInputType == Enum.UserInputType.Touch and not processed then
+			local vp = camera.ViewportSize
+			if io.Position.X > vp.X * 0.4 then
+				Controls.cameraTouch = io
+			end
 		end
 		if processed then
 			return
@@ -209,12 +220,19 @@ function Controls.init(c)
 			end
 			return
 		end
+		if kc == Enum.KeyCode.C and ctx.Camera then
+			ctx.Camera.shoulder = -ctx.Camera.shoulder
+			return
+		end
 		local slot = KEY_SLOTS[kc]
 		if slot then
 			Controls.cast(slot, true)
 		end
 	end)
 	UserInputService.InputEnded:Connect(function(io)
+		if io == Controls.cameraTouch then
+			Controls.cameraTouch = nil
+		end
 		if io.UserInputType == Enum.UserInputType.MouseButton1 then
 			Controls.basic(false)
 			return
@@ -284,12 +302,9 @@ function Controls.init(c)
 		local ch = character()
 		local hum = ch and ch:FindFirstChildOfClass("Humanoid")
 		local root = ch and ch:FindFirstChild("HumanoidRootPart")
-		if Controls.locked and not Controls.menuOpen and hum and root and hum.Health > 0 then
+		if Controls.locked and not Controls.menuOpen and hum and root and hum.Health > 0 and not (ch and ch:GetAttribute("Dead")) then
 			UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
 			hum.AutoRotate = false
-			if hum.CameraOffset.Magnitude < 0.1 then
-				hum.CameraOffset = Vector3.new(1.75, 0.6, 0)
-			end
 			local lv = camera.CFrame.LookVector
 			local flat = Vector3.new(lv.X, 0, lv.Z)
 			if flat.Magnitude > 0.01 then
